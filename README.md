@@ -1,6 +1,6 @@
 # mab_benchmark — MAB Unified Benchmark Suite v1.0
 
-**Gap 5 Research Programme · March 2026**
+**OJEDIRAN ALABA BOLAJI · March 2026**
 
 A self-contained Python package that implements the full MAB Unified
 Benchmark Suite: five standard problem settings, four mandatory baselines,
