@@ -10,6 +10,17 @@ Two conjugate models are implemented:
   - Beta-Bernoulli  for S1, S3, S5 (binary rewards)
   - Normal-InvGamma for S2          (Gaussian rewards)
 
+Reward clipping (Beta-Bernoulli mode)
+--------------------------------------
+The Beta distribution requires both alpha > 0 and beta > 0 at all
+times.  The conjugate update is alpha += r, beta += (1 - r), which
+requires r in [0, 1].  Settings S1, S3, and S5 produce Bernoulli
+rewards already in {0, 1} so no clipping is needed there.  Setting
+S2 produces Gaussian rewards that can exceed 1.0 or fall below 0.0;
+without clipping, beta goes negative and numpy.random.beta raises
+"ValueError: b <= 0".  The fix clips reward to [0, 1] before every
+Beta-Bernoulli update.  For S1/S3/S5 this has zero effect.
+
 Role in benchmark
 -----------------
 Theoretically equivalent to UCB1 in O(log T) regret, but often
@@ -39,9 +50,14 @@ class ThompsonSampling(BanditAlgorithm):
 
     Beta-Bernoulli model (reward_type='bernoulli')
     -----------------------------------------------
-    Prior: Beta(alpha_0, beta_0) = Beta(1, 1) = Uniform(0,1)
-    Update: alpha_a += r_t, beta_a += (1 - r_t)
-    Sample:  theta_a ~ Beta(alpha_a, beta_a)
+    Prior:  Beta(alpha_0, beta_0) = Beta(1, 1) = Uniform(0,1)
+    Update: r_clipped = clip(r_t, 0, 1)
+            alpha_a += r_clipped
+            beta_a  += 1 - r_clipped
+    Sample: theta_a ~ Beta(alpha_a, beta_a)
+    Note:   reward is clipped to [0, 1] before every update so that
+            alpha and beta remain strictly positive across all five
+            benchmark settings (including S2 Gaussian rewards).
 
     Normal-InvGamma model (reward_type='gaussian')
     -----------------------------------------------
@@ -106,8 +122,28 @@ class ThompsonSampling(BanditAlgorithm):
         context: np.ndarray | None = None,
     ) -> None:
         if self.reward_type == "bernoulli":
-            self.alpha[arm] += reward
-            self.beta[arm]  += 1.0 - reward
+            # ── PERMANENT FIX ─────────────────────────────────────────
+            # Clip reward to [0, 1] before the Beta-Bernoulli update.
+            #
+            # Root cause of the original bug:
+            #   S2 (Gaussian) produces rewards outside [0, 1].
+            #   Without clipping: beta[arm] += (1 - reward) can become
+            #   negative when reward > 1, causing numpy.random.beta to
+            #   raise "ValueError: b <= 0" on the next choose_arm call.
+            #
+            # Why clipping is correct:
+            #   The Beta-Bernoulli model treats reward as a success
+            #   probability, which must lie in [0, 1] by definition.
+            #   Clipping is the standard adaptation when applying a
+            #   Bernoulli-style bandit to continuous-reward environments.
+            #
+            # Impact on S1 / S3 / S5 (Bernoulli rewards in {0, 1}):
+            #   clip(0, 0, 1) = 0  and  clip(1, 0, 1) = 1
+            #   → zero effect; behaviour is identical to before.
+            # ──────────────────────────────────────────────────────────
+            reward_clipped = float(np.clip(reward, 0.0, 1.0))
+            self.alpha[arm] += reward_clipped
+            self.beta[arm]  += 1.0 - reward_clipped
         else:
             self.n_obs[arm]  += 1.0
             self.sum_r[arm]  += reward
