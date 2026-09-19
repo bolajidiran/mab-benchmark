@@ -1,0 +1,179 @@
+{
+  "benchmark": "MAB Unified Benchmark Suite v1.0.0 \u2014 S4 Real Dataset",
+  "dataset": "Open Bandit Dataset (Saito et al., 2020)",
+  "dataset_url": "https://github.com/st-tech/zr-obp",
+  "behavior_policy": "random",
+  "campaign": "all",
+  "csv_path": "C:\\Users\\HEADRPU\\source\\repos\\bolajidiran\\mab-benchmark\\open_bandit_dataset\\random\\all\\all.csv",
+  "n_actions": 80,
+  "context_dim": 4,
+  "T_replayer": 50000,
+  "n_runs": 30,
+  "experiment_date": "2026-04-16T01:32:24",
+  "loader_note": "Custom direct CSV loader used (bypasses obp pre_process() which is incompatible with pandas 2.0+ / Python 3.14). All fields read directly from random/all/all.csv.",
+  "algorithm": "Feel-Good Thompson Sampling (FG-TS)",
+  "algorithm_params": "lambda_=0.5, alpha_0=1.0, beta_0=1.0",
+  "ctr_results": {
+    "FG-TS": {
+      "mean_ctr": 0.003258,
+      "std": 0.002587,
+      "ci_lower": 0.002332,
+      "ci_upper": 0.004183,
+      "mean_matched_rounds": 562,
+      "s4_rank": 3,
+      "n_runs": 30
+    },
+    "B3_TS": {
+      "mean_ctr": 0.003925,
+      "std": 0.003022,
+      "ci_lower": 0.002844,
+      "ci_upper": 0.005007,
+      "mean_matched_rounds": 597,
+      "s4_rank": 1,
+      "n_runs": 30
+    },
+    "B2_UCB1": {
+      "mean_ctr": 0.0,
+      "std": 0.0,
+      "ci_lower": 0.0,
+      "ci_upper": 0.0,
+      "mean_matched_rounds": 115,
+      "s4_rank": 5,
+      "n_runs": 30
+    },
+    "B1_EpsGreedy": {
+      "mean_ctr": 0.001803,
+      "std": 0.000855,
+      "ci_lower": 0.001497,
+      "ci_upper": 0.002109,
+      "mean_matched_rounds": 650,
+      "s4_rank": 4,
+      "n_runs": 30
+    },
+    "B0_Random": {
+      "mean_ctr": 0.003887,
+      "std": 0.002423,
+      "ci_lower": 0.00302,
+      "ci_upper": 0.004754,
+      "mean_matched_rounds": 616,
+      "s4_rank": 2,
+      "n_runs": 30
+    }
+  },
+  "s4_ranking": [
+    "B3_TS",
+    "B0_Random",
+    "FG-TS",
+    "B1_EpsGreedy",
+    "B2_UCB1"
+  ],
+  "s1_ranking": [
+    "B3_TS",
+    "FG-TS",
+    "B2_UCB1",
+    "B1_EpsGreedy",
+    "B0_Random"
+  ],
+  "pairwise_tests": {
+    "FG-TS_vs_B3_TS": {
+      "p_raw": 0.761065,
+      "p_threshold": 0.025,
+      "significant": false,
+      "better": "B3_TS",
+      "cohens_d": -0.2334,
+      "a12": 0.49,
+      "magnitude": "small"
+    },
+    "FG-TS_vs_B2_UCB1": {
+      "p_raw": 1.8e-05,
+      "p_threshold": 0.007143,
+      "significant": true,
+      "better": "FG-TS",
+      "cohens_d": 1.7511,
+      "a12": 0.9,
+      "magnitude": "large"
+    },
+    "FG-TS_vs_B1_EpsGreedy": {
+      "p_raw": 0.00546,
+      "p_threshold": 0.0125,
+      "significant": true,
+      "better": "FG-TS",
+      "cohens_d": 0.7423,
+      "a12": 0.75,
+      "magnitude": "medium"
+    },
+    "FG-TS_vs_B0_Random": {
+      "p_raw": 0.230105,
+      "p_threshold": 0.016667,
+      "significant": false,
+      "better": "B0_Random",
+      "cohens_d": -0.2468,
+      "a12": 0.4511,
+      "magnitude": "small"
+    },
+    "B3_TS_vs_B2_UCB1": {
+      "p_raw": 8e-06,
+      "p_threshold": 0.005556,
+      "significant": true,
+      "better": "B3_TS",
+      "cohens_d": 1.8058,
+      "a12": 0.9333,
+      "magnitude": "large"
+    },
+    "B3_TS_vs_B1_EpsGreedy": {
+      "p_raw": 0.000123,
+      "p_threshold": 0.01,
+      "significant": true,
+      "better": "B3_TS",
+      "cohens_d": 0.9394,
+      "a12": 0.8111,
+      "magnitude": "large"
+    },
+    "B3_TS_vs_B0_Random": {
+      "p_raw": 0.823577,
+      "p_threshold": 0.05,
+      "significant": false,
+      "better": "B3_TS",
+      "cohens_d": 0.0139,
+      "a12": 0.5111,
+      "magnitude": "negligible"
+    },
+    "B2_UCB1_vs_B1_EpsGreedy": {
+      "p_raw": 3e-06,
+      "p_threshold": 0.005,
+      "significant": true,
+      "better": "B1_EpsGreedy",
+      "cohens_d": -2.9316,
+      "a12": 0.0167,
+      "magnitude": "large"
+    },
+    "B2_UCB1_vs_B0_Random": {
+      "p_raw": 8e-06,
+      "p_threshold": 0.00625,
+      "significant": true,
+      "better": "B0_Random",
+      "cohens_d": -2.2307,
+      "a12": 0.0667,
+      "magnitude": "large"
+    },
+    "B1_EpsGreedy_vs_B0_Random": {
+      "p_raw": 9.9e-05,
+      "p_threshold": 0.008333,
+      "significant": true,
+      "better": "B0_Random",
+      "cohens_d": -1.1276,
+      "a12": 0.1772,
+      "magnitude": "large"
+    }
+  },
+  "bridge_compliance_s4": {
+    "spearman_rho_s1_s4": 0.3,
+    "c1_rank_correlation": 0.4286,
+    "c2_arm_independence": 1.0,
+    "c3_sufficient_horizon": 0.9134,
+    "exploration_cost_e": 0.017312,
+    "BCS_S4": 0.7807,
+    "band": "PARTIAL"
+  },
+  "objective_3_verdict": "ACHIEVED \u2014 FG-TS demonstrates measurable CTR on real-world ZOZOTOWN fashion recommendation data (OBD random/all campaign, Saito et al., 2020). Results satisfy Objective 3: examine efficiency when deployed as a recommender system on a real-world logged interaction dataset."
+}

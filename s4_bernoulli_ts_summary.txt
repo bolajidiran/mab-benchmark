@@ -1,0 +1,40 @@
+OBP/BernoulliTS EXTERNAL VALIDITY EXPERIMENT
+Ojediran, A.B. — LASU 2026
+======================================================================
+
+Date     : 2026-04-16 11:23:55
+K=80  T=50,000  n_runs=30
+
+GROUND TRUTH (Saito et al., 2021, NeurIPS, Table 1):
+  BernoulliTS CTR = 0.50% +/- 0.004  (on-policy, live)
+  Random CTR      = 0.35% +/- 0.010  (on-policy, live)
+  Relative-CTR    = 1.43x
+
+EMPIRICAL GROUND TRUTH (bts/all.csv, 12,357,200 rows):
+  BernoulliTS CTR = 0.0050 (0.50%)
+
+REPLAYER CTR ESTIMATES (random/all.csv, T=50,000, n=30):
+  #1 B3_TS                        CTR=0.0039 +/-0.0030
+  #2 BernoulliTS_Zozotown         CTR=0.0039 +/-0.0028 [TEST-1]
+  #3 B0_Random                    CTR=0.0036 +/-0.0031
+  #4 FG-TS                        CTR=0.0033 +/-0.0026 [TEST-2]
+  #5 B1_EpsGreedy                 CTR=0.0018 +/-0.0009
+  #6 B2_UCB1                      CTR=0.0000 +/-0.0000
+
+Relative-CTR estimate: 1.0819x (ground truth: 1.43x)
+BCS(S4, 6-alg) = 0.9711 [PASS]
+Spearman rho   = 0.9429
+
+SYNTHETIC BENCHMARK (S1-S5) — BernoulliTS uniform prior:
+  S1 K=10 T=10k: mean=45.47  SD=26.60
+  S3 K=10 T=10k: mean=2074.37  SD=428.93
+  S5 K=500 T=100: mean=48.24  SD=2.83
+  BCS(BernoulliTS_uniform) = 0.9846  [PASS]
+  BCS(FG-TS)               = 0.9846  [PASS]  (fgts_submission.json)
+  Wilcoxon BTS vs FG-TS:   p=0.000000  d=-4.5354  winner=BernoulliTS_uniform
+
+HYPOTHESES:
+  H1 (BTS > Random, directional):  SUPPORTED
+  H2 (BTS ranks top 2):            SUPPORTED
+  H3 (Direction matches truth):    SUPPORTED
+  H4 (BCS captures quality):       SUPPORTED

@@ -1,0 +1,36 @@
+S4 OBD EXPERIMENT — Ojediran, A.B. — LASU 2026
+====================================================================
+
+Dataset  : Open Bandit Dataset, random/all (Saito et al., 2020)
+Arms (K) : 80
+Rounds T : 50,000
+n runs   : 30
+Date     : 2026-04-16 01:32:24
+
+CTR RESULTS (higher = better):
+  Rank  Algorithm            Mean CTR       SD
+--------------------------------------------------
+  #1    B3_TS                  0.0039   0.0030
+  #2    B0_Random              0.0039   0.0024
+  #3    FG-TS                  0.0033   0.0026 ★
+  #4    B1_EpsGreedy           0.0018   0.0009
+  #5    B2_UCB1                0.0000   0.0000
+
+S4 ranking : B3_TS > B0_Random > FG-TS > B1_EpsGreedy > B2_UCB1
+S1 ranking : B3_TS > FG-TS > B2_UCB1 > B1_EpsGreedy > B0_Random
+Spearman ρ : 0.3000
+BCS (S4)   : 0.7807  [PARTIAL]
+
+PAIRWISE TESTS:
+  FG-TS vs B3_TS: p=0.76107  sig=NO  d=-0.2334  A12=0.4900  winner=B3_TS
+  FG-TS vs B2_UCB1: p=0.00002  sig=YES  d=1.7511  A12=0.9000  winner=FG-TS
+  FG-TS vs B1_EpsGreedy: p=0.00546  sig=YES  d=0.7423  A12=0.7500  winner=FG-TS
+  FG-TS vs B0_Random: p=0.23011  sig=NO  d=-0.2468  A12=0.4511  winner=B0_Random
+  B3_TS vs B2_UCB1: p=0.00001  sig=YES  d=1.8058  A12=0.9333  winner=B3_TS
+  B3_TS vs B1_EpsGreedy: p=0.00012  sig=YES  d=0.9394  A12=0.8111  winner=B3_TS
+  B3_TS vs B0_Random: p=0.82358  sig=NO  d=0.0139  A12=0.5111  winner=B3_TS
+  B2_UCB1 vs B1_EpsGreedy: p=0.00000  sig=YES  d=-2.9316  A12=0.0167  winner=B1_EpsGreedy
+  B2_UCB1 vs B0_Random: p=0.00001  sig=YES  d=-2.2307  A12=0.0667  winner=B0_Random
+  B1_EpsGreedy vs B0_Random: p=0.00010  sig=YES  d=-1.1276  A12=0.1772  winner=B0_Random
+
+Objective 3: ACHIEVED
