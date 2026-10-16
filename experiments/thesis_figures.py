@@ -106,28 +106,41 @@ def fig_kuairec(out):
     _save(fig, out, "fig4_kuairec_conditions.png")
 
 
+def _conditional_agreement(g, pairs):
+    """Exploratory: agreement among study pairs that BOTH compare the algorithm pair."""
+    vals = []
+    for c in pairs:
+        col = g[c].fillna("").astype(str).replace("nan", "").to_numpy(); col = col[col != ""]
+        if col.size < 2:
+            continue
+        _, cnt = np.unique(col, return_counts=True)
+        vals.append((cnt * (cnt - 1) / 2).sum() / (col.size * (col.size - 1) / 2))
+    return float(np.mean(vals))
+
+
 def fig_h1(out):
     p = RES / "h1_comparability.json"
     if not p.exists():
         print("skip: no", p); return
     h = json.loads(p.read_text())
+    d = pd.read_csv(RES / "h1_studies.csv"); pairs = [c for c in d.columns if "~" in c]
     order = [x for x in ["U", "F30T", "F30", "F10", "F5", "F1", "F"] if x in h["protocols"]]
     C = [h["protocols"][x]["C"] for x in order]
-    fig, (a1, a2) = plt.subplots(1, 2, figsize=(6.6, 2.7), gridspec_kw={"width_ratios": [1, 1.15]})
-    cols = [PAL[0] if x == "U" else PAL[1] for x in order]
-    a1.bar(order, C, color=cols, edgecolor="white")
-    for i, v in enumerate(C):
-        a1.text(i, v, f"{v:.2f}", ha="center", va="bottom", fontsize=7, color=INK)
-    a1.set_ylim(0, 1.05); a1.set_ylabel("comparability C"); a1.grid(axis="x", visible=False)
-    a1.set_title("Share of study pairs giving the same verdict", fontsize=8.5, color=INK)
+    A = [_conditional_agreement(d[d.protocol == x], pairs) for x in order]
+    fig, (a1, a2) = plt.subplots(1, 2, figsize=(7.2, 3.0), gridspec_kw={"width_ratios": [1.35, 1], "wspace": 0.45})
+    _bars(a1, order, [C, A], ["C, pre-registered (compares AND agrees)", "agreement when both compare (exploratory)"])
+    a1.set_ylim(0, 1.25); a1.set_ylabel("share of study pairs")
+    a1.legend(loc="upper right", fontsize=6.5)
     t = h["tests_U_vs"]; ps = [x for x in order if x != "U"]
-    d = [t[x]["delta"] for x in ps]; lo = [t[x]["ci95"][0] for x in ps]; hi = [t[x]["ci95"][1] for x in ps]
+    dl = [t[x]["delta"] for x in ps]; lo = [t[x]["ci95"][0] for x in ps]; hi = [t[x]["ci95"][1] for x in ps]
     yy = np.arange(len(ps))[::-1]
-    a2.errorbar(d, yy, xerr=[np.array(d) - lo, np.array(hi) - d], fmt="o", color=PAL[0], ms=4, capsize=2, lw=1)
+    a2.errorbar(dl, yy, xerr=[np.array(dl) - lo, np.array(hi) - dl], fmt="o", color=PAL[0], ms=4, capsize=2, lw=1)
     a2.axvline(0.10, color=INK2, ls="--", lw=0.8); a2.axvline(0, color=INK2, lw=0.6)
-    a2.text(0.105, yy.max() + 0.45, "minimum meaningful Δ = 0.10", fontsize=6.5, color=INK2)
-    a2.set_yticks(yy); a2.set_yticklabels([f"U − {x}" for x in ps])
-    a2.set_xlabel("Δ = C_U − C_P with 95% bootstrap interval"); a2.grid(axis="y", visible=False)
+    a2.set_ylim(-0.5, yy.max() + 1.1)
+    a2.text(0.12, yy.max() + 0.45, "minimum meaningful Δ = 0.10", fontsize=6.5, color=INK2, va="bottom")
+    a2.set_xlim(-0.05, 1.05)
+    a2.set_yticks(yy); a2.set_yticklabels([f"U − {x}" for x in ps], fontsize=7.5)
+    a2.set_xlabel("Δ = C(U) − C(P), 95% bootstrap interval"); a2.grid(axis="y", visible=False)
     _save(fig, out, "fig4_h1_comparability.png")
 
 
