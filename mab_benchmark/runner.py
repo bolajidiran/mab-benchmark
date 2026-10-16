@@ -40,6 +40,35 @@ from mab_benchmark.baselines import (
 # Pre-registered seed table (200 seeds; never change once published)
 SEED_TABLE: list[int] = list(range(1000, 1200))
 
+# Identifier of the random-stream layout used by run_setting (see run_streams).
+STREAM_LAYOUT = "1.2.0"
+
+
+def run_streams(seed: int) -> tuple[np.random.Generator, int]:
+    """Independent random streams for one run, derived from one table seed.
+
+    The environment draws its arm means and contexts from default_rng(seed)
+    internally. The reward stream and the
+    algorithm's own randomness come from two child streams of
+    SeedSequence([seed, 1]), so they are reproducible and statistically
+    independent of the environment draws.
+    """
+    reward_ss, alg_ss = np.random.SeedSequence([seed, 1]).spawn(2)
+    alg_seed = int(alg_ss.generate_state(1, dtype=np.uint32)[0])
+    return np.random.default_rng(reward_ss), alg_seed
+
+
+def _make_algorithm(AlgClass, n_arms: int, alg_kwargs: dict, alg_seed: int, context_dim: int = 0):
+    """Instantiate an algorithm, passing context_dim and seed when it accepts them."""
+    import inspect
+    params = inspect.signature(AlgClass.__init__).parameters
+    kw = dict(alg_kwargs)
+    if context_dim and "context_dim" in params and "context_dim" not in kw:
+        kw["context_dim"] = context_dim
+    if "seed" in params and "seed" not in kw:
+        kw["seed"] = alg_seed
+    return AlgClass(n_arms=n_arms, **kw)
+
 
 class BenchmarkRunner:
     """
@@ -64,17 +93,26 @@ class BenchmarkRunner:
     ... )
     """
 
-    def __init__(self, n_runs: int = 30) -> None:
-        if n_runs < 30:
+    def __init__(self, n_runs: int = 30, seeds=None, enforce_min_runs: bool = True) -> None:
+        """
+        n_runs           : number of independent runs (>= 30 unless enforce_min_runs=False).
+        seeds            : optional explicit seed list (default: the pre-registered SEED_TABLE).
+                           Used by the H1 comparability study, which needs fresh, independent
+                           seeds for every simulated study.
+        enforce_min_runs : False only to emulate under-powered practice (H1 study);
+                           certification always uses the default.
+        """
+        self.seeds = list(SEED_TABLE) if seeds is None else [int(x) for x in seeds]
+        if enforce_min_runs and n_runs < 30:
             raise ValueError(
                 f"n_runs must be >= 30 (GAP5 Pillar 3). Got {n_runs}.\n"
                 "This requirement ensures the Wilcoxon signed-rank test "
                 "has adequate statistical power."
             )
-        if n_runs > len(SEED_TABLE):
+        if n_runs > len(self.seeds):
             raise ValueError(
-                f"n_runs={n_runs} exceeds the pre-registered seed table "
-                f"({len(SEED_TABLE)} seeds)."
+                f"n_runs={n_runs} exceeds the seed list "
+                f"({len(self.seeds)} seeds)."
             )
         self.n_runs = n_runs
 
@@ -99,19 +137,43 @@ class BenchmarkRunner:
         np.ndarray of shape (n_runs,)
             Cumulative regret at horizon T for each run.
         """
+        return self._run(AlgClass, alg_kwargs, EnvClass, env_kwargs,
+                         is_stationary, use_context, record_curve=False)
+
+    def run_setting_curves(
+        self,
+        AlgClass: Type[BanditAlgorithm],
+        alg_kwargs: dict,
+        EnvClass: type,
+        env_kwargs: dict,
+        is_stationary: bool = True,
+        use_context: bool = False,
+    ) -> np.ndarray:
+        """Same runs and random streams as run_setting, returning the full
+        cumulative-regret curve: array of shape (n_runs, T); the last column
+        equals run_setting's output exactly."""
+        return self._run(AlgClass, alg_kwargs, EnvClass, env_kwargs,
+                         is_stationary, use_context, record_curve=True)
+
+    def _run(self, AlgClass, alg_kwargs, EnvClass, env_kwargs,
+             is_stationary, use_context, record_curve):
         regrets = np.zeros(self.n_runs, dtype=float)
+        curves = None
 
         for i in range(self.n_runs):
-            seed = SEED_TABLE[i]
-            rng  = np.random.default_rng(seed)
+            seed = self.seeds[i]
+            rng, alg_seed = run_streams(seed)
 
             env = EnvClass(**env_kwargs, seed=seed)
             T   = env.T
+            if record_curve and curves is None:
+                curves = np.zeros((self.n_runs, T))
 
-            alg = AlgClass(
-                n_arms=env.K,
-                **alg_kwargs
-            )
+            # Algorithms in this package draw from numpy's global stream
+            # (np.random.*); seed it per run so every run is reproducible.
+            np.random.seed(alg_seed)
+            alg = _make_algorithm(AlgClass, env.K, alg_kwargs, alg_seed,
+                                  getattr(env, "context_dim", 0) if use_context else 0)
 
             cum_regret = 0.0
 
@@ -129,7 +191,7 @@ class BenchmarkRunner:
                     reward = env.pull(arm, t, rng)
                     reg    = env.regret_increment(arm, t)
                 elif use_context:
-                    reward = env.pull(arm, rng)
+                    reward = env.pull(arm, t, rng)      # reward drawn at round t's context
                     reg    = env.regret_increment(arm, t)
                 else:
                     reward = env.pull(arm, rng)
@@ -137,10 +199,12 @@ class BenchmarkRunner:
 
                 alg.update(arm, reward, t, ctx)
                 cum_regret += reg
+                if record_curve:
+                    curves[i, t - 1] = cum_regret
 
             regrets[i] = cum_regret
 
-        return regrets
+        return curves if record_curve else regrets
 
     # ------------------------------------------------------------------
     # Full suite: all five settings

@@ -1,0 +1,112 @@
+{
+ "FG-TS vs B3_TS": {
+  "stat": 0.0,
+  "p_raw": 1.862645149230957e-09,
+  "p_threshold": 0.005,
+  "significant": true,
+  "better": "B3_TS",
+  "cohens_d": 12.4963,
+  "a12": 0.0,
+  "magnitude": "large",
+  "claim": "significant and large \u2014 B3_TS is better"
+ },
+ "FG-TS vs B2_UCB1": {
+  "stat": 0.0,
+  "p_raw": 1.862645149230957e-09,
+  "p_threshold": 0.005555555555555556,
+  "significant": true,
+  "better": "FG-TS",
+  "cohens_d": -2.2298,
+  "a12": 0.9578,
+  "magnitude": "large",
+  "claim": "significant and large \u2014 FG-TS is better"
+ },
+ "FG-TS vs B1_EpsGreedy": {
+  "stat": 0.0,
+  "p_raw": 1.862645149230957e-09,
+  "p_threshold": 0.00625,
+  "significant": true,
+  "better": "B1_EpsGreedy",
+  "cohens_d": 6.2273,
+  "a12": 0.0,
+  "magnitude": "large",
+  "claim": "significant and large \u2014 B1_EpsGreedy is better"
+ },
+ "FG-TS vs B0_Random": {
+  "stat": 0.0,
+  "p_raw": 1.862645149230957e-09,
+  "p_threshold": 0.0071428571428571435,
+  "significant": true,
+  "better": "FG-TS",
+  "cohens_d": -7.8077,
+  "a12": 1.0,
+  "magnitude": "large",
+  "claim": "significant and large \u2014 FG-TS is better"
+ },
+ "B3_TS vs B2_UCB1": {
+  "stat": 0.0,
+  "p_raw": 1.862645149230957e-09,
+  "p_threshold": 0.008333333333333333,
+  "significant": true,
+  "better": "B3_TS",
+  "cohens_d": -10.8804,
+  "a12": 1.0,
+  "magnitude": "large",
+  "claim": "significant and large \u2014 B3_TS is better"
+ },
+ "B3_TS vs B1_EpsGreedy": {
+  "stat": 0.0,
+  "p_raw": 1.862645149230957e-09,
+  "p_threshold": 0.01,
+  "significant": true,
+  "better": "B3_TS",
+  "cohens_d": -2.4577,
+  "a12": 0.9944,
+  "magnitude": "large",
+  "claim": "significant and large \u2014 B3_TS is better"
+ },
+ "B3_TS vs B0_Random": {
+  "stat": 0.0,
+  "p_raw": 1.862645149230957e-09,
+  "p_threshold": 0.0125,
+  "significant": true,
+  "better": "B3_TS",
+  "cohens_d": -13.2225,
+  "a12": 1.0,
+  "magnitude": "large",
+  "claim": "significant and large \u2014 B3_TS is better"
+ },
+ "B2_UCB1 vs B1_EpsGreedy": {
+  "stat": 0.0,
+  "p_raw": 1.862645149230957e-09,
+  "p_threshold": 0.016666666666666666,
+  "significant": true,
+  "better": "B1_EpsGreedy",
+  "cohens_d": 6.9887,
+  "a12": 0.0,
+  "magnitude": "large",
+  "claim": "significant and large \u2014 B1_EpsGreedy is better"
+ },
+ "B2_UCB1 vs B0_Random": {
+  "stat": 0.0,
+  "p_raw": 1.862645149230957e-09,
+  "p_threshold": 0.025,
+  "significant": true,
+  "better": "B2_UCB1",
+  "cohens_d": -5.8503,
+  "a12": 1.0,
+  "magnitude": "large",
+  "claim": "significant and large \u2014 B2_UCB1 is better"
+ },
+ "B1_EpsGreedy vs B0_Random": {
+  "stat": 0.0,
+  "p_raw": 1.862645149230957e-09,
+  "p_threshold": 0.05,
+  "significant": true,
+  "better": "B1_EpsGreedy",
+  "cohens_d": -10.8527,
+  "a12": 1.0,
+  "magnitude": "large",
+  "claim": "significant and large \u2014 B1_EpsGreedy is better"
+ }
+}

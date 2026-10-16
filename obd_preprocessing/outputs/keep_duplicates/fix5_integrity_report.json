@@ -1,0 +1,125 @@
+{
+  "step": "Fix 5 integrity",
+  "variant": "keep_duplicates",
+  "keep_duplicates": true,
+  "environment": {
+    "python": "3.14.2",
+    "numpy": "2.5.4",
+    "pandas": "3.0.6",
+    "scipy": "1.18.1",
+    "platform": "Windows-11-10.0.26200-SP0"
+  },
+  "reports": [
+    {
+      "policy": "random",
+      "file": "open_bandit_dataset\\random\\all\\all.csv",
+      "file_md5": "2eb4265914edd7345eb3ae78ca3fa1e9",
+      "checks": {
+        "rows_raw": 1374327,
+        "missing_values": 0,
+        "click_values": [
+          0,
+          1
+        ],
+        "item_id_min": 0,
+        "item_id_max": 79,
+        "n_items": 80,
+        "position_values": [
+          1,
+          2,
+          3
+        ],
+        "propensity_min": 0.0125,
+        "propensity_max": 0.0125,
+        "timestamps_in_order": true,
+        "first_timestamp": "2019-11-24 00:00:00.007365+00:00",
+        "last_timestamp": "2019-11-30 23:59:59.408889+00:00",
+        "affinity_nonzero_share": 0.00041703139063701725,
+        "affinity_max": 8.0,
+        "user_feature_cardinality": {
+          "user_feature_0": 4,
+          "user_feature_1": 6,
+          "user_feature_2": 10,
+          "user_feature_3": 10
+        }
+      },
+      "checks_passed": {
+        "no_missing_values": true,
+        "click_is_binary": true,
+        "item_id_in_range": true,
+        "position_in_1_2_3": true,
+        "propensity_in_(0,1]": true,
+        "random_propensity_equals_1/K": true
+      },
+      "duplicates_found": 162,
+      "duplicates_removed": 0,
+      "duplicate_clicks_removed": 161,
+      "sorted_by_timestamp_in_this_step": false,
+      "rows_clean": 1374327,
+      "clicks_clean": 4768,
+      "ctr_clean": 0.0034693344451502445,
+      "published_ctr": 0.0035,
+      "ctr_by_position": {
+        "1": 0.003541446054082379,
+        "2": 0.0034704185019141867,
+        "3": 0.0033961638190691543
+      },
+      "seconds": 15.2
+    },
+    {
+      "policy": "bts",
+      "file": "open_bandit_dataset\\bts\\all\\all.csv",
+      "file_md5": "0619c83803613d59a3c1b47a4b058519",
+      "checks": {
+        "rows_raw": 12357200,
+        "missing_values": 0,
+        "click_values": [
+          0,
+          1
+        ],
+        "item_id_min": 0,
+        "item_id_max": 79,
+        "n_items": 80,
+        "position_values": [
+          1,
+          2,
+          3
+        ],
+        "propensity_min": 1e-06,
+        "propensity_max": 0.95424,
+        "timestamps_in_order": true,
+        "first_timestamp": "2019-11-24 00:00:00.047846+00:00",
+        "last_timestamp": "2019-11-30 23:59:59.920907+00:00",
+        "affinity_nonzero_share": 0.0004222214579354546,
+        "affinity_max": 8.0,
+        "user_feature_cardinality": {
+          "user_feature_0": 4,
+          "user_feature_1": 6,
+          "user_feature_2": 11,
+          "user_feature_3": 10
+        }
+      },
+      "checks_passed": {
+        "no_missing_values": true,
+        "click_is_binary": true,
+        "item_id_in_range": true,
+        "position_in_1_2_3": true,
+        "propensity_in_(0,1]": true
+      },
+      "duplicates_found": 2188,
+      "duplicates_removed": 0,
+      "duplicate_clicks_removed": 2100,
+      "sorted_by_timestamp_in_this_step": false,
+      "rows_clean": 12357200,
+      "clicks_clean": 61208,
+      "ctr_clean": 0.004953225649823585,
+      "published_ctr": 0.005,
+      "ctr_by_position": {
+        "1": 0.0049428417904562386,
+        "2": 0.004999735412361049,
+        "3": 0.004917092346121156
+      },
+      "seconds": 143.1
+    }
+  ]
+}

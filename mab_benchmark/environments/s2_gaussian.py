@@ -12,10 +12,7 @@ drawn from a normal distribution N(mu_a, sigma_a^2).
 Why it is included
 ------------------
 Continuous rewards are standard in network optimisation, clinical dosing,
-and recommendation scoring.  This is a direct replacement for the
-Vermorel (2005) synthetic dataset — now with UCB-Normal added as a
-mandatory baseline, which Vermorel omitted despite it being the
-theoretically correct algorithm for Gaussian rewards.
+and recommendation scoring.
 
 Parameters (from benchmark specification)
 -----------------------------------------
@@ -77,6 +74,11 @@ class GaussianBandit:
         if not (0 <= arm < self.K):
             raise IndexError(f"arm {arm} out of range [0, {self.K-1}]")
         return float(rng.normal(self.means[arm], self.stds[arm]))
+
+    def expected_random_regret(self) -> float:
+        """Expected cumulative regret of the uniform Random policy over the
+        horizon, T (mu* - mean_a mu_a). Used as the NCR normaliser."""
+        return float(self.T * (self.mu_star - self.means.mean()))
 
     def regret_increment(self, arm: int) -> float:
         return self.mu_star - self.means[arm]

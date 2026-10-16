@@ -1,0 +1,5 @@
+setting,ranking at w1=0.6 (best first),identical across sweep,distinct rankings in sweep,BCS,certifiable
+S1_K10_T10000,B3_TS < FG-TS < B2_UCB1 < B1_EpsGreedy < B0_Random,yes,1,n/a (no Tier 2),no
+S3_K10_T10000,B2_UCB1 < FG-TS < B3_TS < B1_EpsGreedy < B0_Random,yes,1,n/a (no Tier 2),no
+S4_SYNTHETIC_K50_T10000,B4_LinUCB < B2_UCB1 < B1_EpsGreedy < B0_Random < FG-TS < B3_TS,yes,1,n/a (no Tier 2),no
+S4_OBD,BernoulliTS_Zozotown < B1_EpsGreedy < FG-TS < B3_TS < B2_UCB1 < B0_Random < B4_LinUCB < B4h_HybridLinUCB,yes,1,0.9109,yes

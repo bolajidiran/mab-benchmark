@@ -1,0 +1,545 @@
+{
+  "test": "Test 2: external validity of the S4 replay protocol",
+  "results": [
+    {
+      "variant": "clean",
+      "campaign": "all",
+      "stream": "pooled",
+      "n_runs": 30,
+      "rows_per_run": 457639,
+      "accepted_per_run_BernoulliTS_Zozotown": 3811.4666666666667,
+      "accepted_per_run_Random": 2367.9333333333334,
+      "replay_ctr_BernoulliTS_Zozotown": 0.00494579051678782,
+      "replay_ctr_ci95_BernoulliTS_Zozotown": [
+        0.004498442878502295,
+        0.005393138155073345
+      ],
+      "replay_ctr_Random": 0.003633200433960245,
+      "replay_ctr_ci95_Random": [
+        0.0032453525299067573,
+        0.004021048338013733
+      ],
+      "ground_truth_ctr_bts_log": 0.004784131330669691,
+      "ground_truth_ctr_random_log": 0.003352581385787005,
+      "replay_ratio": 1.361276540253198,
+      "replay_ratio_ci95": [
+        1.2122247159635011,
+        1.5502424175867193
+      ],
+      "ground_truth_ratio": 1.4269993119187576,
+      "published_ratio_table1": 1.4285714285714286,
+      "relative_error_of_ratio": -0.046056624636481414,
+      "replay_vs_on_policy_BernoulliTS_Zozotown": 0.0337907082696034,
+      "replay_vs_on_policy_Random": 0.08370238209962677,
+      "H1_bts_beats_random": {
+        "p_one_sided_wilcoxon": 2.4842098355293274e-05,
+        "pass": true
+      },
+      "H3a_ratio_above_1": {
+        "pass": true
+      },
+      "H3b_ground_truth_ratio_inside_ci95": {
+        "pass": true
+      },
+      "H3c_absolute_ctrs_inside_ci95": {
+        "bts": true,
+        "random": true
+      }
+    },
+    {
+      "variant": "clean",
+      "campaign": "all",
+      "stream": "random_only",
+      "n_runs": 30,
+      "rows_per_run": 45805,
+      "accepted_per_run_BernoulliTS_Zozotown": 575.6,
+      "accepted_per_run_Random": 572.1333333333333,
+      "replay_ctr_BernoulliTS_Zozotown": 0.0041233957317377305,
+      "replay_ctr_ci95_BernoulliTS_Zozotown": [
+        0.0029915543691935737,
+        0.005255237094281887
+      ],
+      "replay_ctr_Random": 0.003488697631249941,
+      "replay_ctr_ci95_Random": [
+        0.002512953222162773,
+        0.0044644420403371085
+      ],
+      "ground_truth_ctr_bts_log": 0.004784131330669691,
+      "ground_truth_ctr_random_log": 0.003352581385787005,
+      "replay_ratio": 1.1819298109421963,
+      "replay_ratio_ci95": [
+        0.8201883640209341,
+        1.704024412538047
+      ],
+      "ground_truth_ratio": 1.4269993119187576,
+      "published_ratio_table1": 1.4285714285714286,
+      "relative_error_of_ratio": -0.171737644811502,
+      "replay_vs_on_policy_BernoulliTS_Zozotown": -0.13810983713933067,
+      "replay_vs_on_policy_Random": 0.040600429877702515,
+      "H1_bts_beats_random": {
+        "p_one_sided_wilcoxon": 0.23309701731282934,
+        "pass": false
+      },
+      "H3a_ratio_above_1": {
+        "pass": true
+      },
+      "H3b_ground_truth_ratio_inside_ci95": {
+        "pass": true
+      },
+      "H3c_absolute_ctrs_inside_ci95": {
+        "bts": true,
+        "random": true
+      }
+    },
+    {
+      "variant": "clean",
+      "campaign": "men",
+      "stream": "pooled",
+      "n_runs": 30,
+      "rows_per_run": 150990,
+      "accepted_per_run_BernoulliTS_Zozotown": 3024.2,
+      "accepted_per_run_Random": 1946.3666666666666,
+      "replay_ctr_BernoulliTS_Zozotown": 0.006551922863814163,
+      "replay_ctr_ci95_BernoulliTS_Zozotown": [
+        0.005989925084112176,
+        0.007113920643516151
+      ],
+      "replay_ctr_Random": 0.005934232420919979,
+      "replay_ctr_ci95_Random": [
+        0.005279483186039412,
+        0.006588981655800546
+      ],
+      "ground_truth_ctr_bts_log": 0.006528335773538495,
+      "ground_truth_ctr_random_log": 0.004946253654486517,
+      "replay_ratio": 1.1040893579962654,
+      "replay_ratio_ci95": [
+        0.9705504563857779,
+        1.2719984385466188
+      ],
+      "ground_truth_ratio": 1.3198546272726923,
+      "published_ratio_table1": 1.3137254901960784,
+      "relative_error_of_ratio": -0.16347654114171484,
+      "replay_vs_on_policy_BernoulliTS_Zozotown": 0.003613032646279324,
+      "replay_vs_on_policy_Random": 0.19974284285588784,
+      "H1_bts_beats_random": {
+        "p_one_sided_wilcoxon": 0.1853703036904335,
+        "pass": false
+      },
+      "H3a_ratio_above_1": {
+        "pass": true
+      },
+      "H3b_ground_truth_ratio_inside_ci95": {
+        "pass": false
+      },
+      "H3c_absolute_ctrs_inside_ci95": {
+        "bts": true,
+        "random": false
+      }
+    },
+    {
+      "variant": "clean",
+      "campaign": "men",
+      "stream": "random_only",
+      "n_runs": 30,
+      "rows_per_run": 15095,
+      "accepted_per_run_BernoulliTS_Zozotown": 435.4,
+      "accepted_per_run_Random": 445.76666666666665,
+      "replay_ctr_BernoulliTS_Zozotown": 0.006219376197033618,
+      "replay_ctr_ci95_BernoulliTS_Zozotown": [
+        0.004919366036679368,
+        0.007519386357387868
+      ],
+      "replay_ctr_Random": 0.004121782602251867,
+      "replay_ctr_ci95_Random": [
+        0.0028961587511933794,
+        0.005347406453310355
+      ],
+      "ground_truth_ctr_bts_log": 0.006528335773538495,
+      "ground_truth_ctr_random_log": 0.004946253654486517,
+      "replay_ratio": 1.5089044710013977,
+      "replay_ratio_ci95": [
+        1.0546762567931884,
+        2.1717652053334024
+      ],
+      "ground_truth_ratio": 1.3198546272726923,
+      "published_ratio_table1": 1.3137254901960784,
+      "relative_error_of_ratio": 0.14323535321412795,
+      "replay_vs_on_policy_BernoulliTS_Zozotown": -0.04732593224711146,
+      "replay_vs_on_policy_Random": -0.16668596271580427,
+      "H1_bts_beats_random": {
+        "p_one_sided_wilcoxon": 0.008726834319531918,
+        "pass": true
+      },
+      "H3a_ratio_above_1": {
+        "pass": true
+      },
+      "H3b_ground_truth_ratio_inside_ci95": {
+        "pass": true
+      },
+      "H3c_absolute_ctrs_inside_ci95": {
+        "bts": true,
+        "random": true
+      }
+    },
+    {
+      "variant": "clean",
+      "campaign": "women",
+      "stream": "pooled",
+      "n_runs": 30,
+      "rows_per_run": 287615,
+      "accepted_per_run_BernoulliTS_Zozotown": 4523.233333333334,
+      "accepted_per_run_Random": 2741.7,
+      "replay_ctr_BernoulliTS_Zozotown": 0.006968991066525942,
+      "replay_ctr_ci95_BernoulliTS_Zozotown": [
+        0.006452465520387872,
+        0.007485516612664012
+      ],
+      "replay_ctr_Random": 0.005558765632532937,
+      "replay_ctr_ci95_Random": [
+        0.004860400001192603,
+        0.0062571312638732704
+      ],
+      "ground_truth_ctr_bts_log": 0.006190877002268803,
+      "ground_truth_ctr_random_log": 0.004657307322129266,
+      "replay_ratio": 1.2536939902160282,
+      "replay_ratio_ci95": [
+        1.095283186874926,
+        1.4579129375763584
+      ],
+      "ground_truth_ratio": 1.3292824746292256,
+      "published_ratio_table1": 1.3333333333333335,
+      "relative_error_of_ratio": -0.05686412471080016,
+      "replay_vs_on_policy_BernoulliTS_Zozotown": 0.12568721103197156,
+      "replay_vs_on_policy_Random": 0.19355783246692315,
+      "H1_bts_beats_random": {
+        "p_one_sided_wilcoxon": 0.004352731630206108,
+        "pass": true
+      },
+      "H3a_ratio_above_1": {
+        "pass": true
+      },
+      "H3b_ground_truth_ratio_inside_ci95": {
+        "pass": true
+      },
+      "H3c_absolute_ctrs_inside_ci95": {
+        "bts": false,
+        "random": false
+      }
+    },
+    {
+      "variant": "clean",
+      "campaign": "women",
+      "stream": "random_only",
+      "n_runs": 30,
+      "rows_per_run": 28814,
+      "accepted_per_run_BernoulliTS_Zozotown": 624.3333333333334,
+      "accepted_per_run_Random": 626.8,
+      "replay_ctr_BernoulliTS_Zozotown": 0.00561112758982881,
+      "replay_ctr_ci95_BernoulliTS_Zozotown": [
+        0.004580876859529483,
+        0.006641378320128137
+      ],
+      "replay_ctr_Random": 0.004963824181049223,
+      "replay_ctr_ci95_Random": [
+        0.004077934324979059,
+        0.005849714037119386
+      ],
+      "ground_truth_ctr_bts_log": 0.006190877002268803,
+      "ground_truth_ctr_random_log": 0.004657307322129266,
+      "replay_ratio": 1.1304041773378775,
+      "replay_ratio_ci95": [
+        0.8647094272159587,
+        1.4725506822080212
+      ],
+      "ground_truth_ratio": 1.3292824746292256,
+      "published_ratio_table1": 1.3333333333333335,
+      "relative_error_of_ratio": -0.14961326963015964,
+      "replay_vs_on_policy_BernoulliTS_Zozotown": -0.09364576492595944,
+      "replay_vs_on_policy_Random": 0.06581417924978594,
+      "H1_bts_beats_random": {
+        "p_one_sided_wilcoxon": 0.1908992175012827,
+        "pass": false
+      },
+      "H3a_ratio_above_1": {
+        "pass": true
+      },
+      "H3b_ground_truth_ratio_inside_ci95": {
+        "pass": true
+      },
+      "H3c_absolute_ctrs_inside_ci95": {
+        "bts": true,
+        "random": true
+      }
+    },
+    {
+      "variant": "raw",
+      "campaign": "all",
+      "stream": "pooled",
+      "n_runs": 30,
+      "rows_per_run": 457717,
+      "accepted_per_run_BernoulliTS_Zozotown": 3807.7,
+      "accepted_per_run_Random": 2376.5333333333333,
+      "replay_ctr_BernoulliTS_Zozotown": 0.005114764438656199,
+      "replay_ctr_ci95_BernoulliTS_Zozotown": [
+        0.004632727659795023,
+        0.005596801217517375
+      ],
+      "replay_ctr_Random": 0.004103376690773708,
+      "replay_ctr_ci95_Random": [
+        0.003506075572491295,
+        0.004700677809056121
+      ],
+      "ground_truth_ctr_bts_log": 0.004953225649823585,
+      "ground_truth_ctr_random_log": 0.0034693344451502445,
+      "replay_ratio": 1.246476944258264,
+      "replay_ratio_ci95": [
+        1.0643925109490557,
+        1.460961144423973
+      ],
+      "ground_truth_ratio": 1.427716390026237,
+      "published_ratio_table1": 1.4285714285714286,
+      "relative_error_of_ratio": -0.1269435912020611,
+      "replay_vs_on_policy_BernoulliTS_Zozotown": 0.03261284670896569,
+      "replay_vs_on_policy_Random": 0.18275616134667727,
+      "H1_bts_beats_random": {
+        "p_one_sided_wilcoxon": 0.002888246439397335,
+        "pass": true
+      },
+      "H3a_ratio_above_1": {
+        "pass": true
+      },
+      "H3b_ground_truth_ratio_inside_ci95": {
+        "pass": true
+      },
+      "H3c_absolute_ctrs_inside_ci95": {
+        "bts": true,
+        "random": false
+      }
+    },
+    {
+      "variant": "raw",
+      "campaign": "all",
+      "stream": "random_only",
+      "n_runs": 30,
+      "rows_per_run": 45810,
+      "accepted_per_run_BernoulliTS_Zozotown": 571.6666666666666,
+      "accepted_per_run_Random": 569.5333333333333,
+      "replay_ctr_BernoulliTS_Zozotown": 0.004265944055471151,
+      "replay_ctr_ci95_BernoulliTS_Zozotown": [
+        0.0030166234538611158,
+        0.005515264657081186
+      ],
+      "replay_ctr_Random": 0.003009248386706833,
+      "replay_ctr_ci95_Random": [
+        0.0021283333509115277,
+        0.0038901634225021386
+      ],
+      "ground_truth_ctr_bts_log": 0.004953225649823585,
+      "ground_truth_ctr_random_log": 0.0034693344451502445,
+      "replay_ratio": 1.4176111464629149,
+      "replay_ratio_ci95": [
+        0.9083501097562575,
+        2.2548076659550866
+      ],
+      "ground_truth_ratio": 1.427716390026237,
+      "published_ratio_table1": 1.4285714285714286,
+      "relative_error_of_ratio": -0.007077906812526291,
+      "replay_vs_on_policy_BernoulliTS_Zozotown": -0.1387543477606179,
+      "replay_vs_on_policy_Random": -0.13261507811291073,
+      "H1_bts_beats_random": {
+        "p_one_sided_wilcoxon": 0.1905857932253308,
+        "pass": false
+      },
+      "H3a_ratio_above_1": {
+        "pass": true
+      },
+      "H3b_ground_truth_ratio_inside_ci95": {
+        "pass": true
+      },
+      "H3c_absolute_ctrs_inside_ci95": {
+        "bts": true,
+        "random": true
+      }
+    },
+    {
+      "variant": "raw",
+      "campaign": "men",
+      "stream": "pooled",
+      "n_runs": 30,
+      "rows_per_run": 151022,
+      "accepted_per_run_BernoulliTS_Zozotown": 3055.233333333333,
+      "accepted_per_run_Random": 1943.5,
+      "replay_ctr_BernoulliTS_Zozotown": 0.006511508604042338,
+      "replay_ctr_ci95_BernoulliTS_Zozotown": [
+        0.005915678981523428,
+        0.0071073382265612476
+      ],
+      "replay_ctr_Random": 0.0060596315715008755,
+      "replay_ctr_ci95_Random": [
+        0.005377716098975714,
+        0.006741547044026037
+      ],
+      "ground_truth_ctr_bts_log": 0.006742727014339116,
+      "ground_truth_ctr_random_log": 0.005124197205424894,
+      "replay_ratio": 1.0745717008054896,
+      "replay_ratio_ci95": [
+        0.9487646436719108,
+        1.2169033454638694
+      ],
+      "ground_truth_ratio": 1.315860171657858,
+      "published_ratio_table1": 1.3137254901960784,
+      "relative_error_of_ratio": -0.18336938532638158,
+      "replay_vs_on_policy_BernoulliTS_Zozotown": -0.03429152771646671,
+      "replay_vs_on_policy_Random": 0.18255237426960358,
+      "H1_bts_beats_random": {
+        "p_one_sided_wilcoxon": 0.1908992175012827,
+        "pass": false
+      },
+      "H3a_ratio_above_1": {
+        "pass": true
+      },
+      "H3b_ground_truth_ratio_inside_ci95": {
+        "pass": false
+      },
+      "H3c_absolute_ctrs_inside_ci95": {
+        "bts": true,
+        "random": false
+      }
+    },
+    {
+      "variant": "raw",
+      "campaign": "men",
+      "stream": "random_only",
+      "n_runs": 30,
+      "rows_per_run": 15098,
+      "accepted_per_run_BernoulliTS_Zozotown": 434.8666666666667,
+      "accepted_per_run_Random": 446.03333333333336,
+      "replay_ctr_BernoulliTS_Zozotown": 0.0055567521737895555,
+      "replay_ctr_ci95_BernoulliTS_Zozotown": [
+        0.004172031381620828,
+        0.006941472965958283
+      ],
+      "replay_ctr_Random": 0.0038955864390560367,
+      "replay_ctr_ci95_Random": [
+        0.0028189682462250315,
+        0.004972204631887042
+      ],
+      "ground_truth_ctr_bts_log": 0.006742727014339116,
+      "ground_truth_ctr_random_log": 0.005124197205424894,
+      "replay_ratio": 1.4264225067833551,
+      "replay_ratio_ci95": [
+        1.007179116747639,
+        2.0234111774823558
+      ],
+      "ground_truth_ratio": 1.315860171657858,
+      "published_ratio_table1": 1.3137254901960784,
+      "relative_error_of_ratio": 0.08402286010845605,
+      "replay_vs_on_policy_BernoulliTS_Zozotown": -0.1758894936762916,
+      "replay_vs_on_policy_Random": -0.2397664877277067,
+      "H1_bts_beats_random": {
+        "p_one_sided_wilcoxon": 0.021600094896221576,
+        "pass": true
+      },
+      "H3a_ratio_above_1": {
+        "pass": true
+      },
+      "H3b_ground_truth_ratio_inside_ci95": {
+        "pass": true
+      },
+      "H3c_absolute_ctrs_inside_ci95": {
+        "bts": true,
+        "random": false
+      }
+    },
+    {
+      "variant": "raw",
+      "campaign": "women",
+      "stream": "pooled",
+      "n_runs": 30,
+      "rows_per_run": 287669,
+      "accepted_per_run_BernoulliTS_Zozotown": 4482.566666666667,
+      "accepted_per_run_Random": 2741.1666666666665,
+      "replay_ctr_BernoulliTS_Zozotown": 0.006699693650044072,
+      "replay_ctr_ci95_BernoulliTS_Zozotown": [
+        0.0061916321039852795,
+        0.007207755196102865
+      ],
+      "replay_ctr_Random": 0.005535226487458503,
+      "replay_ctr_ci95_Random": [
+        0.0049515416941452,
+        0.006118911280771806
+      ],
+      "ground_truth_ctr_bts_log": 0.006379372756180319,
+      "ground_truth_ctr_random_log": 0.004815026862598819,
+      "replay_ratio": 1.210373896212553,
+      "replay_ratio_ci95": [
+        1.0800693158968742,
+        1.369839473625028
+      ],
+      "ground_truth_ratio": 1.3248883003608363,
+      "published_ratio_table1": 1.3333333333333335,
+      "relative_error_of_ratio": -0.08643325185760564,
+      "replay_vs_on_policy_BernoulliTS_Zozotown": 0.05021197319962645,
+      "replay_vs_on_policy_Random": 0.14957333477283452,
+      "H1_bts_beats_random": {
+        "p_one_sided_wilcoxon": 0.002332402393221855,
+        "pass": true
+      },
+      "H3a_ratio_above_1": {
+        "pass": true
+      },
+      "H3b_ground_truth_ratio_inside_ci95": {
+        "pass": true
+      },
+      "H3c_absolute_ctrs_inside_ci95": {
+        "bts": true,
+        "random": false
+      }
+    },
+    {
+      "variant": "raw",
+      "campaign": "women",
+      "stream": "random_only",
+      "n_runs": 30,
+      "rows_per_run": 28819,
+      "accepted_per_run_BernoulliTS_Zozotown": 631.3,
+      "accepted_per_run_Random": 622.1333333333333,
+      "replay_ctr_BernoulliTS_Zozotown": 0.0064418837958293475,
+      "replay_ctr_ci95_BernoulliTS_Zozotown": [
+        0.005231634020084459,
+        0.007652133571574236
+      ],
+      "replay_ctr_Random": 0.0049115201082697854,
+      "replay_ctr_ci95_Random": [
+        0.0037677466326556004,
+        0.0060552935838839705
+      ],
+      "ground_truth_ctr_bts_log": 0.006379372756180319,
+      "ground_truth_ctr_random_log": 0.004815026862598819,
+      "replay_ratio": 1.3115865666482376,
+      "replay_ratio_ci95": [
+        0.9836538069573073,
+        1.8155571220893691
+      ],
+      "ground_truth_ratio": 1.3248883003608363,
+      "published_ratio_table1": 1.3333333333333335,
+      "relative_error_of_ratio": -0.010039890690389464,
+      "replay_vs_on_policy_BernoulliTS_Zozotown": 0.009798931969991598,
+      "replay_vs_on_policy_Random": 0.020040022293642323,
+      "H1_bts_beats_random": {
+        "p_one_sided_wilcoxon": 0.07594345975667238,
+        "pass": false
+      },
+      "H3a_ratio_above_1": {
+        "pass": true
+      },
+      "H3b_ground_truth_ratio_inside_ci95": {
+        "pass": true
+      },
+      "H3c_absolute_ctrs_inside_ci95": {
+        "bts": true,
+        "random": true
+      }
+    }
+  ]
+}

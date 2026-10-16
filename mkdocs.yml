@@ -1,0 +1,17 @@
+site_name: mab-benchmark
+site_description: Unified benchmark and performance model for multi-armed bandit recommender systems
+site_author: Ojediran Alaba Bolaji
+repo_url: https://github.com/bolajidiran/mab-benchmark
+theme:
+  name: material
+nav:
+  - Home: index.md
+  - Quick start: quickstart.md
+  - The protocol: protocol.md
+  - Replay settings and the BCS: replay.md
+  - Studies and the CLI: cli.md
+  - Plug-ins: plugins.md
+  - Datasets: datasets.md
+  - Submitting a result: submitting.md
+  - Releasing (maintainers): releasing.md
+  - Changelog: changelog.md

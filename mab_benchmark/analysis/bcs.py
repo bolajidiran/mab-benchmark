@@ -33,6 +33,28 @@ Interpretation bands
     BCS >= 0.9  →  PASS:    Tier 1 reliable proxy. Tier 2 recommended.
     0.6 <= BCS  →  PARTIAL: Tier 2 required for deployment claims.
     BCS < 0.6   →  FAIL:    Tiers likely to diverge. Flag in paper.
+
+Replay settings (S4 on logged data, mandatory since 1.3.0)
+----------------------------------------------------------
+When Tier 2 is a replay of logged data, the replayer's i.i.d. assumption
+(Li et al., 2011) must itself be checked, because a bursty log favours
+exploitation (Pires et al., 2025; Chapter Four, Section 4.6). compute_replay()
+adds a fourth condition and a starvation rule:
+
+    cR = clip(rho_shuffle / 0.7, 0, 1)   # replay integrity: Tier 2 ranking
+                                         # with the log as recorded vs with
+                                         # rows permuted inside each hour
+    BCS_R = (c1 + c2 + c3 + cR) / 4
+    starved(a) = m_a / m_rand < 0.5      # matched events of a vs B0 Random
+
+A setting is certifiable only if BCS_R >= 0.9 AND rho_shuffle >= 0.7: the
+integrity condition is a hard requirement as well as a term of the average,
+because averaging alone lets an order-dependent replay pass (on KuaiRec, a
+bursty log with rho_shuffle = 0.657 would still average to 0.918 if c1 were
+met; Chapter Four). The scheme also
+requires Tier 1 to be a bias-free environment (a simulator calibrated on
+the same domain, or a fully observed dataset), not another replay. A starved
+algorithm's Tier 2 result is not certifiable, whatever the BCS.
 """
 
 from __future__ import annotations
@@ -198,6 +220,35 @@ class BCSCalculator:
             "failing_conditions":     failures,
             "action_required":        action,
         }
+
+    THRESHOLD_CR = 0.7          # Spearman rho, logged vs within-hour-shuffled replay
+    STARVATION_FLOOR = 0.5      # matched events relative to B0 Random
+
+    @classmethod
+    def compute_replay(cls, rho_s: float, p_indep: float, K: int, T: int, rho_shuffle: float,
+                       matched_ratios: dict, tier1_bias_free: bool = True) -> dict:
+        """BCS for a replay-based Tier 2 (see the module docstring)."""
+        base = cls.compute(rho_s, p_indep, K, T)
+        cR = cls._clip(rho_shuffle / cls.THRESHOLD_CR)
+        bcs_r = (base["c1_reward_proxy"] + base["c2_arm_independence"] + base["c3_sufficient_horizon"] + cR) / 4.0
+        starved = sorted(a for a, r in matched_ratios.items() if r < cls.STARVATION_FLOOR)
+        failures = list(base["failing_conditions"])
+        if rho_shuffle < cls.THRESHOLD_CR:
+            failures.append(f"Replay integrity: rho_shuffle={rho_shuffle:.3f} < {cls.THRESHOLD_CR}; "
+                            "the replay ranking depends on the order of the log.")
+        if starved:
+            failures.append("Starved in replay (matched events < 0.5 x Random): " + ", ".join(starved))
+        if not tier1_bias_free:
+            failures.append("Tier 1 is not a bias-free environment; the BCS is undefined.")
+        band = ("PASS" if bcs_r >= cls.BAND_PASS else "PARTIAL" if bcs_r >= cls.BAND_PARTIAL else "FAIL")
+        if not tier1_bias_free:
+            band = "UNDEFINED"
+        return base | {"c_R_replay_integrity": round(cR, 4), "rho_shuffle": float(rho_shuffle),
+                       "BCS_R": round(bcs_r, 4), "band_R": band,
+                       "starved_algorithms": starved, "matched_ratios": {k: float(v) for k, v in matched_ratios.items()},
+                       "failing_conditions_R": failures,
+                       "replay_integrity_met": bool(rho_shuffle >= cls.THRESHOLD_CR),
+                       "certifiable": band == "PASS" and rho_shuffle >= cls.THRESHOLD_CR}
 
     @classmethod
     def from_ranking_lists(

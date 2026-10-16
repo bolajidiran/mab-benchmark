@@ -84,6 +84,9 @@ class YahooReplayer:
         T: int = 10_000,
         max_pool: int | None = None,
     ) -> None:
+        import warnings
+        warnings.warn("YahooReplayer is deprecated: S4 uses the Open Bandit Dataset "
+                      "(see obd_preprocessing/).", DeprecationWarning, stacklevel=2)
         if not _HAS_PANDAS:
             raise ImportError(
                 "pandas is required for YahooReplayer. "
@@ -276,12 +279,16 @@ class SyntheticContextualBandit:
         return float(self._sigmoid(context @ self.thetas[arm]))
 
     def pull(self, arm: int, rng_or_t, rng: np.random.Generator | None = None) -> float:
-        # Accept both pull(arm, rng) and pull(arm, t, rng) signatures
+        # Accept both pull(arm, rng) and pull(arm, t, rng) signatures.
+        # In the two-argument form the internal clock advances on every
+        # call, so round k uses context k.
         if rng is None:
             rng = rng_or_t
-            t = self._t + 1
+            self._t += 1
+            t = self._t
         else:
             t = int(rng_or_t)
+            self._t = t
         ctx = self.context(t)
         mu  = self.expected_reward(arm, ctx)
         return float(rng.uniform() < mu)
@@ -289,6 +296,12 @@ class SyntheticContextualBandit:
     def mu_star(self, t: int) -> float:
         ctx = self.context(t)
         return max(self.expected_reward(a, ctx) for a in range(self.K))
+
+    def expected_random_regret(self) -> float:
+        """Expected cumulative regret of the uniform Random policy on this
+        instance's pre-drawn contexts: sum_t (max_a mu_a(x_t) - mean_a mu_a(x_t))."""
+        mu = self._sigmoid(self._contexts @ self.thetas.T)       # (T, K)
+        return float((mu.max(axis=1) - mu.mean(axis=1)).sum())
 
     def regret_increment(self, arm: int, t: int) -> float:
         ctx = self.context(t)

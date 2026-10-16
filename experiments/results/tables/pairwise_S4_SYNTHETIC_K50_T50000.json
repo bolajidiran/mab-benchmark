@@ -1,0 +1,167 @@
+{
+ "FG-TS vs B4_LinUCB": {
+  "stat": 0.0,
+  "p_raw": 1.862645149230957e-09,
+  "p_threshold": 0.0033333333333333335,
+  "significant": true,
+  "better": "B4_LinUCB",
+  "cohens_d": 110.8713,
+  "a12": 0.0,
+  "magnitude": "large",
+  "claim": "significant and large \u2014 B4_LinUCB is better"
+ },
+ "B3_TS vs B4_LinUCB": {
+  "stat": 0.0,
+  "p_raw": 1.862645149230957e-09,
+  "p_threshold": 0.0035714285714285718,
+  "significant": true,
+  "better": "B4_LinUCB",
+  "cohens_d": 102.3571,
+  "a12": 0.0,
+  "magnitude": "large",
+  "claim": "significant and large \u2014 B4_LinUCB is better"
+ },
+ "B2_UCB1 vs B4_LinUCB": {
+  "stat": 0.0,
+  "p_raw": 1.862645149230957e-09,
+  "p_threshold": 0.0038461538461538464,
+  "significant": true,
+  "better": "B4_LinUCB",
+  "cohens_d": 111.8524,
+  "a12": 0.0,
+  "magnitude": "large",
+  "claim": "significant and large \u2014 B4_LinUCB is better"
+ },
+ "B1_EpsGreedy vs B4_LinUCB": {
+  "stat": 0.0,
+  "p_raw": 1.862645149230957e-09,
+  "p_threshold": 0.004166666666666667,
+  "significant": true,
+  "better": "B4_LinUCB",
+  "cohens_d": 110.6966,
+  "a12": 0.0,
+  "magnitude": "large",
+  "claim": "significant and large \u2014 B4_LinUCB is better"
+ },
+ "B0_Random vs B4_LinUCB": {
+  "stat": 0.0,
+  "p_raw": 1.862645149230957e-09,
+  "p_threshold": 0.004545454545454546,
+  "significant": true,
+  "better": "B4_LinUCB",
+  "cohens_d": 115.0737,
+  "a12": 0.0,
+  "magnitude": "large",
+  "claim": "significant and large \u2014 B4_LinUCB is better"
+ },
+ "B3_TS vs B0_Random": {
+  "stat": 190.0,
+  "p_raw": 0.39305018074810505,
+  "p_threshold": 0.005,
+  "significant": false,
+  "better": "equal (not significant)",
+  "cohens_d": 0.0697,
+  "a12": 0.4567,
+  "magnitude": "negligible",
+  "claim": "not significant (magnitude: negligible)"
+ },
+ "B2_UCB1 vs B0_Random": {
+  "stat": 197.0,
+  "p_raw": 0.4771064817905426,
+  "p_threshold": 0.005555555555555556,
+  "significant": false,
+  "better": "equal (not significant)",
+  "cohens_d": 0.0729,
+  "a12": 0.4889,
+  "magnitude": "negligible",
+  "claim": "not significant (magnitude: negligible)"
+ },
+ "FG-TS vs B0_Random": {
+  "stat": 203.0,
+  "p_raw": 0.5561132747679949,
+  "p_threshold": 0.00625,
+  "significant": false,
+  "better": "equal (not significant)",
+  "cohens_d": 0.0484,
+  "a12": 0.4811,
+  "magnitude": "negligible",
+  "claim": "not significant (magnitude: negligible)"
+ },
+ "B1_EpsGreedy vs B0_Random": {
+  "stat": 207.0,
+  "p_raw": 0.6120056137442589,
+  "p_threshold": 0.0071428571428571435,
+  "significant": false,
+  "better": "equal (not significant)",
+  "cohens_d": 0.0608,
+  "a12": 0.4722,
+  "magnitude": "negligible",
+  "claim": "not significant (magnitude: negligible)"
+ },
+ "FG-TS vs B3_TS": {
+  "stat": 215.0,
+  "p_raw": 0.7303419969975948,
+  "p_threshold": 0.008333333333333333,
+  "significant": false,
+  "better": "equal (not significant)",
+  "cohens_d": -0.0237,
+  "a12": 0.5178,
+  "magnitude": "negligible",
+  "claim": "not significant (magnitude: negligible)"
+ },
+ "B2_UCB1 vs B1_EpsGreedy": {
+  "stat": 225.0,
+  "p_raw": 0.8871948085725307,
+  "p_threshold": 0.01,
+  "significant": false,
+  "better": "equal (not significant)",
+  "cohens_d": 0.0113,
+  "a12": 0.5056,
+  "magnitude": "negligible",
+  "claim": "not significant (magnitude: negligible)"
+ },
+ "FG-TS vs B2_UCB1": {
+  "stat": 226.0,
+  "p_raw": 0.9032264724373817,
+  "p_threshold": 0.0125,
+  "significant": false,
+  "better": "equal (not significant)",
+  "cohens_d": -0.0236,
+  "a12": 0.5011,
+  "magnitude": "negligible",
+  "claim": "not significant (magnitude: negligible)"
+ },
+ "FG-TS vs B1_EpsGreedy": {
+  "stat": 226.0,
+  "p_raw": 0.9032264724373817,
+  "p_threshold": 0.016666666666666666,
+  "significant": false,
+  "better": "equal (not significant)",
+  "cohens_d": -0.0121,
+  "a12": 0.4989,
+  "magnitude": "negligible",
+  "claim": "not significant (magnitude: negligible)"
+ },
+ "B3_TS vs B2_UCB1": {
+  "stat": 228.0,
+  "p_raw": 0.935398668050766,
+  "p_threshold": 0.025,
+  "significant": false,
+  "better": "equal (not significant)",
+  "cohens_d": 0.0017,
+  "a12": 0.4867,
+  "magnitude": "negligible",
+  "claim": "not significant (magnitude: negligible)"
+ },
+ "B3_TS vs B1_EpsGreedy": {
+  "stat": 231.0,
+  "p_raw": 0.9838335812091827,
+  "p_threshold": 0.05,
+  "significant": false,
+  "better": "equal (not significant)",
+  "cohens_d": 0.0123,
+  "a12": 0.4933,
+  "magnitude": "negligible",
+  "claim": "not significant (magnitude: negligible)"
+ }
+}

@@ -1,0 +1,441 @@
+{
+  "test": "Test 1: on-policy CTR (Saito et al., Table 1)",
+  "rows": [
+    {
+      "variant": "raw",
+      "log": "random/all",
+      "policy": "random",
+      "campaign": "all",
+      "rows": 1374327,
+      "published_rows": 1374327,
+      "rows_match": true,
+      "rows_difference": 0,
+      "items": 80,
+      "published_items": 80,
+      "items_match": true,
+      "clicks": 4768,
+      "ctr_percent": 0.34693344451502445,
+      "ci95_pm_percent_normal": 0.009830406331807052,
+      "ci95_wilson_percent": [
+        0.337240859948412,
+        0.3569036044728602
+      ],
+      "published_ctr_percent": 0.35,
+      "published_ci_pm_percent": 0.01,
+      "published_within_rounding": true,
+      "published_inside_ci95": true,
+      "relative_ctr": 1.0,
+      "published_relative_ctr": 1.0,
+      "relative_ctr_rounds_to_published": true,
+      "ci_pm_matches_published_3dp": true
+    },
+    {
+      "variant": "raw",
+      "log": "bts/all",
+      "policy": "bts",
+      "campaign": "all",
+      "rows": 12357200,
+      "published_rows": 12168084,
+      "rows_match": false,
+      "rows_difference": 189116,
+      "items": 80,
+      "published_items": 80,
+      "items_match": true,
+      "clicks": 61208,
+      "ctr_percent": 0.4953225649823585,
+      "ci95_pm_percent_normal": 0.003914297747002819,
+      "ci95_wilson_percent": [
+        0.4914236270098022,
+        0.49925228179165454
+      ],
+      "published_ctr_percent": 0.5,
+      "published_ci_pm_percent": 0.004,
+      "published_within_rounding": true,
+      "published_inside_ci95": false,
+      "relative_ctr": 1.427716390026237,
+      "published_relative_ctr": 1.43,
+      "relative_ctr_rounds_to_published": true,
+      "ci_pm_matches_published_3dp": true
+    },
+    {
+      "variant": "raw",
+      "log": "random/men",
+      "policy": "random",
+      "campaign": "men",
+      "rows": 452949,
+      "published_rows": 452949,
+      "rows_match": true,
+      "rows_difference": 0,
+      "items": 34,
+      "published_items": 34,
+      "items_match": true,
+      "clicks": 2321,
+      "ctr_percent": 0.5124197205424894,
+      "ci95_pm_percent_normal": 0.02079317411160992,
+      "ci95_wilson_percent": [
+        0.4920420997181334,
+        0.533636742224414
+      ],
+      "published_ctr_percent": 0.51,
+      "published_ci_pm_percent": 0.021,
+      "published_within_rounding": true,
+      "published_inside_ci95": true,
+      "relative_ctr": 1.4769971838800289,
+      "published_relative_ctr": 1.48,
+      "relative_ctr_rounds_to_published": true,
+      "ci_pm_matches_published_3dp": true
+    },
+    {
+      "variant": "raw",
+      "log": "bts/men",
+      "policy": "bts",
+      "campaign": "men",
+      "rows": 4077727,
+      "published_rows": 4077727,
+      "rows_match": true,
+      "rows_difference": 0,
+      "items": 34,
+      "published_items": 34,
+      "items_match": true,
+      "clicks": 27495,
+      "ctr_percent": 0.6742727014339116,
+      "ci95_pm_percent_normal": 0.007943057073702247,
+      "ci95_wilson_percent": [
+        0.6663759798766525,
+        0.6822623583797901
+      ],
+      "published_ctr_percent": 0.67,
+      "published_ci_pm_percent": 0.008,
+      "published_within_rounding": true,
+      "published_inside_ci95": true,
+      "relative_ctr": 1.9435217679185475,
+      "published_relative_ctr": 1.94,
+      "relative_ctr_rounds_to_published": true,
+      "ci_pm_matches_published_3dp": true
+    },
+    {
+      "variant": "raw",
+      "log": "random/women",
+      "policy": "random",
+      "campaign": "women",
+      "rows": 864585,
+      "published_rows": 864585,
+      "rows_match": true,
+      "rows_difference": 0,
+      "items": 46,
+      "published_items": 46,
+      "items_match": true,
+      "clicks": 4163,
+      "ctr_percent": 0.4815026862598819,
+      "ci95_pm_percent_normal": 0.014591351003821086,
+      "ci95_wilson_percent": [
+        0.4671297248785489,
+        0.4963156793861826
+      ],
+      "published_ctr_percent": 0.48,
+      "published_ci_pm_percent": 0.014,
+      "published_within_rounding": true,
+      "published_inside_ci95": true,
+      "relative_ctr": 1.3878820098563018,
+      "published_relative_ctr": 1.39,
+      "relative_ctr_rounds_to_published": true,
+      "ci_pm_matches_published_3dp": false
+    },
+    {
+      "variant": "raw",
+      "log": "bts/women",
+      "policy": "bts",
+      "campaign": "women",
+      "rows": 7765497,
+      "published_rows": 7765497,
+      "rows_match": true,
+      "rows_difference": 0,
+      "items": 46,
+      "published_items": 46,
+      "items_match": true,
+      "clicks": 49539,
+      "ctr_percent": 0.6379372756180319,
+      "ci95_pm_percent_normal": 0.005599674100743107,
+      "ci95_wilson_percent": [
+        0.6323619682192438,
+        0.6435614201324502
+      ],
+      "published_ctr_percent": 0.64,
+      "published_ci_pm_percent": 0.056,
+      "published_within_rounding": true,
+      "published_inside_ci95": true,
+      "relative_ctr": 1.8387886371398972,
+      "published_relative_ctr": 1.84,
+      "relative_ctr_rounds_to_published": true,
+      "ci_pm_matches_published_3dp": false
+    },
+    {
+      "variant": "clean",
+      "log": "random/all",
+      "policy": "random",
+      "campaign": "all",
+      "rows": 1374165,
+      "published_rows": 1374327,
+      "rows_match": false,
+      "rows_difference": -162,
+      "items": 80,
+      "published_items": 80,
+      "items_match": true,
+      "clicks": 4607,
+      "ctr_percent": 0.3352581385787005,
+      "ci95_pm_percent_normal": 0.009664715793124782,
+      "ci95_wilson_percent": [
+        0.325731275823169,
+        0.3450626747247865
+      ],
+      "published_ctr_percent": 0.35,
+      "published_ci_pm_percent": 0.01,
+      "published_within_rounding": false,
+      "published_inside_ci95": false,
+      "relative_ctr": 1.0,
+      "published_relative_ctr": 1.0,
+      "relative_ctr_rounds_to_published": true,
+      "ci_pm_matches_published_3dp": true
+    },
+    {
+      "variant": "clean",
+      "log": "bts/all",
+      "policy": "bts",
+      "campaign": "all",
+      "rows": 12355012,
+      "published_rows": 12168084,
+      "rows_match": false,
+      "rows_difference": 186928,
+      "items": 80,
+      "published_items": 80,
+      "items_match": true,
+      "clicks": 59108,
+      "ctr_percent": 0.4784131330669691,
+      "ci95_pm_percent_normal": 0.0038475714889837833,
+      "ci95_wilson_percent": [
+        0.4745809287684896,
+        0.48227613216800097
+      ],
+      "published_ctr_percent": 0.5,
+      "published_ci_pm_percent": 0.004,
+      "published_within_rounding": false,
+      "published_inside_ci95": false,
+      "relative_ctr": 1.4269993119187576,
+      "published_relative_ctr": 1.43,
+      "relative_ctr_rounds_to_published": true,
+      "ci_pm_matches_published_3dp": true
+    },
+    {
+      "variant": "clean",
+      "log": "random/men",
+      "policy": "random",
+      "campaign": "men",
+      "rows": 452868,
+      "published_rows": 452949,
+      "rows_match": false,
+      "rows_difference": -81,
+      "items": 34,
+      "published_items": 34,
+      "items_match": true,
+      "clicks": 2240,
+      "ctr_percent": 0.4946253654486517,
+      "ci95_pm_percent_normal": 0.02043260482152803,
+      "ci95_wilson_percent": [
+        0.4746084590408877,
+        0.5154821247271488
+      ],
+      "published_ctr_percent": 0.51,
+      "published_ci_pm_percent": 0.021,
+      "published_within_rounding": false,
+      "published_inside_ci95": true,
+      "relative_ctr": 1.4753567729796973,
+      "published_relative_ctr": 1.48,
+      "relative_ctr_rounds_to_published": true,
+      "ci_pm_matches_published_3dp": false
+    },
+    {
+      "variant": "clean",
+      "log": "bts/men",
+      "policy": "bts",
+      "campaign": "men",
+      "rows": 4076843,
+      "published_rows": 4077727,
+      "rows_match": false,
+      "rows_difference": -884,
+      "items": 34,
+      "published_items": 34,
+      "items_match": true,
+      "clicks": 26615,
+      "ctr_percent": 0.6528335773538495,
+      "ci95_pm_percent_normal": 0.007817449449325026,
+      "ci95_wilson_percent": [
+        0.6450624912757823,
+        0.6606976593746647
+      ],
+      "published_ctr_percent": 0.67,
+      "published_ci_pm_percent": 0.008,
+      "published_within_rounding": false,
+      "published_inside_ci95": false,
+      "relative_ctr": 1.9472564636953607,
+      "published_relative_ctr": 1.94,
+      "relative_ctr_rounds_to_published": false,
+      "ci_pm_matches_published_3dp": true
+    },
+    {
+      "variant": "clean",
+      "log": "random/women",
+      "policy": "random",
+      "campaign": "women",
+      "rows": 864448,
+      "published_rows": 864585,
+      "rows_match": false,
+      "rows_difference": -137,
+      "items": 46,
+      "published_items": 46,
+      "items_match": true,
+      "clicks": 4026,
+      "ctr_percent": 0.4657307322129266,
+      "ci95_pm_percent_normal": 0.014352660716526449,
+      "ci95_wilson_percent": [
+        0.4515965363596367,
+        0.4803051697233673
+      ],
+      "published_ctr_percent": 0.48,
+      "published_ci_pm_percent": 0.014,
+      "published_within_rounding": false,
+      "published_inside_ci95": true,
+      "relative_ctr": 1.389170548364177,
+      "published_relative_ctr": 1.39,
+      "relative_ctr_rounds_to_published": true,
+      "ci_pm_matches_published_3dp": true
+    },
+    {
+      "variant": "clean",
+      "log": "bts/women",
+      "policy": "bts",
+      "campaign": "women",
+      "rows": 7764005,
+      "published_rows": 7765497,
+      "rows_match": false,
+      "rows_difference": -1492,
+      "items": 46,
+      "published_items": 46,
+      "items_match": true,
+      "clicks": 48066,
+      "ctr_percent": 0.6190877002268803,
+      "ci95_pm_percent_normal": 0.005517378335731251,
+      "ci95_wilson_percent": [
+        0.6135947017356652,
+        0.6246295638713948
+      ],
+      "published_ctr_percent": 0.64,
+      "published_ci_pm_percent": 0.056,
+      "published_within_rounding": false,
+      "published_inside_ci95": false,
+      "relative_ctr": 1.8466000642115716,
+      "published_relative_ctr": 1.84,
+      "relative_ctr_rounds_to_published": false,
+      "ci_pm_matches_published_3dp": false
+    }
+  ],
+  "verdict": {
+    "raw": {
+      "T1a_rows_and_items_match": {
+        "logs_matching_rows": 5,
+        "logs_matching_items": 6,
+        "of": 6,
+        "mismatches": [
+          {
+            "log": "bts/all",
+            "rows": 12357200,
+            "published_rows": 12168084,
+            "rows_difference": 189116
+          }
+        ]
+      },
+      "T1b_ctr_matches": {
+        "within_rounding": 6,
+        "inside_ci95": 5,
+        "of": 6,
+        "pass": true
+      },
+      "T1c_relative_ctr_matches": {
+        "count": 6,
+        "of": 6,
+        "pass": true
+      },
+      "T1d_bts_above_random_every_campaign": {
+        "by_campaign": {
+          "all": true,
+          "men": true,
+          "women": true
+        },
+        "pass": true
+      }
+    },
+    "clean": {
+      "T1a_rows_and_items_match": {
+        "logs_matching_rows": 0,
+        "logs_matching_items": 6,
+        "of": 6,
+        "mismatches": [
+          {
+            "log": "random/all",
+            "rows": 1374165,
+            "published_rows": 1374327,
+            "rows_difference": -162
+          },
+          {
+            "log": "bts/all",
+            "rows": 12355012,
+            "published_rows": 12168084,
+            "rows_difference": 186928
+          },
+          {
+            "log": "random/men",
+            "rows": 452868,
+            "published_rows": 452949,
+            "rows_difference": -81
+          },
+          {
+            "log": "bts/men",
+            "rows": 4076843,
+            "published_rows": 4077727,
+            "rows_difference": -884
+          },
+          {
+            "log": "random/women",
+            "rows": 864448,
+            "published_rows": 864585,
+            "rows_difference": -137
+          },
+          {
+            "log": "bts/women",
+            "rows": 7764005,
+            "published_rows": 7765497,
+            "rows_difference": -1492
+          }
+        ]
+      },
+      "T1b_ctr_matches": {
+        "within_rounding": 0,
+        "inside_ci95": 2,
+        "of": 6,
+        "pass": false
+      },
+      "T1c_relative_ctr_matches": {
+        "count": 4,
+        "of": 6,
+        "pass": false
+      },
+      "T1d_bts_above_random_every_campaign": {
+        "by_campaign": {
+          "all": true,
+          "men": true,
+          "women": true
+        },
+        "pass": true
+      }
+    }
+  }
+}

@@ -1,0 +1,9 @@
+# A two-minute smoke study across three settings.
+name: quick
+n_runs: 30
+algorithms: [FG-TS, B2_UCB1]
+settings:
+  - {environment: S1_bernoulli, params: {K: 10, T: 500}}
+  - {environment: S2_gaussian, params: {K: 10, T: 1000}}
+  - {environment: S5_coldstart, params: {K: 500, T: 50}}
+metrics: [mean_regret, ncr]

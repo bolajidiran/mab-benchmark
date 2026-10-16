@@ -1,0 +1,12 @@
+{
+  "LinUCBFast_vs_package_LinUCB": {
+    "rows": 4000,
+    "identical_choices": 3999,
+    "numerical_ties": 1,
+    "largest_gap_at_a_difference": 0.0
+  },
+  "HybridLinUCB_vs_reference": {
+    "rows": 1500,
+    "identical_choices": 1500
+  }
+}

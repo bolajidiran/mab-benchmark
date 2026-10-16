@@ -573,6 +573,8 @@ class TestBCSCalculator:
 
 class TestLeaderboardSubmitter:
 
+    CELLS = ["S1_K10_T10000", "S2_K10_T1000", "S3_K10_T10000", "S4_SYNTHETIC_K50_T10000", "S5_K500_T100"]
+
     @pytest.fixture
     def submitter(self):
         return LeaderboardSubmitter(
@@ -582,46 +584,33 @@ class TestLeaderboardSubmitter:
         )
 
     @pytest.fixture
-    def sample_data(self):
-        rng = np.random.default_rng(0)
-        results = {
-            "GoodAlg": rng.normal(100, 10, size=30),
-            "BadAlg":  rng.normal(200, 10, size=30),
-        }
-        report = StatisticalAnalyser().analyse(results)
-        bcs    = BCSCalculator.compute(0.85, 0.95, K=10, T=500)
-        return results, report, bcs
+    def suite(self):
+        rng = np.random.default_rng(1)
+        return {a: {c: rng.normal(m, 5, 30) for c in self.CELLS}
+                for a, m in (("TestAlgorithm", 50), ("B0_Random", 200), ("B1_EpsGreedy", 90),
+                             ("B2_UCB1", 80), ("B3_TS", 60))}
 
-    def test_generate_returns_valid_json(self, submitter, sample_data):
+    def test_build_returns_valid_json(self, submitter, suite):
         import json
-        results, report, bcs = sample_data
-        json_str = submitter.generate(results, report, bcs)
-        data = json.loads(json_str)  # must not raise
-        assert "algorithm" in data
-        assert "certification" in data
-        assert "settings" in data
+        from mab_benchmark.analysis.certification import Certifier
+        cert = Certifier().certify("TestAlgorithm", suite, bcs=BCSCalculator.compute(0.85, 0.95, 10, 10_000))
+        data = json.loads(LeaderboardSubmitter.to_json(submitter.build(suite, cert)))
+        assert {"algorithm", "certification", "settings"} <= set(data)
+        assert data["certification"]["level"] == "C1"
 
-    def test_certification_in_json(self, submitter, sample_data):
-        import json
-        results, report, bcs = sample_data
-        json_str = submitter.generate(results, report, bcs)
-        data = json.loads(json_str)
-        assert "C1" in data["certification"]
-
-    def test_summary_returns_string(self, submitter, sample_data):
-        results, report, bcs = sample_data
-        json_str = submitter.generate(results, report, bcs)
-        summary  = submitter.summary(json_str)
+    def test_summary_returns_string(self, submitter, suite):
+        from mab_benchmark.analysis.certification import Certifier
+        cert = Certifier().certify("TestAlgorithm", suite, bcs=BCSCalculator.compute(0.85, 0.95, 10, 10_000))
+        summary = submitter.summary(submitter.build(suite, cert))
         assert "TestAlgorithm" in summary
         assert "BCS" in summary
 
-    def test_missing_stats_report_raises(self, submitter):
+    def test_certificate_of_another_algorithm_raises(self, submitter, suite):
+        from mab_benchmark.analysis.certification import Certifier
+        suite["Other"] = suite["TestAlgorithm"]
+        cert = Certifier(require_bcs_for_c1=False).certify("Other", suite)
         with pytest.raises(ValueError):
-            submitter.generate(
-                {"A": np.zeros(30)},
-                {"summary": {}, "n_runs": 30},  # missing pairwise
-                None,
-            )
+            submitter.build(suite, cert)
 
     def test_too_few_runs_raises(self, submitter):
         rng = np.random.default_rng(0)
@@ -637,46 +626,14 @@ class TestLeaderboardSubmitter:
 class TestFullPipeline:
 
     def test_ucb1_vs_random_full_pipeline(self):
-        """
-        End-to-end: run two algorithms, analyse, compute BCS, generate JSON.
-        """
+        """End-to-end: run two algorithms, analyse, compute BCS."""
         runner   = BenchmarkRunner(n_runs=30)
         analyser = StatisticalAnalyser()
-
-        # Run S1 K=10 T=500 only (fast)
-        regrets_ucb = runner.run_setting(
-            UCB1, {},
-            BernoulliBandit, {"K": 10, "T": 500}
-        )
-        regrets_rnd = runner.run_setting(
-            RandomPolicy, {},
-            BernoulliBandit, {"K": 10, "T": 500}
-        )
-
-        results = {"UCB1": regrets_ucb, "Random": regrets_rnd}
-        report  = analyser.analyse(results)
-        bcs     = BCSCalculator.compute(
-            rho_s=0.85, p_indep=0.95, K=10, T=500
-        )
-
-        submitter = LeaderboardSubmitter(
-            algorithm_name="UCB1",
-            paper_url="https://example.com",
-            code_url="https://github.com",
-        )
-        json_str = submitter.generate(results, report, bcs)
-
-        import json
-        data = json.loads(json_str)
-
-        # UCB1 should have lower regret
-        # UCB1 should achieve lower regret than random
-        s1_key = "S1_K10_T500"
-        if s1_key in data["settings"]:
-            assert data["settings"][s1_key]["mean_regret"] < 500 * 0.6
-        else:
-            # results passed directly, check via report
-            assert report["ranking"][0] == "UCB1"
-
-        # Should be certified
-        assert "C1" in data["certification"]
+        regrets_ucb = runner.run_setting(UCB1, {}, BernoulliBandit, {"K": 10, "T": 500})
+        regrets_rnd = runner.run_setting(RandomPolicy, {}, BernoulliBandit, {"K": 10, "T": 500})
+        report  = analyser.analyse({"UCB1": regrets_ucb, "Random": regrets_rnd})
+        bcs     = BCSCalculator.compute(rho_s=0.85, p_indep=0.95, K=10, T=500)
+        assert report["ranking"][0] == "UCB1"
+        assert report["pairwise"][("UCB1", "Random")]["significant"]
+        assert regrets_ucb.mean() < 500 * 0.6
+        assert 0.0 <= bcs["BCS"] <= 1.0

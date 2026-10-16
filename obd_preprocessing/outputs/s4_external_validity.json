@@ -1,0 +1,82 @@
+{
+  "pooled": {
+    "stream": "pooled",
+    "ground_truth_ctr_bts_log": 0.004784131330669691,
+    "ground_truth_ctr_random_log": 0.003352581385787005,
+    "ground_truth_ratio_this_data": 1.4269993119187576,
+    "published_ratio": 1.4285714285714286,
+    "replay_ctr_BernoulliTS_Zozotown": 0.004915472362984208,
+    "replay_ctr_ci95": [
+      0.004370824220078976,
+      0.005460120505889441
+    ],
+    "replay_ctr_B0_Random": 0.0034943394680261924,
+    "replay_ratio": 1.406695716876287,
+    "replay_ratio_ci95_bootstrap": [
+      1.2349548924902074,
+      1.6013545390333614
+    ],
+    "rank_of_BernoulliTS_Zozotown": 1,
+    "n_algorithms": 8,
+    "H1_bts_beats_random": {
+      "test": "one-sided paired Wilcoxon, BTS > Random",
+      "p": 3.955326974391937e-05,
+      "supported": true
+    },
+    "H2_rank_top_two": {
+      "rank": 1,
+      "supported": true
+    },
+    "H3a_direction_matches": {
+      "replay_ratio_above_1": true,
+      "supported": true
+    },
+    "H3b_ratio_matches": {
+      "ground_truth_inside_ci95": true,
+      "supported": true
+    },
+    "H3c_absolute_ctr_matches": {
+      "ground_truth_bts_inside_ci95": true
+    }
+  },
+  "random_only": {
+    "stream": "random_only",
+    "ground_truth_ctr_bts_log": 0.004784131330669691,
+    "ground_truth_ctr_random_log": 0.003352581385787005,
+    "ground_truth_ratio_this_data": 1.4269993119187576,
+    "published_ratio": 1.4285714285714286,
+    "replay_ctr_BernoulliTS_Zozotown": 0.0043855310720082395,
+    "replay_ctr_ci95": [
+      0.003500914217997618,
+      0.005270147926018861
+    ],
+    "replay_ctr_B0_Random": 0.0029246719067782035,
+    "replay_ratio": 1.4994950585207034,
+    "replay_ratio_ci95_bootstrap": [
+      1.0893421558755247,
+      2.1185359813682627
+    ],
+    "rank_of_BernoulliTS_Zozotown": 1,
+    "n_algorithms": 8,
+    "H1_bts_beats_random": {
+      "test": "one-sided paired Wilcoxon, BTS > Random",
+      "p": 0.017268367111682892,
+      "supported": true
+    },
+    "H2_rank_top_two": {
+      "rank": 1,
+      "supported": true
+    },
+    "H3a_direction_matches": {
+      "replay_ratio_above_1": true,
+      "supported": true
+    },
+    "H3b_ratio_matches": {
+      "ground_truth_inside_ci95": true,
+      "supported": true
+    },
+    "H3c_absolute_ctr_matches": {
+      "ground_truth_bts_inside_ci95": true
+    }
+  }
+}

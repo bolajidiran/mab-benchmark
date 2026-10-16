@@ -1,0 +1,111 @@
+{
+  "experiment": "External validity: Bernoulli TS (ZOZOTOWN priors) vs ground truth",
+  "variant": "keep_duplicates",
+  "evaluation_policy": "Bernoulli TS with ZOZOTOWN production priors (obp 0.4.1 prior_bts.yaml, campaign all)",
+  "ground_truth": {
+    "published": {
+      "bts": 0.005,
+      "random": 0.0035,
+      "ratio": 1.4285714285714286
+    },
+    "this_data": {
+      "bts": 0.004953225649823585,
+      "random": 0.0034693344451502445,
+      "ratio": 1.427716390026237
+    }
+  },
+  "track1_s4_external_validity": {
+    "pooled": {
+      "stream": "pooled",
+      "ground_truth_ctr_bts_log": 0.004953225649823585,
+      "ground_truth_ctr_random_log": 0.0034693344451502445,
+      "ground_truth_ratio_this_data": 1.427716390026237,
+      "published_ratio": 1.4285714285714286,
+      "replay_ctr_BernoulliTS_Zozotown": 0.005299214611111973,
+      "replay_ctr_ci95": [
+        0.004888667540614696,
+        0.005709761681609249
+      ],
+      "replay_ctr_B0_Random": 0.004011058592408092,
+      "replay_ratio": 1.321151134800681,
+      "replay_ratio_ci95_bootstrap": [
+        1.1140408987632535,
+        1.5676323545244646
+      ],
+      "rank_of_BernoulliTS_Zozotown": 1,
+      "n_algorithms": 8,
+      "H1_bts_beats_random": {
+        "test": "one-sided paired Wilcoxon, BTS > Random",
+        "p": 0.00011581834405660629,
+        "supported": true
+      },
+      "H2_rank_top_two": {
+        "rank": 1,
+        "supported": true
+      },
+      "H3a_direction_matches": {
+        "replay_ratio_above_1": true,
+        "supported": true
+      },
+      "H3b_ratio_matches": {
+        "ground_truth_inside_ci95": true,
+        "supported": true
+      },
+      "H3c_absolute_ctr_matches": {
+        "ground_truth_bts_inside_ci95": true
+      }
+    },
+    "random_only": {
+      "stream": "random_only",
+      "ground_truth_ctr_bts_log": 0.004953225649823585,
+      "ground_truth_ctr_random_log": 0.0034693344451502445,
+      "ground_truth_ratio_this_data": 1.427716390026237,
+      "published_ratio": 1.4285714285714286,
+      "replay_ctr_BernoulliTS_Zozotown": 0.005473879096186623,
+      "replay_ctr_ci95": [
+        0.00458625849897128,
+        0.006361499693401966
+      ],
+      "replay_ctr_B0_Random": 0.004600150887965472,
+      "replay_ratio": 1.1899346846441332,
+      "replay_ratio_ci95_bootstrap": [
+        0.901899760167171,
+        1.5927673754009446
+      ],
+      "rank_of_BernoulliTS_Zozotown": 1,
+      "n_algorithms": 8,
+      "H1_bts_beats_random": {
+        "test": "one-sided paired Wilcoxon, BTS > Random",
+        "p": 0.057088336907327175,
+        "supported": false
+      },
+      "H2_rank_top_two": {
+        "rank": 1,
+        "supported": true
+      },
+      "H3a_direction_matches": {
+        "replay_ratio_above_1": true,
+        "supported": true
+      },
+      "H3b_ratio_matches": {
+        "ground_truth_inside_ci95": true,
+        "supported": true
+      },
+      "H3c_absolute_ctr_matches": {
+        "ground_truth_bts_inside_ci95": true
+      }
+    }
+  },
+  "track1_s4_ranking": [
+    "BernoulliTS_Zozotown",
+    "B4_LinUCB",
+    "B0_Random",
+    "B4h_HybridLinUCB",
+    "FG-TS",
+    "B2_UCB1",
+    "B1_EpsGreedy",
+    "B3_TS"
+  ],
+  "track0_synthetic": null,
+  "source": "obd_preprocessing\\outputs\\keep_duplicates\\s4_replay_results.json"
+}

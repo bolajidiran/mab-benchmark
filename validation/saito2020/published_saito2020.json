@@ -1,0 +1,231 @@
+{
+  "reference": "Saito, Y., Aihara, S., Matsutani, M., & Narita, Y. (2021). Open Bandit Dataset and Pipeline: Towards realistic and reproducible off-policy evaluation. arXiv:2008.07146v5 (26 Oct 2021). NeurIPS 2021 Datasets and Benchmarks Track.",
+  "transcribed_on": "2026-10-11",
+  "transcription_note": "Values transcribed from arXiv:2008.07146v5 in two independent passes that agreed on every number. CTR in percent; RMSE values are x 10^3; values in brackets in the paper (RMSE divided by the best estimator) are recomputed here, not stored.",
+  "table1": {
+    "caption_summary": "Statistics of OBD. The +/- value is a 95% confidence interval from the normal approximation of Bernoulli sampling (percentage points). Relative CTR is against Random in the ALL campaign.",
+    "rows": {
+      "random/all": {
+        "n_data": 1374327,
+        "n_items": 80,
+        "ctr_percent": 0.35,
+        "ci_pm_percent": 0.01,
+        "relative_ctr": 1.0
+      },
+      "bts/all": {
+        "n_data": 12168084,
+        "n_items": 80,
+        "ctr_percent": 0.5,
+        "ci_pm_percent": 0.004,
+        "relative_ctr": 1.43
+      },
+      "random/men": {
+        "n_data": 452949,
+        "n_items": 34,
+        "ctr_percent": 0.51,
+        "ci_pm_percent": 0.021,
+        "relative_ctr": 1.48
+      },
+      "bts/men": {
+        "n_data": 4077727,
+        "n_items": 34,
+        "ctr_percent": 0.67,
+        "ci_pm_percent": 0.008,
+        "relative_ctr": 1.94
+      },
+      "random/women": {
+        "n_data": 864585,
+        "n_items": 46,
+        "ctr_percent": 0.48,
+        "ci_pm_percent": 0.014,
+        "relative_ctr": 1.39
+      },
+      "bts/women": {
+        "n_data": 7765497,
+        "n_items": 46,
+        "ctr_percent": 0.64,
+        "ci_pm_percent": 0.056,
+        "relative_ctr": 1.84
+      }
+    },
+    "known_issues": [
+      "bts/women: +/-0.056 is about ten times the normal-approximation value (about 0.006); probably a typesetting error."
+    ]
+  },
+  "table4_bts_to_random_n300000": {
+    "IPW": {
+      "all": 0.493,
+      "men": 0.789,
+      "women": 0.776
+    },
+    "SNIPW": {
+      "all": 0.507,
+      "men": 0.644,
+      "women": 0.804
+    },
+    "DM": {
+      "all": 1.026,
+      "men": 0.773,
+      "women": 0.816
+    },
+    "DR": {
+      "all": 0.482,
+      "men": 0.613,
+      "women": 0.803
+    },
+    "SNDR": {
+      "all": 0.482,
+      "men": 0.659,
+      "women": 0.791
+    },
+    "Switch-DR": {
+      "all": 0.482,
+      "men": 0.613,
+      "women": 0.803
+    },
+    "DRos": {
+      "all": 0.316,
+      "men": 0.459,
+      "women": 0.561
+    }
+  },
+  "table6_bts_to_random_n10000": {
+    "IPW": {
+      "all": 1.899,
+      "men": 3.683,
+      "women": 3.156
+    },
+    "SNIPW": {
+      "all": 1.641,
+      "men": 3.661,
+      "women": 3.038
+    },
+    "DM": {
+      "all": 0.797,
+      "men": 3.041,
+      "women": 2.665
+    },
+    "DR": {
+      "all": 1.203,
+      "men": 3.747,
+      "women": 3.055
+    },
+    "SNDR": {
+      "all": 1.159,
+      "men": 3.757,
+      "women": 3.069
+    },
+    "Switch-DR": {
+      "all": 1.203,
+      "men": 3.747,
+      "women": 3.055
+    },
+    "DRos": {
+      "all": 0.765,
+      "men": 3.727,
+      "women": 3.051
+    }
+  },
+  "table9_random_to_bts_n300000": {
+    "IPW": {
+      "all": 0.474,
+      "men": 1.298,
+      "women": 1.645
+    },
+    "SNIPW": {
+      "all": 0.468,
+      "men": 1.133,
+      "women": 1.585
+    },
+    "DM": {
+      "all": 1.499,
+      "men": 1.758,
+      "women": 0.584
+    },
+    "DR": {
+      "all": 0.501,
+      "men": 1.169,
+      "women": 1.539
+    },
+    "SNDR": {
+      "all": 0.5,
+      "men": 1.151,
+      "women": 1.524
+    },
+    "Switch-DR": {
+      "all": 0.501,
+      "men": 1.169,
+      "women": 1.539
+    },
+    "DRos": {
+      "all": 0.508,
+      "men": 1.171,
+      "women": 1.524
+    }
+  },
+  "known_issues_rmse_tables": [
+    "Table 9, Women, Switch-DR: printed normalised value 2.036 is inconsistent with its RMSE 1.539 (should be 2.636).",
+    "ALL, DRos, Random -> BTS: 0.508 in Table 9 but 0.500 in Table 10.",
+    "Table 6 (BTS -> Random, n = 10,000), Women column is identical digit for digit to the Men column of Table 10 (Random -> BTS, n = 10,000). One of the two columns is a copy; Test 4 checks which (both are reproduced here)."
+  ],
+  "protocol_from_code": {
+    "source": "github.com/st-tech/zr-obp, benchmark/ope (commit 8cbd5fa), locked to obp 0.5.0, pyieoe 0.1.1, scikit-learn 0.24.2, numpy 1.21.2, pandas 1.3.3, Python 3.9",
+    "n_seeds": 200,
+    "random_state": 12345,
+    "n_folds_cross_fitting": 2,
+    "reg_model": "HistGradientBoostingClassifier(max_iter=100, learning_rate=0.01, max_depth=5, min_samples_leaf=10, random_state=seed)",
+    "lambdas_switch_dr_dros": [
+      1,
+      5,
+      10,
+      50,
+      100,
+      500,
+      1000,
+      5000,
+      10000
+    ],
+    "tuning": "estimated MSE = sample variance / n + (high-probability bias upper bound)^2, delta = 0.05 (obp 0.5.0 defaults); tuned once and reused",
+    "evaluation_policy_when_behaviour_random": "BernoulliTS(is_zozotown_prior=True, campaign, len_list=3, random_state=12345).compute_batch_action_dist(n_sim=100000)",
+    "evaluation_policy_when_behaviour_bts": "uniform Random(len_list=3)",
+    "ground_truth": "mean click of the full log of the evaluation policy",
+    "bootstrap": "seed s in 0..199: np.random.seed(s); idx = np.random.choice(arange(n), size=n, replace=True) over the first n rows in time order"
+  },
+  "table10_random_to_bts_n10000": {
+    "IPW": {
+      "all": 1.104,
+      "men": 3.156,
+      "women": 6.789
+    },
+    "SNIPW": {
+      "all": 1.1,
+      "men": 3.038,
+      "women": 5.685
+    },
+    "DM": {
+      "all": 1.128,
+      "men": 2.665,
+      "women": 2.986
+    },
+    "DR": {
+      "all": 1.133,
+      "men": 3.055,
+      "women": 5.724
+    },
+    "SNDR": {
+      "all": 1.148,
+      "men": 3.069,
+      "women": 5.476
+    },
+    "Switch-DR": {
+      "all": 1.133,
+      "men": 3.055,
+      "women": 5.724
+    },
+    "DRos": {
+      "all": 1.125,
+      "men": 3.051,
+      "women": 5.694
+    }
+  }
+}

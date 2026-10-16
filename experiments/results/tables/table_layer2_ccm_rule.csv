@@ -1,0 +1,3 @@
+test,first CCM flag,"final weights (w1, w2, w3)",result
+"latency injection (250 ms from round 1,000; 2G, delta = 200 ms)",[1041],"[0.2, 0.40000000000000013, 0.40000000000000013]",weights moved from w1 to w2 and w3 until w1 = 0.2
+per-arm costs (5 best arms cost 300 ms; 2G),100,"[0.2, 0.40000000000000013, 0.40000000000000013]","share of slow-arm pulls 0.71 before the first flag, 0.20 after"

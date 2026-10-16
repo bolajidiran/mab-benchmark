@@ -84,6 +84,11 @@ class BernoulliBandit:
             raise IndexError(f"arm {arm} out of range [0, {self.K-1}]")
         return float(rng.uniform() < self.means[arm])
 
+    def expected_random_regret(self) -> float:
+        """Expected cumulative regret of the uniform Random policy over the
+        horizon, T (mu* - mean_a mu_a). Used as the NCR normaliser."""
+        return float(self.T * (self.mu_star - self.means.mean()))
+
     def regret_increment(self, arm: int) -> float:
         """Return mu_star - mu_arm (instantaneous expected regret)."""
         return self.mu_star - self.means[arm]

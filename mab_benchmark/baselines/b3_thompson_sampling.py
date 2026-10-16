@@ -18,8 +18,8 @@ requires r in [0, 1].  Settings S1, S3, and S5 produce Bernoulli
 rewards already in {0, 1} so no clipping is needed there.  Setting
 S2 produces Gaussian rewards that can exceed 1.0 or fall below 0.0;
 without clipping, beta goes negative and numpy.random.beta raises
-"ValueError: b <= 0".  The fix clips reward to [0, 1] before every
-Beta-Bernoulli update.  For S1/S3/S5 this has zero effect.
+"ValueError: b <= 0".  The reward is therefore clipped to [0, 1] before
+every Beta-Bernoulli update.  For S1/S3/S5 this has zero effect.
 
 Role in benchmark
 -----------------
@@ -122,10 +122,9 @@ class ThompsonSampling(BanditAlgorithm):
         context: np.ndarray | None = None,
     ) -> None:
         if self.reward_type == "bernoulli":
-            # ── PERMANENT FIX ─────────────────────────────────────────
             # Clip reward to [0, 1] before the Beta-Bernoulli update.
             #
-            # Root cause of the original bug:
+            # Why it is needed:
             #   S2 (Gaussian) produces rewards outside [0, 1].
             #   Without clipping: beta[arm] += (1 - reward) can become
             #   negative when reward > 1, causing numpy.random.beta to
@@ -176,12 +175,15 @@ class ThompsonSampling(BanditAlgorithm):
                 continue
 
             kappa_n = self.kappa0 + n
+            xbar    = self.sum_r[a] / n
             mu_n    = (self.kappa0 * self.mu0 + self.sum_r[a]) / kappa_n
             alpha_n = self.alpha0 + n / 2.0
+            # Standard Normal-InvGamma update: within-sample scatter uses
+            # the sample mean, the prior term uses (xbar - mu0).
             beta_n  = (
                 self.beta0
-                + 0.5 * (self.sum_r2[a] - n * mu_n ** 2)
-                + 0.5 * self.kappa0 * n * (mu_n - self.mu0) ** 2 / kappa_n
+                + 0.5 * (self.sum_r2[a] - n * xbar ** 2)
+                + 0.5 * self.kappa0 * n * (xbar - self.mu0) ** 2 / kappa_n
             )
             beta_n  = max(beta_n, 1e-8)   # numerical safety
 

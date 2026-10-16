@@ -1,0 +1,27 @@
+name: Release to PyPI
+
+# Runs only when a version tag is pushed (git tag v1.3.0 && git push origin v1.3.0).
+# It uses PyPI trusted publishing: before the first release, add this repository as a
+# trusted publisher on https://pypi.org/manage/account/publishing/ (project
+# "mab-benchmark", workflow "release.yml", environment "pypi"). No token is stored here.
+# Alternatively, upload by hand with twine (docs/releasing.md).
+
+on:
+  push:
+    tags: ["v*"]
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    environment: pypi
+    permissions:
+      id-token: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install build twine
+      - run: python -m build
+      - run: twine check dist/*
+      - uses: pypa/gh-action-pypi-publish@release/v1

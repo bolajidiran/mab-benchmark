@@ -1,0 +1,6 @@
+#,design expectation,evidence,verdict
+1,Sub-linear regret growth on S1,"T x20 (500 to 10,000) multiplies FG-TS regret by 3.05",SUPPORTED
+2,The bonus costs regret against TS on stationary S1,"FG-TS 195.2 vs TS 49.0; significant True, d = 4.3673",SUPPORTED
+3,The bonus helps against TS after change-points (S3),"FG-TS 1741.9 vs TS 2136.0; significant True, d = -1.1943",SUPPORTED
+4,FG-TS beats UCB1 on S1 and on S3,S1: 195.2 vs 348.9 (sig True); S3: 1741.9 vs 946.5 (sig True),S1 SUPPORTED; S3 NOT SUPPORTED (UCB1 best on S3)
+5,lambda = 0 reduces FG-TS exactly to B3,"identical run by run: {'S1_K10_T10000': True, 'S3_K10_T10000': True, 'S5_K500_T100': True}",SUPPORTED

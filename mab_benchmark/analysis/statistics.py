@@ -256,7 +256,8 @@ class StatisticalAnalyser:
         Requirement 4: Cohen's d and A12 statistic for every pair.
 
         Cohen's d = (mean_A - mean_B) / pooled_std
-        A12 = P(regret_A < regret_B)  (lower regret is better)
+        A12 = P(regret_A < regret_B) + 0.5 P(regret_A = regret_B)
+              (Vargha & Delaney, 2000; lower regret is better)
 
         Magnitude labels (Cohen's d):
             |d| < 0.2  → negligible
@@ -283,12 +284,11 @@ class StatisticalAnalyser:
             d = ((arr_a.mean() - arr_b.mean()) / s_pool
                  if s_pool > 0 else 0.0)
 
-            # A12 statistic: P(regret_A < regret_B)
-            # (lower regret = better for algorithm A)
-            wins = float(np.sum(
-                arr_a[:, None] < arr_b[None, :]
-            ))
-            a12 = wins / (n * n)
+            # Vargha-Delaney A12 = P(regret_A < regret_B) + 0.5 P(tie)
+            # (lower regret = better for algorithm A); ties count one half.
+            wins = float(np.sum(arr_a[:, None] < arr_b[None, :]))
+            ties = float(np.sum(arr_a[:, None] == arr_b[None, :]))
+            a12 = (wins + 0.5 * ties) / (n * n)
 
             # Magnitude label
             abs_d = abs(d)

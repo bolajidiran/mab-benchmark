@@ -1,0 +1,24 @@
+EXTERNAL VALIDITY EXPERIMENT - Ojediran, A.B. - LASU 2026
+==============================================================================
+
+Variant : keep_duplicates
+Ground truth (published, Saito et al.): BTS 0.50%, Random 0.35%, ratio 1.43x
+Ground truth (this cleaned data)      : BTS 0.4953%, Random 0.3469%, ratio 1.428x
+
+[pooled]
+  Replay CTR  BTS (ZOZOTOWN) = 0.5299%   B0 Random = 0.4011%
+  Replay ratio = 1.321x  (95% bootstrap CI 1.114 to 1.568)
+  Rank of BTS (ZOZOTOWN): 1 of 8
+  H1  BTS > Random       : p = 0.0001  SUPPORTED
+  H2  rank in top two    : SUPPORTED
+  H3a direction (> 1)    : SUPPORTED
+  H3b ratio inside CI    : SUPPORTED
+
+[random_only]
+  Replay CTR  BTS (ZOZOTOWN) = 0.5474%   B0 Random = 0.4600%
+  Replay ratio = 1.190x  (95% bootstrap CI 0.902 to 1.593)
+  Rank of BTS (ZOZOTOWN): 1 of 8
+  H1  BTS > Random       : p = 0.0571  NOT SUPPORTED
+  H2  rank in top two    : SUPPORTED
+  H3a direction (> 1)    : SUPPORTED
+  H3b ratio inside CI    : SUPPORTED

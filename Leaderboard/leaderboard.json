@@ -1,0 +1,48 @@
+{
+  "benchmark": "MAB Unified Benchmark Suite v1.2.0",
+  "ranking_criterion": "mean cumulative regret, S1_K10_T10000 (lower is better)",
+  "entries": [
+    {
+      "algorithm": "BernoulliTS_uniform",
+      "mean_regret": 49.031,
+      "ci95": [
+        38.7837,
+        59.2783
+      ],
+      "n_runs": 30,
+      "level": "C1",
+      "bcs": 0.9109,
+      "beats": {
+        "B0_Random": 17,
+        "B1_EpsGreedy": 8,
+        "B2_UCB1": 15,
+        "B3_TS": 0
+      },
+      "cells": 21,
+      "code_url": "https://github.com/bolajidiran/mab-benchmark",
+      "date": "2026-10-12",
+      "file": "submissions/BernoulliTS_uniform.json"
+    },
+    {
+      "algorithm": "FG-TS",
+      "mean_regret": 195.2069,
+      "ci95": [
+        180.8056,
+        209.6083
+      ],
+      "n_runs": 30,
+      "level": "C1",
+      "bcs": 0.9109,
+      "beats": {
+        "B0_Random": 16,
+        "B1_EpsGreedy": 2,
+        "B2_UCB1": 8,
+        "B3_TS": 1
+      },
+      "cells": 21,
+      "code_url": "https://github.com/bolajidiran/mab-benchmark",
+      "date": "2026-10-12",
+      "file": "submissions/FG-TS.json"
+    }
+  ]
+}

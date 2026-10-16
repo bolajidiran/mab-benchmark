@@ -1,0 +1,29 @@
+S4 OBD EXPERIMENT - Ojediran, A.B. - LASU 2026
+==============================================================================
+
+Variant  : keep_duplicates
+Dataset  : Open Bandit Dataset, campaign all, random + bts logs (Saito et al., 2020)
+Replay   : rejection sampling, accept if matched and u < min(1, (1/80) / propensity)
+Runs     : 30 disjoint time slices, seeds 1000 to 1029 (mab_benchmark.runner)
+
+TABLE 4.8 - S4 CTR RESULTS (higher = better)
+  Rank Algorithm                 Mean CTR       SD                95% CI  Accepted  Clicks
+  --------------------------------------------------------------------------------------
+  1    BernoulliTS_Zozotown      0.5299%  0.1147%   [0.4889%, 0.5710%]     3,830    20.2
+  2    B4_LinUCB                 0.4749%  0.4359%   [0.3190%, 0.6309%]       438     2.0
+  3    B0_Random                 0.4011%  0.1646%   [0.3422%, 0.4600%]     2,354     9.4
+  4    B4h_HybridLinUCB          0.3639%  0.3015%   [0.2560%, 0.4718%]       466     1.7
+  5    FG-TS                     0.3565%  0.1865%   [0.2898%, 0.4232%]     1,327     4.7
+  6    B2_UCB1                   0.3400%  0.3644%   [0.2096%, 0.4704%]       219     0.7
+  7    B1_EpsGreedy              0.3308%  0.1683%   [0.2706%, 0.3910%]     3,323    10.4
+  8    B3_TS                     0.3173%  0.1526%   [0.2626%, 0.3719%]     1,472     4.8
+
+Significant pairs after Holm-Bonferroni: 4 of 28
+  B1_EpsGreedy vs BernoulliTS_Zozotown: p = 6.918e-06, higher CTR = BernoulliTS_Zozotown
+  B3_TS vs BernoulliTS_Zozotown: p = 1.218e-05, higher CTR = BernoulliTS_Zozotown
+  FG-TS vs BernoulliTS_Zozotown: p = 9.903e-05, higher CTR = BernoulliTS_Zozotown
+  B0_Random vs BernoulliTS_Zozotown: p = 0.0002316, higher CTR = BernoulliTS_Zozotown
+
+Objective 3: 4 of 28 pairs differ significantly after Holm-Bonferroni correction; the BCS of S4 is reported by experiments/s4_bcs_bridge.py.
+
+Full tables: obd_preprocessing\outputs\keep_duplicates\s4_replay_summary.md

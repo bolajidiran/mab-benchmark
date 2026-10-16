@@ -1,0 +1,13 @@
+variant,log,policy,campaign,rows,published_rows,rows_match,rows_difference,items,published_items,items_match,clicks,ctr_percent,ci95_pm_percent_normal,published_ctr_percent,published_ci_pm_percent,published_within_rounding,published_inside_ci95,relative_ctr,published_relative_ctr,relative_ctr_rounds_to_published,ci_pm_matches_published_3dp
+raw,random/all,random,all,1374327,1374327,True,0,80,80,True,4768,0.34693344451502445,0.009830406331807052,0.35,0.01,True,True,1.0,1.0,True,True
+raw,bts/all,bts,all,12357200,12168084,False,189116,80,80,True,61208,0.4953225649823585,0.003914297747002819,0.5,0.004,True,False,1.427716390026237,1.43,True,True
+raw,random/men,random,men,452949,452949,True,0,34,34,True,2321,0.5124197205424894,0.02079317411160992,0.51,0.021,True,True,1.4769971838800289,1.48,True,True
+raw,bts/men,bts,men,4077727,4077727,True,0,34,34,True,27495,0.6742727014339116,0.007943057073702247,0.67,0.008,True,True,1.9435217679185475,1.94,True,True
+raw,random/women,random,women,864585,864585,True,0,46,46,True,4163,0.4815026862598819,0.014591351003821086,0.48,0.014,True,True,1.3878820098563018,1.39,True,False
+raw,bts/women,bts,women,7765497,7765497,True,0,46,46,True,49539,0.6379372756180319,0.005599674100743107,0.64,0.056,True,True,1.8387886371398972,1.84,True,False
+clean,random/all,random,all,1374165,1374327,False,-162,80,80,True,4607,0.3352581385787005,0.009664715793124782,0.35,0.01,False,False,1.0,1.0,True,True
+clean,bts/all,bts,all,12355012,12168084,False,186928,80,80,True,59108,0.4784131330669691,0.0038475714889837833,0.5,0.004,False,False,1.4269993119187576,1.43,True,True
+clean,random/men,random,men,452868,452949,False,-81,34,34,True,2240,0.4946253654486517,0.02043260482152803,0.51,0.021,False,True,1.4753567729796973,1.48,True,False
+clean,bts/men,bts,men,4076843,4077727,False,-884,34,34,True,26615,0.6528335773538495,0.007817449449325026,0.67,0.008,False,False,1.9472564636953607,1.94,False,True
+clean,random/women,random,women,864448,864585,False,-137,46,46,True,4026,0.4657307322129266,0.014352660716526449,0.48,0.014,False,True,1.389170548364177,1.39,True,True
+clean,bts/women,bts,women,7764005,7765497,False,-1492,46,46,True,48066,0.6190877002268803,0.005517378335731251,0.64,0.056,False,False,1.8466000642115716,1.84,False,False

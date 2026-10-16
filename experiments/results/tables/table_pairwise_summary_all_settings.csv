@@ -1,0 +1,22 @@
+setting,algorithms,pairs,significant pairs (Holm),ranking (best first)
+S1_K10_T500,5,10,10,B3_TS < B1_EpsGreedy < FG-TS < B2_UCB1 < B0_Random
+S1_K10_T2000,5,10,9,B3_TS < B1_EpsGreedy < FG-TS < B2_UCB1 < B0_Random
+S1_K10_T10000,5,10,10,B3_TS < FG-TS < B2_UCB1 < B1_EpsGreedy < B0_Random
+S1_K50_T500,5,10,9,B3_TS < B1_EpsGreedy < FG-TS < B2_UCB1 < B0_Random
+S1_K50_T2000,5,10,10,B3_TS < B1_EpsGreedy < FG-TS < B2_UCB1 < B0_Random
+S1_K50_T10000,5,10,10,B3_TS < B1_EpsGreedy < FG-TS < B2_UCB1 < B0_Random
+S1_K200_T500,5,10,10,B1_EpsGreedy < B3_TS < B2_UCB1 < FG-TS < B0_Random
+S1_K200_T2000,5,10,10,B1_EpsGreedy < B3_TS < FG-TS < B2_UCB1 < B0_Random
+S1_K200_T10000,5,10,10,B3_TS < B1_EpsGreedy < FG-TS < B2_UCB1 < B0_Random
+S2_K10_T1000,5,10,8,B1_EpsGreedy < B3_TS < B2_UCB1 < FG-TS < B0_Random
+S2_K10_T10000,5,10,8,B2_UCB1 < B3_TS < B1_EpsGreedy < FG-TS < B0_Random
+S2_K50_T1000,5,10,10,B1_EpsGreedy < B3_TS < B2_UCB1 < FG-TS < B0_Random
+S2_K50_T10000,5,10,8,B3_TS < B1_EpsGreedy < FG-TS < B2_UCB1 < B0_Random
+S2_K200_T1000,5,10,10,B1_EpsGreedy < B3_TS < B2_UCB1 < FG-TS < B0_Random
+S2_K200_T10000,5,10,8,B1_EpsGreedy < B3_TS < FG-TS < B2_UCB1 < B0_Random
+S3_K10_T10000,5,10,10,B2_UCB1 < FG-TS < B3_TS < B1_EpsGreedy < B0_Random
+S4_SYNTHETIC_K50_T10000,6,15,5,B4_LinUCB < B2_UCB1 < B1_EpsGreedy < B0_Random < FG-TS < B3_TS
+S4_SYNTHETIC_K50_T50000,6,15,5,B4_LinUCB < B0_Random < FG-TS < B1_EpsGreedy < B2_UCB1 < B3_TS
+S5_K500_T50,5,10,4,B1_EpsGreedy < B3_TS < B2_UCB1 < B0_Random < FG-TS
+S5_K500_T100,5,10,5,B1_EpsGreedy < B3_TS < B0_Random < B2_UCB1 < FG-TS
+S5_K500_T200,5,10,7,B1_EpsGreedy < B3_TS < B0_Random < FG-TS < B2_UCB1

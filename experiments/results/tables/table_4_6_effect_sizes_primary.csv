@@ -1,0 +1,11 @@
+comparison,Cohen d,A12,magnitude
+FG-TS vs B3_TS,4.3673,0.0,large
+FG-TS vs B2_UCB1,-2.8986,0.9711,large
+FG-TS vs B0_Random,-7.1161,1.0,large
+B3_TS vs B2_UCB1,-6.0644,1.0,large
+B3_TS vs B1_EpsGreedy,-5.9741,1.0,large
+B3_TS vs B0_Random,-7.3915,1.0,large
+B2_UCB1 vs B0_Random,-6.8159,1.0,large
+B1_EpsGreedy vs B0_Random,-6.6131,1.0,large
+FG-TS vs B1_EpsGreedy,-3.63,0.9956,large
+B2_UCB1 vs B1_EpsGreedy,-1.2482,0.8211,large

@@ -1,0 +1,8 @@
+c2 definition,p_indep,c2,BCS,band
+"p_indep, 1h bins",0.9996835443037975,1.0,0.9109,PASS
+"p_indep / null, 1h bins",0.9998575701467028,1.0,0.9109,PASS
+"p_indep, 3h bins",0.9629746835443038,1.0,0.9109,PASS
+"p_indep / null, 3h bins",0.9894004421901419,1.0,0.9109,PASS
+"p_indep, 6h bins",0.8699367088607595,0.9666,0.8997,PARTIAL
+"p_indep / null, 6h bins",0.9899350006301877,1.0,0.9109,PASS
+rho at the lower 95% bootstrap bound (c2 from 1h bins),0.9996835443037975,1.0,0.8905,PARTIAL

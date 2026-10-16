@@ -1,0 +1,112 @@
+{
+ "FG-TS vs B1_EpsGreedy": {
+  "stat": 0.0,
+  "p_raw": 1.862645149230957e-09,
+  "p_threshold": 0.005,
+  "significant": true,
+  "better": "B1_EpsGreedy",
+  "cohens_d": 4.6851,
+  "a12": 0.0,
+  "magnitude": "large",
+  "claim": "significant and large \u2014 B1_EpsGreedy is better"
+ },
+ "B3_TS vs B1_EpsGreedy": {
+  "stat": 0.0,
+  "p_raw": 1.862645149230957e-09,
+  "p_threshold": 0.005555555555555556,
+  "significant": true,
+  "better": "B1_EpsGreedy",
+  "cohens_d": 4.1573,
+  "a12": 0.0,
+  "magnitude": "large",
+  "claim": "significant and large \u2014 B1_EpsGreedy is better"
+ },
+ "B2_UCB1 vs B1_EpsGreedy": {
+  "stat": 0.0,
+  "p_raw": 1.862645149230957e-09,
+  "p_threshold": 0.00625,
+  "significant": true,
+  "better": "B1_EpsGreedy",
+  "cohens_d": 4.6924,
+  "a12": 0.0,
+  "magnitude": "large",
+  "claim": "significant and large \u2014 B1_EpsGreedy is better"
+ },
+ "B1_EpsGreedy vs B0_Random": {
+  "stat": 0.0,
+  "p_raw": 1.862645149230957e-09,
+  "p_threshold": 0.0071428571428571435,
+  "significant": true,
+  "better": "B1_EpsGreedy",
+  "cohens_d": -4.6118,
+  "a12": 1.0,
+  "magnitude": "large",
+  "claim": "significant and large \u2014 B1_EpsGreedy is better"
+ },
+ "B3_TS vs B0_Random": {
+  "stat": 3.0,
+  "p_raw": 9.313225746154785e-09,
+  "p_threshold": 0.008333333333333333,
+  "significant": true,
+  "better": "B3_TS",
+  "cohens_d": -1.7535,
+  "a12": 0.9,
+  "magnitude": "large",
+  "claim": "significant and large \u2014 B3_TS is better"
+ },
+ "FG-TS vs B3_TS": {
+  "stat": 6.0,
+  "p_raw": 2.60770320892334e-08,
+  "p_threshold": 0.01,
+  "significant": true,
+  "better": "B3_TS",
+  "cohens_d": 2.0886,
+  "a12": 0.0811,
+  "magnitude": "large",
+  "claim": "significant and large \u2014 B3_TS is better"
+ },
+ "B3_TS vs B2_UCB1": {
+  "stat": 8.0,
+  "p_raw": 4.6566128730773926e-08,
+  "p_threshold": 0.0125,
+  "significant": true,
+  "better": "B3_TS",
+  "cohens_d": -2.0716,
+  "a12": 0.9267,
+  "magnitude": "large",
+  "claim": "significant and large \u2014 B3_TS is better"
+ },
+ "B2_UCB1 vs B0_Random": {
+  "stat": 196.0,
+  "p_raw": 0.46454504504799843,
+  "p_threshold": 0.016666666666666666,
+  "significant": false,
+  "better": "equal (not significant)",
+  "cohens_d": 0.1612,
+  "a12": 0.4544,
+  "magnitude": "negligible",
+  "claim": "not significant (magnitude: negligible)"
+ },
+ "FG-TS vs B2_UCB1": {
+  "stat": 213.0,
+  "p_raw": 0.7000329215079546,
+  "p_threshold": 0.025,
+  "significant": false,
+  "better": "equal (not significant)",
+  "cohens_d": -0.0873,
+  "a12": 0.5122,
+  "magnitude": "negligible",
+  "claim": "not significant (magnitude: negligible)"
+ },
+ "FG-TS vs B0_Random": {
+  "stat": 231.0,
+  "p_raw": 0.9838335812091827,
+  "p_threshold": 0.05,
+  "significant": false,
+  "better": "equal (not significant)",
+  "cohens_d": 0.0852,
+  "a12": 0.4833,
+  "magnitude": "negligible",
+  "claim": "not significant (magnitude: negligible)"
+ }
+}

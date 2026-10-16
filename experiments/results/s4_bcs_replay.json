@@ -1,0 +1,87 @@
+{
+ "obd_random_only": {
+  "BCS": 0.9109,
+  "c1_reward_proxy": 1.0,
+  "c2_arm_independence": 1.0,
+  "c3_sufficient_horizon": 0.7326,
+  "exploration_cost": 0.0535,
+  "band": "PASS",
+  "flag": "All three bridge conditions satisfied. Tier 1 result is a reliable proxy for deployment. Tier 2 validation is recommended but not required for C1 algorithmic claims.",
+  "failing_conditions": [],
+  "action_required": "None required for C1 claims.",
+  "c_R_replay_integrity": 1.0,
+  "rho_shuffle": 0.8285714285714287,
+  "BCS_R": 0.9332,
+  "band_R": "PASS",
+  "starved_algorithms": [
+   "B2_UCB1"
+  ],
+  "matched_ratios": {
+   "B0_Random": 1.0,
+   "B1_EpsGreedy": 0.8439183037666239,
+   "B2_UCB1": 0.1788698595897978,
+   "B3_TS": 0.9937702704249144,
+   "FG-TS": 0.9887561979337457,
+   "BernoulliTS_Zozotown": 0.9958483343773972
+  },
+  "failing_conditions_R": [
+   "Starved in replay (matched events < 0.5 x Random): B2_UCB1"
+  ],
+  "certifiable": true
+ },
+ "kuairec_p_indep": 0.9996835443037975,
+ "kuairec_bursty": {
+  "BCS": 0.7817,
+  "c1_reward_proxy": 0.6122,
+  "c2_arm_independence": 1.0,
+  "c3_sufficient_horizon": 0.733,
+  "exploration_cost": 0.0534,
+  "band": "PARTIAL",
+  "flag": "One or more bridge conditions partially failed. Tier 2 (deployment) validation is required before making any deployment performance claims.",
+  "failing_conditions": [
+   "Condition 1 (reward proxy): rho_S=0.429 < threshold 0.7. c1=0.612. Flag domain as 'high deployment risk'."
+  ],
+  "action_required": "Run Tier 2 evaluation. Address failing conditions.",
+  "c_R_replay_integrity": 0.9388,
+  "rho_shuffle": 0.6571428571428573,
+  "BCS_R": 0.821,
+  "band_R": "PARTIAL",
+  "starved_algorithms": [
+   "B2_UCB1"
+  ],
+  "matched_ratios": {
+   "B0_Random": 1.0,
+   "B1_EpsGreedy": 0.8870773039002714,
+   "B2_UCB1": 0.21762624909099904,
+   "B3_TS": 0.9946068358938182,
+   "FG-TS": 0.9869631463520689,
+   "Greedy": 0.9319749353833378
+  },
+  "failing_conditions_R": [
+   "Condition 1 (reward proxy): rho_S=0.429 < threshold 0.7. c1=0.612. Flag domain as 'high deployment risk'.",
+   "Replay integrity: rho_shuffle=0.657 < 0.7; the replay ranking depends on the order of the log.",
+   "Starved in replay (matched events < 0.5 x Random): B2_UCB1"
+  ],
+  "certifiable": false
+ },
+ "kuairec_three_condition": {
+  "IID": [
+   0.9429,
+   14273,
+   0.9106,
+   "PASS"
+  ],
+  "BURSTY": [
+   0.4286,
+   14336,
+   0.7817,
+   "PARTIAL"
+  ],
+  "SHUFFLED": [
+   0.9429,
+   14348,
+   0.9111,
+   "PASS"
+  ]
+ }
+}

@@ -1,0 +1,246 @@
+{
+  "environment": {
+    "python": "3.14.2",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "numpy": "2.5.4",
+    "pandas": "3.0.6",
+    "scipy": "1.18.1",
+    "scikit-learn": "1.9.1"
+  },
+  "logs": [
+    {
+      "policy": "random",
+      "campaign": "all",
+      "file": "all.csv",
+      "file_md5": "2eb4265914edd7345eb3ae78ca3fa1e9",
+      "rows_raw": 1374327,
+      "clicks_raw": 4768,
+      "ctr_raw": 0.0034693344451502445,
+      "duplicates_flagged": 162,
+      "duplicate_clicks": 161,
+      "rows_clean": 1374165,
+      "clicks_clean": 4607,
+      "ctr_clean": 0.003352581385787005,
+      "n_items_observed": 80,
+      "n_items_expected": 80,
+      "item_id_range": [
+        0,
+        79
+      ],
+      "positions_raw": [
+        1,
+        2,
+        3
+      ],
+      "user_feature_vocab_sizes": [
+        4,
+        6,
+        10,
+        10
+      ],
+      "context_dim_one_hot_drop_first": 26,
+      "time_ordered_in_file": true,
+      "rows_sharing_a_timestamp_with_previous_row": 44801,
+      "propensity_min": 0.0125,
+      "propensity_max": 0.0125,
+      "propensity_equal_1_over_K": true,
+      "missing_values_in_used_columns": 0,
+      "seconds": 15.1
+    },
+    {
+      "policy": "bts",
+      "campaign": "all",
+      "file": "all.csv",
+      "file_md5": "0619c83803613d59a3c1b47a4b058519",
+      "rows_raw": 12357200,
+      "clicks_raw": 61208,
+      "ctr_raw": 0.004953225649823585,
+      "duplicates_flagged": 2188,
+      "duplicate_clicks": 2100,
+      "rows_clean": 12355012,
+      "clicks_clean": 59108,
+      "ctr_clean": 0.004784131330669691,
+      "n_items_observed": 80,
+      "n_items_expected": 80,
+      "item_id_range": [
+        0,
+        79
+      ],
+      "positions_raw": [
+        1,
+        2,
+        3
+      ],
+      "user_feature_vocab_sizes": [
+        4,
+        6,
+        11,
+        10
+      ],
+      "context_dim_one_hot_drop_first": 27,
+      "time_ordered_in_file": true,
+      "rows_sharing_a_timestamp_with_previous_row": 403775,
+      "propensity_min": 1e-06,
+      "propensity_max": 0.95424,
+      "propensity_equal_1_over_K": null,
+      "missing_values_in_used_columns": 0,
+      "seconds": 140.7
+    },
+    {
+      "policy": "random",
+      "campaign": "men",
+      "file": "men.csv",
+      "file_md5": "9b5efef4bdb4bc585fce424f0f5ce192",
+      "rows_raw": 452949,
+      "clicks_raw": 2321,
+      "ctr_raw": 0.005124197205424894,
+      "duplicates_flagged": 81,
+      "duplicate_clicks": 81,
+      "rows_clean": 452868,
+      "clicks_clean": 2240,
+      "ctr_clean": 0.004946253654486517,
+      "n_items_observed": 34,
+      "n_items_expected": 34,
+      "item_id_range": [
+        0,
+        33
+      ],
+      "positions_raw": [
+        1,
+        2,
+        3
+      ],
+      "user_feature_vocab_sizes": [
+        4,
+        6,
+        11,
+        10
+      ],
+      "context_dim_one_hot_drop_first": 27,
+      "time_ordered_in_file": true,
+      "rows_sharing_a_timestamp_with_previous_row": 13945,
+      "propensity_min": 0.0294117647058823,
+      "propensity_max": 0.0294117647058823,
+      "propensity_equal_1_over_K": true,
+      "missing_values_in_used_columns": 0,
+      "seconds": 4.3
+    },
+    {
+      "policy": "bts",
+      "campaign": "men",
+      "file": "men.csv",
+      "file_md5": "c16878318135545c7df41a1417b1a091",
+      "rows_raw": 4077727,
+      "clicks_raw": 27495,
+      "ctr_raw": 0.006742727014339116,
+      "duplicates_flagged": 884,
+      "duplicate_clicks": 880,
+      "rows_clean": 4076843,
+      "clicks_clean": 26615,
+      "ctr_clean": 0.006528335773538495,
+      "n_items_observed": 34,
+      "n_items_expected": 34,
+      "item_id_range": [
+        0,
+        33
+      ],
+      "positions_raw": [
+        1,
+        2,
+        3
+      ],
+      "user_feature_vocab_sizes": [
+        4,
+        6,
+        11,
+        10
+      ],
+      "context_dim_one_hot_drop_first": 27,
+      "time_ordered_in_file": true,
+      "rows_sharing_a_timestamp_with_previous_row": 128705,
+      "propensity_min": 1e-06,
+      "propensity_max": 0.72529,
+      "propensity_equal_1_over_K": null,
+      "missing_values_in_used_columns": 0,
+      "seconds": 39.0
+    },
+    {
+      "policy": "random",
+      "campaign": "women",
+      "file": "women.csv",
+      "file_md5": "980f53011faf57e4158a0e22d2092bb3",
+      "rows_raw": 864585,
+      "clicks_raw": 4163,
+      "ctr_raw": 0.004815026862598819,
+      "duplicates_flagged": 137,
+      "duplicate_clicks": 137,
+      "rows_clean": 864448,
+      "clicks_clean": 4026,
+      "ctr_clean": 0.004657307322129266,
+      "n_items_observed": 46,
+      "n_items_expected": 46,
+      "item_id_range": [
+        0,
+        45
+      ],
+      "positions_raw": [
+        1,
+        2,
+        3
+      ],
+      "user_feature_vocab_sizes": [
+        4,
+        6,
+        11,
+        9
+      ],
+      "context_dim_one_hot_drop_first": 26,
+      "time_ordered_in_file": true,
+      "rows_sharing_a_timestamp_with_previous_row": 28266,
+      "propensity_min": 0.0217391304347826,
+      "propensity_max": 0.0217391304347826,
+      "propensity_equal_1_over_K": true,
+      "missing_values_in_used_columns": 0,
+      "seconds": 9.4
+    },
+    {
+      "policy": "bts",
+      "campaign": "women",
+      "file": "women.csv",
+      "file_md5": "cfa612b26c7458b8194f9ff11cd7061d",
+      "rows_raw": 7765497,
+      "clicks_raw": 49539,
+      "ctr_raw": 0.006379372756180319,
+      "duplicates_flagged": 1492,
+      "duplicate_clicks": 1473,
+      "rows_clean": 7764005,
+      "clicks_clean": 48066,
+      "ctr_clean": 0.006190877002268803,
+      "n_items_observed": 46,
+      "n_items_expected": 46,
+      "item_id_range": [
+        0,
+        45
+      ],
+      "positions_raw": [
+        1,
+        2,
+        3
+      ],
+      "user_feature_vocab_sizes": [
+        4,
+        6,
+        11,
+        10
+      ],
+      "context_dim_one_hot_drop_first": 27,
+      "time_ordered_in_file": true,
+      "rows_sharing_a_timestamp_with_previous_row": 259279,
+      "propensity_min": 1e-06,
+      "propensity_max": 0.9628,
+      "propensity_equal_1_over_K": null,
+      "missing_values_in_used_columns": 0,
+      "seconds": 84.3
+    }
+  ]
+}

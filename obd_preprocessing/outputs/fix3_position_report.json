@@ -1,0 +1,71 @@
+{
+  "step": "Fix 3 positions",
+  "environment": {
+    "python": "3.14.2",
+    "numpy": "2.5.4",
+    "pandas": "3.0.6",
+    "scipy": "1.18.1",
+    "platform": "Windows-11-10.0.26200-SP0"
+  },
+  "position_bias_tests": {
+    "random": {
+      "clicks_by_position": [
+        1570,
+        1542,
+        1495
+      ],
+      "rows_by_position": [
+        457953,
+        458109,
+        458103
+      ],
+      "ctr_by_position": [
+        0.0034282994106382097,
+        0.0033660111458190083,
+        0.0032634582179116925
+      ],
+      "chi2": 1.899492420303575,
+      "dof": 2,
+      "p_value": 0.38683918685605173
+    },
+    "bts": {
+      "clicks_by_position": [
+        19666,
+        19802,
+        19640
+      ],
+      "rows_by_position": [
+        4117748,
+        4118801,
+        4118463
+      ],
+      "ctr_by_position": [
+        0.004775911493369677,
+        0.004807709816521847,
+        0.0047687693200108875
+      ],
+      "chi2": 0.7434963627303016,
+      "dof": 2,
+      "p_value": 0.6895278566272183
+    }
+  },
+  "positions": {
+    "pooled": {
+      "rows": 13729177,
+      "clicks": 63715,
+      "ctr": 0.004640846279423741,
+      "rows_random": 1374165,
+      "clicks_random": 4607,
+      "ctr_random": 0.003352581385787005,
+      "rows_bts": 12355012,
+      "clicks_bts": 59108,
+      "ctr_bts": 0.004784131330669691,
+      "rows_position_1": 4575701,
+      "clicks_position_1": 21236,
+      "rows_position_2": 4576910,
+      "clicks_position_2": 21344,
+      "rows_position_3": 4576566,
+      "clicks_position_3": 21135
+    }
+  }
+}

@@ -103,6 +103,13 @@ class PiecewiseStationaryBandit:
         p   = self.segment_means[seg, arm]
         return float(rng.uniform() < p)
 
+    def expected_random_regret(self) -> float:
+        """Expected cumulative regret of the uniform Random policy, summed
+        over the segments: sum_t (mu*_t - mean_a mu_{a,t})."""
+        seg = np.array([self.current_segment(t) for t in range(1, self.T + 1)])
+        gap = self.segment_means.max(axis=1) - self.segment_means.mean(axis=1)
+        return float(gap[seg].sum())
+
     def regret_increment(self, arm: int, t: int) -> float:
         return self.mu_star(t) - self.segment_means[self.current_segment(t), arm]
 

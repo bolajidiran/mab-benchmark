@@ -1,0 +1,14 @@
+# The primary S1 cell of the thesis: FG-TS against the four mandatory baselines.
+# Run: mab-benchmark run examples/study_s1.yaml
+name: s1-primary
+n_runs: 30
+algorithms:
+  - name: FG-TS
+    params: {lam: 0.5}
+settings:
+  - environment: S1_bernoulli
+    params: {K: 10, T: 10000}
+    label: S1_K10_T10000
+metrics: [mean_regret, sd_regret, ncr]
+include_mandatory_baselines: true
+output: results/s1-primary

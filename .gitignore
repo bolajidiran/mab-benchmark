@@ -1,0 +1,32 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.pytest_cache/
+.ipynb_checkpoints/
+
+# IDE
+.vs/
+.vscode/
+.idea/
+
+# Data and caches (large or licensed; regenerate locally)
+open_bandit_dataset/
+obd_preprocessing/cache/
+obd_preprocessing/_transfer/
+validation/saito2020/cache/
+validation/saito2020/_transfer/
+
+# KuaiRec (CC BY-SA 4.0, about 430 MB): download separately, see docs/datasets.md
+kuairec_dataset/
+# local study outputs of `mab-benchmark run` (experiments/results/ holds the thesis results and IS tracked)
+/results/
+
+# scratch logs and chain scripts
+*.log
+chain*.sh
+rerun_chain.sh
+# raw OBD downloads
+open_bandit_dataset/

@@ -1,13 +1,50 @@
 [build-system]
-requires = ["setuptools>=68", "wheel"]
+requires = ["setuptools>=77", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "mab_benchmark"
-version = "1.0.0"
+name = "mab-benchmark"
+version = "1.3.0"
+description = "Unified benchmark and performance model for multi-armed bandit recommender systems: five settings, mandatory baselines, a pre-registered statistical protocol, the GUF, CCM and BCS, replay-bias diagnostics and OPE."
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [{ name = "Ojediran Alaba Bolaji", email = "bolajidiran@gmail.com" }]
 requires-python = ">=3.10"
+keywords = ["multi-armed bandit", "recommender systems", "benchmark", "off-policy evaluation", "reproducibility"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Science/Research",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
 dependencies = [
     "numpy>=1.24",
     "scipy>=1.10",
     "pandas>=2.0",
 ]
+
+[project.optional-dependencies]
+yaml = ["PyYAML>=6.0"]
+plots = ["matplotlib>=3.7"]
+dev = ["pytest>=7.0", "pytest-cov", "PyYAML>=6.0", "build", "twine"]
+docs = ["mkdocs>=1.5", "mkdocs-material>=9"]
+
+[project.scripts]
+mab-benchmark = "mab_benchmark.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/bolajidiran/mab-benchmark"
+Documentation = "https://bolajidiran.github.io/mab-benchmark/"
+Issues = "https://github.com/bolajidiran/mab-benchmark/issues"
+
+[tool.setuptools.packages.find]
+include = ["mab_benchmark*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

@@ -1,0 +1,479 @@
+{
+  "test1": {
+    "raw": {
+      "T1a_rows_and_items_match": {
+        "logs_matching_rows": 5,
+        "logs_matching_items": 6,
+        "of": 6,
+        "mismatches": [
+          {
+            "log": "bts/all",
+            "rows": 12357200,
+            "published_rows": 12168084,
+            "rows_difference": 189116
+          }
+        ]
+      },
+      "T1b_ctr_matches": {
+        "within_rounding": 6,
+        "inside_ci95": 5,
+        "of": 6,
+        "pass": true
+      },
+      "T1c_relative_ctr_matches": {
+        "count": 6,
+        "of": 6,
+        "pass": true
+      },
+      "T1d_bts_above_random_every_campaign": {
+        "by_campaign": {
+          "all": true,
+          "men": true,
+          "women": true
+        },
+        "pass": true
+      }
+    },
+    "clean": {
+      "T1a_rows_and_items_match": {
+        "logs_matching_rows": 0,
+        "logs_matching_items": 6,
+        "of": 6,
+        "mismatches": [
+          {
+            "log": "random/all",
+            "rows": 1374165,
+            "published_rows": 1374327,
+            "rows_difference": -162
+          },
+          {
+            "log": "bts/all",
+            "rows": 12355012,
+            "published_rows": 12168084,
+            "rows_difference": 186928
+          },
+          {
+            "log": "random/men",
+            "rows": 452868,
+            "published_rows": 452949,
+            "rows_difference": -81
+          },
+          {
+            "log": "bts/men",
+            "rows": 4076843,
+            "published_rows": 4077727,
+            "rows_difference": -884
+          },
+          {
+            "log": "random/women",
+            "rows": 864448,
+            "published_rows": 864585,
+            "rows_difference": -137
+          },
+          {
+            "log": "bts/women",
+            "rows": 7764005,
+            "published_rows": 7765497,
+            "rows_difference": -1492
+          }
+        ]
+      },
+      "T1b_ctr_matches": {
+        "within_rounding": 0,
+        "inside_ci95": 2,
+        "of": 6,
+        "pass": false
+      },
+      "T1c_relative_ctr_matches": {
+        "count": 4,
+        "of": 6,
+        "pass": false
+      },
+      "T1d_bts_above_random_every_campaign": {
+        "by_campaign": {
+          "all": true,
+          "men": true,
+          "women": true
+        },
+        "pass": true
+      }
+    }
+  },
+  "test2": [
+    {
+      "variant": "clean",
+      "campaign": "all",
+      "stream": "pooled",
+      "replay_ratio": 1.361276540253198,
+      "replay_ratio_ci95": [
+        1.2122247159635011,
+        1.5502424175867193
+      ],
+      "ground_truth_ratio": 1.4269993119187576,
+      "H1_bts_beats_random": {
+        "p_one_sided_wilcoxon": 2.4842098355293274e-05,
+        "pass": true
+      },
+      "H3a_ratio_above_1": {
+        "pass": true
+      },
+      "H3b_ground_truth_ratio_inside_ci95": {
+        "pass": true
+      }
+    },
+    {
+      "variant": "clean",
+      "campaign": "all",
+      "stream": "random_only",
+      "replay_ratio": 1.1819298109421963,
+      "replay_ratio_ci95": [
+        0.8201883640209341,
+        1.704024412538047
+      ],
+      "ground_truth_ratio": 1.4269993119187576,
+      "H1_bts_beats_random": {
+        "p_one_sided_wilcoxon": 0.23309701731282934,
+        "pass": false
+      },
+      "H3a_ratio_above_1": {
+        "pass": true
+      },
+      "H3b_ground_truth_ratio_inside_ci95": {
+        "pass": true
+      }
+    },
+    {
+      "variant": "clean",
+      "campaign": "men",
+      "stream": "pooled",
+      "replay_ratio": 1.1040893579962654,
+      "replay_ratio_ci95": [
+        0.9705504563857779,
+        1.2719984385466188
+      ],
+      "ground_truth_ratio": 1.3198546272726923,
+      "H1_bts_beats_random": {
+        "p_one_sided_wilcoxon": 0.1853703036904335,
+        "pass": false
+      },
+      "H3a_ratio_above_1": {
+        "pass": true
+      },
+      "H3b_ground_truth_ratio_inside_ci95": {
+        "pass": false
+      }
+    },
+    {
+      "variant": "clean",
+      "campaign": "men",
+      "stream": "random_only",
+      "replay_ratio": 1.5089044710013977,
+      "replay_ratio_ci95": [
+        1.0546762567931884,
+        2.1717652053334024
+      ],
+      "ground_truth_ratio": 1.3198546272726923,
+      "H1_bts_beats_random": {
+        "p_one_sided_wilcoxon": 0.008726834319531918,
+        "pass": true
+      },
+      "H3a_ratio_above_1": {
+        "pass": true
+      },
+      "H3b_ground_truth_ratio_inside_ci95": {
+        "pass": true
+      }
+    },
+    {
+      "variant": "clean",
+      "campaign": "women",
+      "stream": "pooled",
+      "replay_ratio": 1.2536939902160282,
+      "replay_ratio_ci95": [
+        1.095283186874926,
+        1.4579129375763584
+      ],
+      "ground_truth_ratio": 1.3292824746292256,
+      "H1_bts_beats_random": {
+        "p_one_sided_wilcoxon": 0.004352731630206108,
+        "pass": true
+      },
+      "H3a_ratio_above_1": {
+        "pass": true
+      },
+      "H3b_ground_truth_ratio_inside_ci95": {
+        "pass": true
+      }
+    },
+    {
+      "variant": "clean",
+      "campaign": "women",
+      "stream": "random_only",
+      "replay_ratio": 1.1304041773378775,
+      "replay_ratio_ci95": [
+        0.8647094272159587,
+        1.4725506822080212
+      ],
+      "ground_truth_ratio": 1.3292824746292256,
+      "H1_bts_beats_random": {
+        "p_one_sided_wilcoxon": 0.1908992175012827,
+        "pass": false
+      },
+      "H3a_ratio_above_1": {
+        "pass": true
+      },
+      "H3b_ground_truth_ratio_inside_ci95": {
+        "pass": true
+      }
+    },
+    {
+      "variant": "raw",
+      "campaign": "all",
+      "stream": "pooled",
+      "replay_ratio": 1.246476944258264,
+      "replay_ratio_ci95": [
+        1.0643925109490557,
+        1.460961144423973
+      ],
+      "ground_truth_ratio": 1.427716390026237,
+      "H1_bts_beats_random": {
+        "p_one_sided_wilcoxon": 0.002888246439397335,
+        "pass": true
+      },
+      "H3a_ratio_above_1": {
+        "pass": true
+      },
+      "H3b_ground_truth_ratio_inside_ci95": {
+        "pass": true
+      }
+    },
+    {
+      "variant": "raw",
+      "campaign": "all",
+      "stream": "random_only",
+      "replay_ratio": 1.4176111464629149,
+      "replay_ratio_ci95": [
+        0.9083501097562575,
+        2.2548076659550866
+      ],
+      "ground_truth_ratio": 1.427716390026237,
+      "H1_bts_beats_random": {
+        "p_one_sided_wilcoxon": 0.1905857932253308,
+        "pass": false
+      },
+      "H3a_ratio_above_1": {
+        "pass": true
+      },
+      "H3b_ground_truth_ratio_inside_ci95": {
+        "pass": true
+      }
+    },
+    {
+      "variant": "raw",
+      "campaign": "men",
+      "stream": "pooled",
+      "replay_ratio": 1.0745717008054896,
+      "replay_ratio_ci95": [
+        0.9487646436719108,
+        1.2169033454638694
+      ],
+      "ground_truth_ratio": 1.315860171657858,
+      "H1_bts_beats_random": {
+        "p_one_sided_wilcoxon": 0.1908992175012827,
+        "pass": false
+      },
+      "H3a_ratio_above_1": {
+        "pass": true
+      },
+      "H3b_ground_truth_ratio_inside_ci95": {
+        "pass": false
+      }
+    },
+    {
+      "variant": "raw",
+      "campaign": "men",
+      "stream": "random_only",
+      "replay_ratio": 1.4264225067833551,
+      "replay_ratio_ci95": [
+        1.007179116747639,
+        2.0234111774823558
+      ],
+      "ground_truth_ratio": 1.315860171657858,
+      "H1_bts_beats_random": {
+        "p_one_sided_wilcoxon": 0.021600094896221576,
+        "pass": true
+      },
+      "H3a_ratio_above_1": {
+        "pass": true
+      },
+      "H3b_ground_truth_ratio_inside_ci95": {
+        "pass": true
+      }
+    },
+    {
+      "variant": "raw",
+      "campaign": "women",
+      "stream": "pooled",
+      "replay_ratio": 1.210373896212553,
+      "replay_ratio_ci95": [
+        1.0800693158968742,
+        1.369839473625028
+      ],
+      "ground_truth_ratio": 1.3248883003608363,
+      "H1_bts_beats_random": {
+        "p_one_sided_wilcoxon": 0.002332402393221855,
+        "pass": true
+      },
+      "H3a_ratio_above_1": {
+        "pass": true
+      },
+      "H3b_ground_truth_ratio_inside_ci95": {
+        "pass": true
+      }
+    },
+    {
+      "variant": "raw",
+      "campaign": "women",
+      "stream": "random_only",
+      "replay_ratio": 1.3115865666482376,
+      "replay_ratio_ci95": [
+        0.9836538069573073,
+        1.8155571220893691
+      ],
+      "ground_truth_ratio": 1.3248883003608363,
+      "H1_bts_beats_random": {
+        "p_one_sided_wilcoxon": 0.07594345975667238,
+        "pass": false
+      },
+      "H3a_ratio_above_1": {
+        "pass": true
+      },
+      "H3b_ground_truth_ratio_inside_ci95": {
+        "pass": true
+      }
+    }
+  ],
+  "test3": [
+    {
+      "behaviour": "bts",
+      "campaign": "all",
+      "spearman_rho": 0.9723448696087954,
+      "T3a_rank_agreement": true,
+      "best_reproduced": "DRos",
+      "best_published": "DRos",
+      "T3b_best_agrees_or_tied": true,
+      "n_published_inside_ci95": 7,
+      "median_relative_difference": 0.007871876003580768
+    },
+    {
+      "behaviour": "bts",
+      "campaign": "men",
+      "spearman_rho": 1.0,
+      "T3a_rank_agreement": true,
+      "best_reproduced": "DRos",
+      "best_published": "DRos",
+      "T3b_best_agrees_or_tied": true,
+      "n_published_inside_ci95": 7,
+      "median_relative_difference": 0.0009710742450498947
+    },
+    {
+      "behaviour": "bts",
+      "campaign": "women",
+      "spearman_rho": 1.0,
+      "T3a_rank_agreement": true,
+      "best_reproduced": "DRos",
+      "best_published": "DRos",
+      "T3b_best_agrees_or_tied": true,
+      "n_published_inside_ci95": 7,
+      "median_relative_difference": -0.0030352309617712875
+    },
+    {
+      "behaviour": "random",
+      "campaign": "all",
+      "spearman_rho": 1.0,
+      "T3a_rank_agreement": true,
+      "best_reproduced": "SNIPW",
+      "best_published": "SNIPW",
+      "T3b_best_agrees_or_tied": true,
+      "n_published_inside_ci95": 7,
+      "median_relative_difference": 0.01183413909520926
+    },
+    {
+      "behaviour": "random",
+      "campaign": "men",
+      "spearman_rho": 1.0,
+      "T3a_rank_agreement": true,
+      "best_reproduced": "SNIPW",
+      "best_published": "SNIPW",
+      "T3b_best_agrees_or_tied": true,
+      "n_published_inside_ci95": 7,
+      "median_relative_difference": 0.0075817000526688175
+    },
+    {
+      "behaviour": "random",
+      "campaign": "women",
+      "spearman_rho": 0.9908673886137247,
+      "T3a_rank_agreement": true,
+      "best_reproduced": "DM",
+      "best_published": "DM",
+      "T3b_best_agrees_or_tied": true,
+      "n_published_inside_ci95": 7,
+      "median_relative_difference": 0.0011851313834321845
+    }
+  ],
+  "test4": [
+    {
+      "campaign": "all",
+      "best_reproduced_10000": "DRos",
+      "best_published_10000": "DRos",
+      "T4a_best_at_10000_agrees_or_tied": true,
+      "T4b_directions_agree": "7/7",
+      "T4c_switch_reproduced": true
+    },
+    {
+      "campaign": "men",
+      "best_reproduced_10000": "DM",
+      "best_published_10000": "DM",
+      "T4a_best_at_10000_agrees_or_tied": true,
+      "T4b_directions_agree": "7/7",
+      "T4c_switch_reproduced": true
+    },
+    {
+      "campaign": "women",
+      "best_reproduced_10000": "DM",
+      "best_published_10000": "DM",
+      "T4a_best_at_10000_agrees_or_tied": true,
+      "T4b_directions_agree": "6/7",
+      "T4c_switch_reproduced": true
+    }
+  ],
+  "duplicated_column_check": {
+    "median_abs_rel_diff_table6_women": 0.6089090295154823,
+    "median_abs_rel_diff_table10_men": 0.0001950989221853027,
+    "column_belongs_to": "Table 10, Men (Random -> BTS)"
+  },
+  "equivalence_with_official_obp050": {
+    "action_dist_identical": {
+      "all": true,
+      "men": true,
+      "women": true
+    },
+    "pipeline_max_abs_diff": {
+      "bts->random all n=10000": 0.0,
+      "random->bts all n=10000": 0.0,
+      "bts->random all n=300000": 0.0,
+      "random->bts all n=300000": 0.0,
+      "bts->random men n=10000": 0.0,
+      "random->bts women n=10000": 0.0
+    }
+  },
+  "version_drift_max_abs_diff_x1e3": {
+    "DM": 9.454242944073599e-14,
+    "DR": 9.71445146547012e-14,
+    "DRos": 9.540979117872439e-14,
+    "IPW": 1.0018028073766061e-13,
+    "SNDR": 9.62771529167128e-14,
+    "SNIPW": 9.71445146547012e-14,
+    "Switch-DR": 9.71445146547012e-14
+  }
+}

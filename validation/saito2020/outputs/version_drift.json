@@ -1,0 +1,905 @@
+{
+  "note": "Same seeds and inputs; official obp 0.5.0 under scikit-learn 0.24.2 vs this run under the current environment. IPW and SNIPW do not use the reward model, so any difference there would indicate an implementation error.",
+  "environment_this_run": {
+    "python": "3.14.2",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "numpy": "2.5.4",
+    "pandas": "3.0.6",
+    "scipy": "1.18.1",
+    "scikit-learn": "1.9.1"
+  },
+  "max_abs_diff_x1e3_by_estimator": {
+    "DM": 9.454242944073599e-14,
+    "DR": 9.71445146547012e-14,
+    "DRos": 9.540979117872439e-14,
+    "IPW": 1.0018028073766061e-13,
+    "SNDR": 9.62771529167128e-14,
+    "SNIPW": 9.71445146547012e-14,
+    "Switch-DR": 9.71445146547012e-14
+  },
+  "median_abs_error_official_x1e3": 1.191978760538442,
+  "rows": [
+    {
+      "config": "bts->random all n=10000",
+      "seed": 0,
+      "estimator": "IPW",
+      "official_sklearn_0_24_2": 0.0038950670619796015,
+      "this_run": 0.0038950670619796,
+      "abs_diff_x1e3": 1.3010426069826053e-15,
+      "abs_error_official_x1e3": 0.42573261682940167
+    },
+    {
+      "config": "bts->random all n=10000",
+      "seed": 0,
+      "estimator": "SNIPW",
+      "official_sklearn_0_24_2": 0.0036875057397938006,
+      "this_run": 0.0036875057397938,
+      "abs_diff_x1e3": 4.3368086899420177e-16,
+      "abs_error_official_x1e3": 0.21817129464360083
+    },
+    {
+      "config": "bts->random all n=10000",
+      "seed": 0,
+      "estimator": "DM",
+      "official_sklearn_0_24_2": 0.0036832204023081517,
+      "this_run": 0.0036832204023081,
+      "abs_diff_x1e3": 5.160802341031001e-14,
+      "abs_error_official_x1e3": 0.2138859571579519
+    },
+    {
+      "config": "bts->random all n=10000",
+      "seed": 0,
+      "estimator": "DR",
+      "official_sklearn_0_24_2": 0.003508631413314616,
+      "this_run": 0.0035086314133146,
+      "abs_diff_x1e3": 1.6046192152785466e-14,
+      "abs_error_official_x1e3": 0.03929696816441612
+    },
+    {
+      "config": "bts->random all n=10000",
+      "seed": 0,
+      "estimator": "SNDR",
+      "official_sklearn_0_24_2": 0.003517934955671641,
+      "this_run": 0.0035179349556716,
+      "abs_diff_x1e3": 4.119968255444917e-14,
+      "abs_error_official_x1e3": 0.0486005105214413
+    },
+    {
+      "config": "bts->random all n=10000",
+      "seed": 0,
+      "estimator": "Switch-DR",
+      "official_sklearn_0_24_2": 0.003508631413314616,
+      "this_run": 0.0035086314133146,
+      "abs_diff_x1e3": 1.6046192152785466e-14,
+      "abs_error_official_x1e3": 0.03929696816441612
+    },
+    {
+      "config": "bts->random all n=10000",
+      "seed": 0,
+      "estimator": "DRos",
+      "official_sklearn_0_24_2": 0.0035208901960613417,
+      "this_run": 0.0035208901960613,
+      "abs_diff_x1e3": 4.163336342344337e-14,
+      "abs_error_official_x1e3": 0.05155575091114187
+    },
+    {
+      "config": "bts->random all n=10000",
+      "seed": 1,
+      "estimator": "IPW",
+      "official_sklearn_0_24_2": 0.0036443036479411333,
+      "this_run": 0.0036443036479411,
+      "abs_diff_x1e3": 3.3393426912553537e-14,
+      "abs_error_official_x1e3": 0.17496920279093342
+    },
+    {
+      "config": "bts->random all n=10000",
+      "seed": 1,
+      "estimator": "SNIPW",
+      "official_sklearn_0_24_2": 0.0035455851283068057,
+      "this_run": 0.0035455851283068,
+      "abs_diff_x1e3": 5.637851296924623e-15,
+      "abs_error_official_x1e3": 0.07625068315660587
+    },
+    {
+      "config": "bts->random all n=10000",
+      "seed": 1,
+      "estimator": "DM",
+      "official_sklearn_0_24_2": 0.0040527177563101854,
+      "this_run": 0.0040527177563101,
+      "abs_diff_x1e3": 8.586881206085195e-14,
+      "abs_error_official_x1e3": 0.5833833111599857
+    },
+    {
+      "config": "bts->random all n=10000",
+      "seed": 1,
+      "estimator": "DR",
+      "official_sklearn_0_24_2": 0.003255782786352774,
+      "this_run": 0.0032557827863527,
+      "abs_diff_x1e3": 7.41594285980085e-14,
+      "abs_error_official_x1e3": 0.21355165879742566
+    },
+    {
+      "config": "bts->random all n=10000",
+      "seed": 1,
+      "estimator": "SNDR",
+      "official_sklearn_0_24_2": 0.0032773705156089435,
+      "this_run": 0.0032773705156089,
+      "abs_diff_x1e3": 4.336808689942018e-14,
+      "abs_error_official_x1e3": 0.19196392954125632
+    },
+    {
+      "config": "bts->random all n=10000",
+      "seed": 1,
+      "estimator": "Switch-DR",
+      "official_sklearn_0_24_2": 0.003255782786352774,
+      "this_run": 0.0032557827863527,
+      "abs_diff_x1e3": 7.41594285980085e-14,
+      "abs_error_official_x1e3": 0.21355165879742566
+    },
+    {
+      "config": "bts->random all n=10000",
+      "seed": 1,
+      "estimator": "DRos",
+      "official_sklearn_0_24_2": 0.003814969688472447,
+      "this_run": 0.0038149696884724,
+      "abs_diff_x1e3": 4.7271214720367993e-14,
+      "abs_error_official_x1e3": 0.34563524332224727
+    },
+    {
+      "config": "bts->random all n=10000",
+      "seed": 2,
+      "estimator": "IPW",
+      "official_sklearn_0_24_2": 0.005637609522751121,
+      "this_run": 0.0056376095227511,
+      "abs_diff_x1e3": 2.0816681711721685e-14,
+      "abs_error_official_x1e3": 2.168275077600921
+    },
+    {
+      "config": "bts->random all n=10000",
+      "seed": 2,
+      "estimator": "SNIPW",
+      "official_sklearn_0_24_2": 0.005570019147553148,
+      "this_run": 0.0055700191475531,
+      "abs_diff_x1e3": 4.85722573273506e-14,
+      "abs_error_official_x1e3": 2.1006847024029485
+    },
+    {
+      "config": "bts->random all n=10000",
+      "seed": 2,
+      "estimator": "DM",
+      "official_sklearn_0_24_2": 0.004716275706049254,
+      "this_run": 0.0047162757060492,
+      "abs_diff_x1e3": 5.377642775528102e-14,
+      "abs_error_official_x1e3": 1.2469412608990538
+    },
+    {
+      "config": "bts->random all n=10000",
+      "seed": 2,
+      "estimator": "DR",
+      "official_sklearn_0_24_2": 0.004762965508683494,
+      "this_run": 0.0047629655086834,
+      "abs_diff_x1e3": 9.367506770274758e-14,
+      "abs_error_official_x1e3": 1.293631063533294
+    },
+    {
+      "config": "bts->random all n=10000",
+      "seed": 2,
+      "estimator": "SNDR",
+      "official_sklearn_0_24_2": 0.004762405735739796,
+      "this_run": 0.0047624057357397,
+      "abs_diff_x1e3": 9.62771529167128e-14,
+      "abs_error_official_x1e3": 1.2930712905895965
+    },
+    {
+      "config": "bts->random all n=10000",
+      "seed": 2,
+      "estimator": "Switch-DR",
+      "official_sklearn_0_24_2": 0.004762965508683494,
+      "this_run": 0.0047629655086834,
+      "abs_diff_x1e3": 9.367506770274758e-14,
+      "abs_error_official_x1e3": 1.293631063533294
+    },
+    {
+      "config": "bts->random all n=10000",
+      "seed": 2,
+      "estimator": "DRos",
+      "official_sklearn_0_24_2": 0.0045807513329526785,
+      "this_run": 0.0045807513329526,
+      "abs_diff_x1e3": 7.892991815694472e-14,
+      "abs_error_official_x1e3": 1.1114168878024788
+    },
+    {
+      "config": "random->bts all n=10000",
+      "seed": 0,
+      "estimator": "IPW",
+      "official_sklearn_0_24_2": 0.0038504,
+      "this_run": 0.0038504,
+      "abs_diff_x1e3": 0.0,
+      "abs_error_official_x1e3": 1.1028256498235
+    },
+    {
+      "config": "random->bts all n=10000",
+      "seed": 0,
+      "estimator": "SNIPW",
+      "official_sklearn_0_24_2": 0.004262542129467921,
+      "this_run": 0.0042625421294679,
+      "abs_diff_x1e3": 2.0816681711721685e-14,
+      "abs_error_official_x1e3": 0.690683520355579
+    },
+    {
+      "config": "random->bts all n=10000",
+      "seed": 0,
+      "estimator": "DM",
+      "official_sklearn_0_24_2": 0.0035077118084042825,
+      "this_run": 0.0035077118084042,
+      "abs_diff_x1e3": 8.239936510889834e-14,
+      "abs_error_official_x1e3": 1.4455138414192175
+    },
+    {
+      "config": "random->bts all n=10000",
+      "seed": 0,
+      "estimator": "DR",
+      "official_sklearn_0_24_2": 0.003744077011247589,
+      "this_run": 0.0037440770112475,
+      "abs_diff_x1e3": 8.890457814381136e-14,
+      "abs_error_official_x1e3": 1.2091486385759111
+    },
+    {
+      "config": "random->bts all n=10000",
+      "seed": 0,
+      "estimator": "SNDR",
+      "official_sklearn_0_24_2": 0.003769377254866942,
+      "this_run": 0.0037693772548669,
+      "abs_diff_x1e3": 4.206704429243757e-14,
+      "abs_error_official_x1e3": 1.183848394956558
+    },
+    {
+      "config": "random->bts all n=10000",
+      "seed": 0,
+      "estimator": "Switch-DR",
+      "official_sklearn_0_24_2": 0.003744077011247589,
+      "this_run": 0.0037440770112475,
+      "abs_diff_x1e3": 8.890457814381136e-14,
+      "abs_error_official_x1e3": 1.2091486385759111
+    },
+    {
+      "config": "random->bts all n=10000",
+      "seed": 0,
+      "estimator": "DRos",
+      "official_sklearn_0_24_2": 0.003756124302876591,
+      "this_run": 0.0037561243028765,
+      "abs_diff_x1e3": 9.107298248878237e-14,
+      "abs_error_official_x1e3": 1.197101346946909
+    },
+    {
+      "config": "random->bts all n=10000",
+      "seed": 1,
+      "estimator": "IPW",
+      "official_sklearn_0_24_2": 0.00388568,
+      "this_run": 0.0038856799999999,
+      "abs_diff_x1e3": 9.974659986866641e-14,
+      "abs_error_official_x1e3": 1.0675456498235
+    },
+    {
+      "config": "random->bts all n=10000",
+      "seed": 1,
+      "estimator": "SNIPW",
+      "official_sklearn_0_24_2": 0.004418597098377853,
+      "this_run": 0.0044185970983778,
+      "abs_diff_x1e3": 5.377642775528102e-14,
+      "abs_error_official_x1e3": 0.5346285514456466
+    },
+    {
+      "config": "random->bts all n=10000",
+      "seed": 1,
+      "estimator": "DM",
+      "official_sklearn_0_24_2": 0.004315429782661328,
+      "this_run": 0.0043154297826613,
+      "abs_diff_x1e3": 2.7755575615628914e-14,
+      "abs_error_official_x1e3": 0.637795867162172
+    },
+    {
+      "config": "random->bts all n=10000",
+      "seed": 1,
+      "estimator": "DR",
+      "official_sklearn_0_24_2": 0.0038555200267050777,
+      "this_run": 0.003855520026705,
+      "abs_diff_x1e3": 7.762887554996212e-14,
+      "abs_error_official_x1e3": 1.0977056231184223
+    },
+    {
+      "config": "random->bts all n=10000",
+      "seed": 1,
+      "estimator": "SNDR",
+      "official_sklearn_0_24_2": 0.0037924438668926717,
+      "this_run": 0.0037924438668926,
+      "abs_diff_x1e3": 7.155734338404329e-14,
+      "abs_error_official_x1e3": 1.1607817829308282
+    },
+    {
+      "config": "random->bts all n=10000",
+      "seed": 1,
+      "estimator": "Switch-DR",
+      "official_sklearn_0_24_2": 0.0038555200267050777,
+      "this_run": 0.003855520026705,
+      "abs_diff_x1e3": 7.762887554996212e-14,
+      "abs_error_official_x1e3": 1.0977056231184223
+    },
+    {
+      "config": "random->bts all n=10000",
+      "seed": 1,
+      "estimator": "DRos",
+      "official_sklearn_0_24_2": 0.0038701576518068363,
+      "this_run": 0.0038701576518068,
+      "abs_diff_x1e3": 3.642919299551295e-14,
+      "abs_error_official_x1e3": 1.0830679980166638
+    },
+    {
+      "config": "random->bts all n=10000",
+      "seed": 2,
+      "estimator": "IPW",
+      "official_sklearn_0_24_2": 0.00384928,
+      "this_run": 0.0038492799999999,
+      "abs_diff_x1e3": 1.0018028073766061e-13,
+      "abs_error_official_x1e3": 1.1039456498235
+    },
+    {
+      "config": "random->bts all n=10000",
+      "seed": 2,
+      "estimator": "SNIPW",
+      "official_sklearn_0_24_2": 0.004327749005668275,
+      "this_run": 0.0043277490056682,
+      "abs_diff_x1e3": 7.546047120499111e-14,
+      "abs_error_official_x1e3": 0.6254766441552246
+    },
+    {
+      "config": "random->bts all n=10000",
+      "seed": 2,
+      "estimator": "DM",
+      "official_sklearn_0_24_2": 0.0038820789986857293,
+      "this_run": 0.0038820789986857,
+      "abs_diff_x1e3": 2.949029909160572e-14,
+      "abs_error_official_x1e3": 1.0711466511377707
+    },
+    {
+      "config": "random->bts all n=10000",
+      "seed": 2,
+      "estimator": "DR",
+      "official_sklearn_0_24_2": 0.004017026837221397,
+      "this_run": 0.0040170268372213,
+      "abs_diff_x1e3": 9.71445146547012e-14,
+      "abs_error_official_x1e3": 0.9361988126021028
+    },
+    {
+      "config": "random->bts all n=10000",
+      "seed": 2,
+      "estimator": "SNDR",
+      "official_sklearn_0_24_2": 0.004033800976312665,
+      "this_run": 0.0040338009763126,
+      "abs_diff_x1e3": 6.505213034913027e-14,
+      "abs_error_official_x1e3": 0.919424673510835
+    },
+    {
+      "config": "random->bts all n=10000",
+      "seed": 2,
+      "estimator": "Switch-DR",
+      "official_sklearn_0_24_2": 0.004017026837221397,
+      "this_run": 0.0040170268372213,
+      "abs_diff_x1e3": 9.71445146547012e-14,
+      "abs_error_official_x1e3": 0.9361988126021028
+    },
+    {
+      "config": "random->bts all n=10000",
+      "seed": 2,
+      "estimator": "DRos",
+      "official_sklearn_0_24_2": 0.0040287816412242815,
+      "this_run": 0.0040287816412242,
+      "abs_diff_x1e3": 8.153200337090993e-14,
+      "abs_error_official_x1e3": 0.9244440085992185
+    },
+    {
+      "config": "bts->random all n=300000",
+      "seed": 0,
+      "estimator": "IPW",
+      "official_sklearn_0_24_2": 0.002983400035108692,
+      "this_run": 0.0029834000351086,
+      "abs_diff_x1e3": 9.237402509576498e-14,
+      "abs_error_official_x1e3": 0.4859344100415076
+    },
+    {
+      "config": "bts->random all n=300000",
+      "seed": 0,
+      "estimator": "SNIPW",
+      "official_sklearn_0_24_2": 0.0030106261620913583,
+      "this_run": 0.0030106261620913,
+      "abs_diff_x1e3": 5.811323644522304e-14,
+      "abs_error_official_x1e3": 0.4587082830588415
+    },
+    {
+      "config": "bts->random all n=300000",
+      "seed": 0,
+      "estimator": "DM",
+      "official_sklearn_0_24_2": 0.0042488901486970945,
+      "this_run": 0.004248890148697,
+      "abs_diff_x1e3": 9.454242944073599e-14,
+      "abs_error_official_x1e3": 0.7795557035468947
+    },
+    {
+      "config": "bts->random all n=300000",
+      "seed": 0,
+      "estimator": "DR",
+      "official_sklearn_0_24_2": 0.0030331594095743836,
+      "this_run": 0.0030331594095743,
+      "abs_diff_x1e3": 8.370040771588094e-14,
+      "abs_error_official_x1e3": 0.43617503557581616
+    },
+    {
+      "config": "bts->random all n=300000",
+      "seed": 0,
+      "estimator": "SNDR",
+      "official_sklearn_0_24_2": 0.0030220648064066664,
+      "this_run": 0.0030220648064066,
+      "abs_diff_x1e3": 6.635317295611287e-14,
+      "abs_error_official_x1e3": 0.4472696387435335
+    },
+    {
+      "config": "bts->random all n=300000",
+      "seed": 0,
+      "estimator": "Switch-DR",
+      "official_sklearn_0_24_2": 0.0030331594095743836,
+      "this_run": 0.0030331594095743,
+      "abs_diff_x1e3": 8.370040771588094e-14,
+      "abs_error_official_x1e3": 0.43617503557581616
+    },
+    {
+      "config": "bts->random all n=300000",
+      "seed": 0,
+      "estimator": "DRos",
+      "official_sklearn_0_24_2": 0.0030382118871963323,
+      "this_run": 0.0030382118871963,
+      "abs_diff_x1e3": 3.252606517456513e-14,
+      "abs_error_official_x1e3": 0.4311225579538675
+    },
+    {
+      "config": "random->bts all n=300000",
+      "seed": 0,
+      "estimator": "IPW",
+      "official_sklearn_0_24_2": 0.004521095999999999,
+      "this_run": 0.004521096,
+      "abs_diff_x1e3": 8.673617379884035e-16,
+      "abs_error_official_x1e3": 0.43212964982350127
+    },
+    {
+      "config": "random->bts all n=300000",
+      "seed": 0,
+      "estimator": "SNIPW",
+      "official_sklearn_0_24_2": 0.004540968817419801,
+      "this_run": 0.0045409688174198,
+      "abs_diff_x1e3": 1.734723475976807e-15,
+      "abs_error_official_x1e3": 0.41225683240369865
+    },
+    {
+      "config": "random->bts all n=300000",
+      "seed": 0,
+      "estimator": "DM",
+      "official_sklearn_0_24_2": 0.0035921326958102654,
+      "this_run": 0.0035921326958102,
+      "abs_diff_x1e3": 6.548581121812447e-14,
+      "abs_error_official_x1e3": 1.3610929540132346
+    },
+    {
+      "config": "random->bts all n=300000",
+      "seed": 0,
+      "estimator": "DR",
+      "official_sklearn_0_24_2": 0.004515812096360347,
+      "this_run": 0.0045158120963603,
+      "abs_diff_x1e3": 4.683753385137379e-14,
+      "abs_error_official_x1e3": 0.43741355346315314
+    },
+    {
+      "config": "random->bts all n=300000",
+      "seed": 0,
+      "estimator": "SNDR",
+      "official_sklearn_0_24_2": 0.004519872198619085,
+      "this_run": 0.004519872198619,
+      "abs_diff_x1e3": 8.500145032286355e-14,
+      "abs_error_official_x1e3": 0.43335345120441504
+    },
+    {
+      "config": "random->bts all n=300000",
+      "seed": 0,
+      "estimator": "Switch-DR",
+      "official_sklearn_0_24_2": 0.004515812096360347,
+      "this_run": 0.0045158120963603,
+      "abs_diff_x1e3": 4.683753385137379e-14,
+      "abs_error_official_x1e3": 0.43741355346315314
+    },
+    {
+      "config": "random->bts all n=300000",
+      "seed": 0,
+      "estimator": "DRos",
+      "official_sklearn_0_24_2": 0.0045075148840844105,
+      "this_run": 0.0045075148840844,
+      "abs_diff_x1e3": 1.0408340855860843e-14,
+      "abs_error_official_x1e3": 0.4457107657390895
+    },
+    {
+      "config": "bts->random men n=10000",
+      "seed": 0,
+      "estimator": "IPW",
+      "official_sklearn_0_24_2": 0.0016492657721802733,
+      "this_run": 0.0016492657721802,
+      "abs_diff_x1e3": 7.32920668600201e-14,
+      "abs_error_official_x1e3": 3.4749314332445267
+    },
+    {
+      "config": "bts->random men n=10000",
+      "seed": 0,
+      "estimator": "SNIPW",
+      "official_sklearn_0_24_2": 0.0017265349269770837,
+      "this_run": 0.001726534926977,
+      "abs_diff_x1e3": 8.370040771588094e-14,
+      "abs_error_official_x1e3": 3.3976622784477164
+    },
+    {
+      "config": "bts->random men n=10000",
+      "seed": 0,
+      "estimator": "DM",
+      "official_sklearn_0_24_2": 0.002150540364027778,
+      "this_run": 0.0021505403640277,
+      "abs_diff_x1e3": 7.762887554996212e-14,
+      "abs_error_official_x1e3": 2.9736568413970224
+    },
+    {
+      "config": "bts->random men n=10000",
+      "seed": 0,
+      "estimator": "DR",
+      "official_sklearn_0_24_2": 0.001420535032071802,
+      "this_run": 0.0014205350320718,
+      "abs_diff_x1e3": 1.951563910473908e-15,
+      "abs_error_official_x1e3": 3.703662173352998
+    },
+    {
+      "config": "bts->random men n=10000",
+      "seed": 0,
+      "estimator": "SNDR",
+      "official_sklearn_0_24_2": 0.0013863338160222897,
+      "this_run": 0.0013863338160222,
+      "abs_diff_x1e3": 8.977193988179977e-14,
+      "abs_error_official_x1e3": 3.73786338940251
+    },
+    {
+      "config": "bts->random men n=10000",
+      "seed": 0,
+      "estimator": "Switch-DR",
+      "official_sklearn_0_24_2": 0.001420535032071802,
+      "this_run": 0.0014205350320718,
+      "abs_diff_x1e3": 1.951563910473908e-15,
+      "abs_error_official_x1e3": 3.703662173352998
+    },
+    {
+      "config": "bts->random men n=10000",
+      "seed": 0,
+      "estimator": "DRos",
+      "official_sklearn_0_24_2": 0.0014364444150382772,
+      "this_run": 0.0014364444150382,
+      "abs_diff_x1e3": 7.719519468096792e-14,
+      "abs_error_official_x1e3": 3.6877527903865226
+    },
+    {
+      "config": "bts->random men n=10000",
+      "seed": 1,
+      "estimator": "IPW",
+      "official_sklearn_0_24_2": 0.001191237045991069,
+      "this_run": 0.001191237045991,
+      "abs_diff_x1e3": 6.895525817007808e-14,
+      "abs_error_official_x1e3": 3.932960159433731
+    },
+    {
+      "config": "bts->random men n=10000",
+      "seed": 1,
+      "estimator": "SNIPW",
+      "official_sklearn_0_24_2": 0.0011876548838027016,
+      "this_run": 0.0011876548838027,
+      "abs_diff_x1e3": 1.5178830414797062e-15,
+      "abs_error_official_x1e3": 3.936542321622098
+    },
+    {
+      "config": "bts->random men n=10000",
+      "seed": 1,
+      "estimator": "DM",
+      "official_sklearn_0_24_2": 0.0018594876807005705,
+      "this_run": 0.0018594876807005,
+      "abs_diff_x1e3": 7.047314121155779e-14,
+      "abs_error_official_x1e3": 3.2647095247242297
+    },
+    {
+      "config": "bts->random men n=10000",
+      "seed": 1,
+      "estimator": "DR",
+      "official_sklearn_0_24_2": 0.0010411074009656197,
+      "this_run": 0.0010411074009656,
+      "abs_diff_x1e3": 1.973247953923618e-14,
+      "abs_error_official_x1e3": 4.08308980445918
+    },
+    {
+      "config": "bts->random men n=10000",
+      "seed": 1,
+      "estimator": "SNDR",
+      "official_sklearn_0_24_2": 0.0010435683476794897,
+      "this_run": 0.0010435683476794,
+      "abs_diff_x1e3": 8.977193988179977e-14,
+      "abs_error_official_x1e3": 4.08062885774531
+    },
+    {
+      "config": "bts->random men n=10000",
+      "seed": 1,
+      "estimator": "Switch-DR",
+      "official_sklearn_0_24_2": 0.0010411074009656197,
+      "this_run": 0.0010411074009656,
+      "abs_diff_x1e3": 1.973247953923618e-14,
+      "abs_error_official_x1e3": 4.08308980445918
+    },
+    {
+      "config": "bts->random men n=10000",
+      "seed": 1,
+      "estimator": "DRos",
+      "official_sklearn_0_24_2": 0.0010631587805599349,
+      "this_run": 0.0010631587805599,
+      "abs_diff_x1e3": 3.491130995403324e-14,
+      "abs_error_official_x1e3": 4.061038424864865
+    },
+    {
+      "config": "bts->random men n=10000",
+      "seed": 2,
+      "estimator": "IPW",
+      "official_sklearn_0_24_2": 0.0014315183050385236,
+      "this_run": 0.0014315183050385,
+      "abs_diff_x1e3": 2.3635607360183997e-14,
+      "abs_error_official_x1e3": 3.6926789003862766
+    },
+    {
+      "config": "bts->random men n=10000",
+      "seed": 2,
+      "estimator": "SNIPW",
+      "official_sklearn_0_24_2": 0.001394502470217725,
+      "this_run": 0.0013945024702177,
+      "abs_diff_x1e3": 2.4936649967166602e-14,
+      "abs_error_official_x1e3": 3.7296947352070755
+    },
+    {
+      "config": "bts->random men n=10000",
+      "seed": 2,
+      "estimator": "DM",
+      "official_sklearn_0_24_2": 0.0022832139508181947,
+      "this_run": 0.0022832139508181,
+      "abs_diff_x1e3": 9.454242944073599e-14,
+      "abs_error_official_x1e3": 2.840983254606605
+    },
+    {
+      "config": "bts->random men n=10000",
+      "seed": 2,
+      "estimator": "DR",
+      "official_sklearn_0_24_2": 0.0010979078919500366,
+      "this_run": 0.00109790789195,
+      "abs_diff_x1e3": 3.664603343001005e-14,
+      "abs_error_official_x1e3": 4.026289313474763
+    },
+    {
+      "config": "bts->random men n=10000",
+      "seed": 2,
+      "estimator": "SNDR",
+      "official_sklearn_0_24_2": 0.0011285572333749616,
+      "this_run": 0.0011285572333749,
+      "abs_diff_x1e3": 6.158268339717665e-14,
+      "abs_error_official_x1e3": 3.9956399720498386
+    },
+    {
+      "config": "bts->random men n=10000",
+      "seed": 2,
+      "estimator": "Switch-DR",
+      "official_sklearn_0_24_2": 0.0010979078919500366,
+      "this_run": 0.00109790789195,
+      "abs_diff_x1e3": 3.664603343001005e-14,
+      "abs_error_official_x1e3": 4.026289313474763
+    },
+    {
+      "config": "bts->random men n=10000",
+      "seed": 2,
+      "estimator": "DRos",
+      "official_sklearn_0_24_2": 0.001131096189021531,
+      "this_run": 0.0011310961890215,
+      "abs_diff_x1e3": 3.1008182133085427e-14,
+      "abs_error_official_x1e3": 3.993101016403269
+    },
+    {
+      "config": "random->bts women n=10000",
+      "seed": 0,
+      "estimator": "IPW",
+      "official_sklearn_0_24_2": 0.011641496000000003,
+      "this_run": 0.011641496,
+      "abs_diff_x1e3": 3.469446951953614e-15,
+      "abs_error_official_x1e3": 5.262123243819703
+    },
+    {
+      "config": "random->bts women n=10000",
+      "seed": 0,
+      "estimator": "SNIPW",
+      "official_sklearn_0_24_2": 0.01097600035390224,
+      "this_run": 0.0109760003539022,
+      "abs_diff_x1e3": 3.9898639947466563e-14,
+      "abs_error_official_x1e3": 4.59662759772194
+    },
+    {
+      "config": "random->bts women n=10000",
+      "seed": 0,
+      "estimator": "DM",
+      "official_sklearn_0_24_2": 0.008698063045409645,
+      "this_run": 0.0086980630454096,
+      "abs_diff_x1e3": 4.5102810375396984e-14,
+      "abs_error_official_x1e3": 2.3186902892293455
+    },
+    {
+      "config": "random->bts women n=10000",
+      "seed": 0,
+      "estimator": "DR",
+      "official_sklearn_0_24_2": 0.011033455844455312,
+      "this_run": 0.0110334558444553,
+      "abs_diff_x1e3": 1.214306433183765e-14,
+      "abs_error_official_x1e3": 4.654083088275012
+    },
+    {
+      "config": "random->bts women n=10000",
+      "seed": 0,
+      "estimator": "SNDR",
+      "official_sklearn_0_24_2": 0.010899951203841001,
+      "this_run": 0.010899951203841,
+      "abs_diff_x1e3": 1.734723475976807e-15,
+      "abs_error_official_x1e3": 4.520578447660701
+    },
+    {
+      "config": "random->bts women n=10000",
+      "seed": 0,
+      "estimator": "Switch-DR",
+      "official_sklearn_0_24_2": 0.011033455844455312,
+      "this_run": 0.0110334558444553,
+      "abs_diff_x1e3": 1.214306433183765e-14,
+      "abs_error_official_x1e3": 4.654083088275012
+    },
+    {
+      "config": "random->bts women n=10000",
+      "seed": 0,
+      "estimator": "DRos",
+      "official_sklearn_0_24_2": 0.011010618158072196,
+      "this_run": 0.0110106181580721,
+      "abs_diff_x1e3": 9.540979117872439e-14,
+      "abs_error_official_x1e3": 4.631245401891896
+    },
+    {
+      "config": "random->bts women n=10000",
+      "seed": 1,
+      "estimator": "IPW",
+      "official_sklearn_0_24_2": 0.011832350000000005,
+      "this_run": 0.01183235,
+      "abs_diff_x1e3": 5.204170427930421e-15,
+      "abs_error_official_x1e3": 5.4529772438197055
+    },
+    {
+      "config": "random->bts women n=10000",
+      "seed": 1,
+      "estimator": "SNIPW",
+      "official_sklearn_0_24_2": 0.010848795230165697,
+      "this_run": 0.0108487952301656,
+      "abs_diff_x1e3": 9.71445146547012e-14,
+      "abs_error_official_x1e3": 4.4694224739853965
+    },
+    {
+      "config": "random->bts women n=10000",
+      "seed": 1,
+      "estimator": "DM",
+      "official_sklearn_0_24_2": 0.009339851655249792,
+      "this_run": 0.0093398516552497,
+      "abs_diff_x1e3": 9.194034422677078e-14,
+      "abs_error_official_x1e3": 2.9604788990694915
+    },
+    {
+      "config": "random->bts women n=10000",
+      "seed": 1,
+      "estimator": "DR",
+      "official_sklearn_0_24_2": 0.009509709736282955,
+      "this_run": 0.0095097097362829,
+      "abs_diff_x1e3": 5.377642775528102e-14,
+      "abs_error_official_x1e3": 3.1303369801026544
+    },
+    {
+      "config": "random->bts women n=10000",
+      "seed": 1,
+      "estimator": "SNDR",
+      "official_sklearn_0_24_2": 0.009495590417145584,
+      "this_run": 0.0094955904171455,
+      "abs_diff_x1e3": 8.326672684688674e-14,
+      "abs_error_official_x1e3": 3.1162176609652836
+    },
+    {
+      "config": "random->bts women n=10000",
+      "seed": 1,
+      "estimator": "Switch-DR",
+      "official_sklearn_0_24_2": 0.009509709736282955,
+      "this_run": 0.0095097097362829,
+      "abs_diff_x1e3": 5.377642775528102e-14,
+      "abs_error_official_x1e3": 3.1303369801026544
+    },
+    {
+      "config": "random->bts women n=10000",
+      "seed": 1,
+      "estimator": "DRos",
+      "official_sklearn_0_24_2": 0.009506817445490725,
+      "this_run": 0.0095068174454907,
+      "abs_diff_x1e3": 2.42861286636753e-14,
+      "abs_error_official_x1e3": 3.127444689310425
+    },
+    {
+      "config": "random->bts women n=10000",
+      "seed": 2,
+      "estimator": "IPW",
+      "official_sklearn_0_24_2": 0.008345872000000002,
+      "this_run": 0.008345872,
+      "abs_diff_x1e3": 1.734723475976807e-15,
+      "abs_error_official_x1e3": 1.9664992438197022
+    },
+    {
+      "config": "random->bts women n=10000",
+      "seed": 2,
+      "estimator": "SNIPW",
+      "official_sklearn_0_24_2": 0.007816359831720274,
+      "this_run": 0.0078163598317202,
+      "abs_diff_x1e3": 7.45931094670027e-14,
+      "abs_error_official_x1e3": 1.4369870755399743
+    },
+    {
+      "config": "random->bts women n=10000",
+      "seed": 2,
+      "estimator": "DM",
+      "official_sklearn_0_24_2": 0.006511729564411021,
+      "this_run": 0.006511729564411,
+      "abs_diff_x1e3": 2.168404344971009e-14,
+      "abs_error_official_x1e3": 0.1323568082307212
+    },
+    {
+      "config": "random->bts women n=10000",
+      "seed": 2,
+      "estimator": "DR",
+      "official_sklearn_0_24_2": 0.007571351516718742,
+      "this_run": 0.0075713515167187,
+      "abs_diff_x1e3": 4.163336342344337e-14,
+      "abs_error_official_x1e3": 1.191978760538442
+    },
+    {
+      "config": "random->bts women n=10000",
+      "seed": 2,
+      "estimator": "SNDR",
+      "official_sklearn_0_24_2": 0.007504122745713957,
+      "this_run": 0.0075041227457139,
+      "abs_diff_x1e3": 5.724587470723463e-14,
+      "abs_error_official_x1e3": 1.1247499895336568
+    },
+    {
+      "config": "random->bts women n=10000",
+      "seed": 2,
+      "estimator": "Switch-DR",
+      "official_sklearn_0_24_2": 0.007571351516718742,
+      "this_run": 0.0075713515167187,
+      "abs_diff_x1e3": 4.163336342344337e-14,
+      "abs_error_official_x1e3": 1.191978760538442
+    },
+    {
+      "config": "random->bts women n=10000",
+      "seed": 2,
+      "estimator": "DRos",
+      "official_sklearn_0_24_2": 0.0075582311181071875,
+      "this_run": 0.0075582311181071,
+      "abs_diff_x1e3": 8.760353553682876e-14,
+      "abs_error_official_x1e3": 1.1788583619268873
+    }
+  ]
+}

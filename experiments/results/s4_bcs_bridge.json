@@ -1,0 +1,274 @@
+{
+ "provenance": {
+  "mab_benchmark": "1.2.0",
+  "stream_layout": "1.2.0",
+  "seeds": [
+   1000,
+   1001,
+   1002,
+   1003,
+   1004,
+   1005,
+   1006,
+   1007,
+   1008,
+   1009,
+   1010,
+   1011,
+   1012,
+   1013,
+   1014,
+   1015,
+   1016,
+   1017,
+   1018,
+   1019,
+   1020,
+   1021,
+   1022,
+   1023,
+   1024,
+   1025,
+   1026,
+   1027,
+   1028,
+   1029
+  ],
+  "n_runs": 30,
+  "python": "3.14.2",
+  "numpy": "2.5.4",
+  "scipy": "1.18.1",
+  "platform": "Windows-11-10.0.26200-SP0"
+ },
+ "validation_vs_step5": {
+  "B0_Random": {
+   "identical_runs": 0,
+   "mean_ctr_block": 0.003755783250549458,
+   "mean_ctr_step5": 0.00349433946802615,
+   "mean_accepted_block": 2361.0666666666666,
+   "mean_accepted_step5": 2371.0333333333333,
+   "welch_p_ctr": 0.40351871030789366,
+   "welch_p_accepted": 0.909337580949793
+  },
+  "B1_EpsGreedy": {
+   "identical_runs": 0,
+   "mean_ctr_block": 0.003010426471338651,
+   "mean_ctr_step5": 0.00415050128521338,
+   "mean_accepted_block": 3408.5,
+   "mean_accepted_step5": 3518.6666666666665,
+   "welch_p_ctr": 0.01748151835293604,
+   "welch_p_accepted": 0.7368618261441002
+  },
+  "B2_UCB1": {
+   "identical_runs": 30,
+   "mean_ctr_block": 0.003560512981482952,
+   "mean_ctr_step5": 0.003560512981482923,
+   "mean_accepted_block": 221.0,
+   "mean_accepted_step5": 221.0,
+   "welch_p_ctr": 0.9999999999999738,
+   "welch_p_accepted": 1.0
+  },
+  "B3_TS": {
+   "identical_runs": 0,
+   "mean_ctr_block": 0.003467023554706397,
+   "mean_ctr_step5": 0.0038681867654022264,
+   "mean_accepted_block": 1466.7333333333333,
+   "mean_accepted_step5": 1469.6,
+   "welch_p_ctr": 0.3230249504921089,
+   "welch_p_accepted": 0.9729563570854869
+  },
+  "BernoulliTS_Zozotown": {
+   "identical_runs": 0,
+   "mean_ctr_block": 0.004987701832292434,
+   "mean_ctr_step5": 0.004915472362984153,
+   "mean_accepted_block": 3836.133333333333,
+   "mean_accepted_step5": 3832.4666666666667,
+   "welch_p_ctr": 0.8512354409249653,
+   "welch_p_accepted": 0.9778471989651351
+  },
+  "FG-TS": {
+   "identical_runs": 0,
+   "mean_ctr_block": 0.003958076664335714,
+   "mean_ctr_step5": 0.0038782013017189297,
+   "mean_accepted_block": 1330.3,
+   "mean_accepted_step5": 1318.9666666666667,
+   "welch_p_ctr": 0.8744810215185213,
+   "welch_p_accepted": 0.8794286750027549
+  }
+ },
+ "arm_independence": {
+  "1h": {
+   "bins": 168,
+   "mean_impressions_per_item_bin": 102.24441964285714,
+   "mean_clicks_per_item_bin": 0.34278273809523807,
+   "p_indep": 0.9996835443037975,
+   "median_abs_rho": 0.05797395441215818,
+   "p_indep_null_mean": 0.9998259493670885,
+   "share_pairs_rho_gt_0.3_positive": 0.00031645569620253165
+  },
+  "3h": {
+   "bins": 56,
+   "mean_impressions_per_item_bin": 306.73325892857144,
+   "mean_clicks_per_item_bin": 1.0283482142857143,
+   "p_indep": 0.9629746835443038,
+   "median_abs_rho": 0.09570713611765538,
+   "p_indep_null_mean": 0.9732911392405063,
+   "share_pairs_rho_gt_0.3_positive": 0.03132911392405063
+  },
+  "6h": {
+   "bins": 28,
+   "mean_impressions_per_item_bin": 613.4665178571429,
+   "mean_clicks_per_item_bin": 2.0566964285714286,
+   "p_indep": 0.8699367088607595,
+   "median_abs_rho": 0.13671517917352494,
+   "p_indep_null_mean": 0.8787816455696204,
+   "share_pairs_rho_gt_0.3_positive": 0.0810126582278481
+  }
+ },
+ "calibration": {
+  "item_ctr_min": 0.0011475786091347257,
+  "item_ctr_max": 0.007441592154600519,
+  "item_ctr_mean": 0.0033543650354432714
+ },
+ "bcs_variants": {
+  "random_only: full-log Tier 2, generic S1 Tier 1": {
+   "BCS": 0.6728,
+   "c1_reward_proxy": 0.2857,
+   "c2_arm_independence": 1.0,
+   "c3_sufficient_horizon": 0.7326,
+   "exploration_cost": 0.0535,
+   "band": "PARTIAL",
+   "flag": "One or more bridge conditions partially failed. Tier 2 (deployment) validation is required before making any deployment performance claims.",
+   "failing_conditions": [
+    "Condition 1 (reward proxy): rho_S=0.200 < threshold 0.7. c1=0.286. Flag domain as 'high deployment risk'."
+   ],
+   "action_required": "Run Tier 2 evaluation. Address failing conditions.",
+   "rho_S": 0.19999999999999998,
+   "T_accepted": 14315
+  },
+  "random_only: full-log Tier 2, domain-matched Tier 1": {
+   "BCS": 0.9109,
+   "c1_reward_proxy": 1.0,
+   "c2_arm_independence": 1.0,
+   "c3_sufficient_horizon": 0.7326,
+   "exploration_cost": 0.0535,
+   "band": "PASS",
+   "flag": "All three bridge conditions satisfied. Tier 1 result is a reliable proxy for deployment. Tier 2 validation is recommended but not required for C1 algorithmic claims.",
+   "failing_conditions": [],
+   "action_required": "None required for C1 claims.",
+   "rho_S": 0.942857142857143,
+   "rho_boot_ci95": [
+    0.6571428571428573,
+    0.942857142857143
+   ],
+   "P(rho >= 0.7)": 0.965,
+   "T_accepted": 14315,
+   "tier1_ranking": [
+    "BernoulliTS_Zozotown",
+    "B1_EpsGreedy",
+    "B3_TS",
+    "FG-TS",
+    "B2_UCB1",
+    "B0_Random"
+   ],
+   "tier2_ranking": [
+    "BernoulliTS_Zozotown",
+    "B1_EpsGreedy",
+    "B3_TS",
+    "FG-TS",
+    "B0_Random",
+    "B2_UCB1"
+   ],
+   "tier2_pairs_significant_holm": "8 of 15",
+   "replay_ratio_BTS_over_Random": 1.334744186816611,
+   "on_policy_ratio": 1.4269993119187576,
+   "tier2_mean_ctr": {
+    "B0_Random": 0.003376042685371841,
+    "B1_EpsGreedy": 0.00417560856464661,
+    "B2_UCB1": 0.0032552083333333326,
+    "B3_TS": 0.003513158900583758,
+    "FG-TS": 0.0035113023711756198,
+    "BernoulliTS_Zozotown": 0.004506153348744805
+   },
+   "tier1_mean_regret": {
+    "B0_Random": 58.45160411190625,
+    "B1_EpsGreedy": 47.93822105746207,
+    "B2_UCB1": 58.32069230769789,
+    "B3_TS": 56.750026809508995,
+    "FG-TS": 57.776712780212456,
+    "BernoulliTS_Zozotown": 41.87286704746376
+   }
+  },
+  "pooled: full-log Tier 2, generic S1 Tier 1": {
+   "BCS": 0.6453,
+   "c1_reward_proxy": 0.0,
+   "c2_arm_independence": 1.0,
+   "c3_sufficient_horizon": 0.936,
+   "exploration_cost": 0.0128,
+   "band": "PARTIAL",
+   "flag": "One or more bridge conditions partially failed. Tier 2 (deployment) validation is required before making any deployment performance claims.",
+   "failing_conditions": [
+    "Condition 1 (reward proxy): rho_S=-0.600 < threshold 0.7. c1=0.000. Flag domain as 'high deployment risk'."
+   ],
+   "action_required": "Run Tier 2 evaluation. Address failing conditions.",
+   "rho_S": -0.6,
+   "T_accepted": 69730
+  },
+  "pooled: full-log Tier 2, domain-matched Tier 1": {
+   "BCS": 0.8766,
+   "c1_reward_proxy": 0.6939,
+   "c2_arm_independence": 1.0,
+   "c3_sufficient_horizon": 0.936,
+   "exploration_cost": 0.0128,
+   "band": "PARTIAL",
+   "flag": "One or more bridge conditions partially failed. Tier 2 (deployment) validation is required before making any deployment performance claims.",
+   "failing_conditions": [
+    "Condition 1 (reward proxy): rho_S=0.486 < threshold 0.7. c1=0.694. Flag domain as 'high deployment risk'."
+   ],
+   "action_required": "Run Tier 2 evaluation. Address failing conditions.",
+   "rho_S": 0.48571428571428577,
+   "rho_boot_ci95": [
+    0.2571428571428572,
+    0.7142857142857143
+   ],
+   "P(rho >= 0.7)": 0.0305,
+   "T_accepted": 69730,
+   "tier1_ranking": [
+    "BernoulliTS_Zozotown",
+    "B1_EpsGreedy",
+    "B3_TS",
+    "FG-TS",
+    "B2_UCB1",
+    "B0_Random"
+   ],
+   "tier2_ranking": [
+    "B1_EpsGreedy",
+    "BernoulliTS_Zozotown",
+    "B2_UCB1",
+    "B0_Random",
+    "B3_TS",
+    "FG-TS"
+   ],
+   "tier2_pairs_significant_holm": "12 of 15",
+   "replay_ratio_BTS_over_Random": 1.2920258327009893,
+   "on_policy_ratio": 1.4269993119187576,
+   "tier2_mean_ctr": {
+    "B0_Random": 0.003943483131114669,
+    "B1_EpsGreedy": 0.005156871634094498,
+    "B2_UCB1": 0.0047337284020120595,
+    "B3_TS": 0.0038822600435426814,
+    "FG-TS": 0.003461219056726414,
+    "BernoulliTS_Zozotown": 0.0050950820762207345
+   },
+   "tier1_mean_regret": {
+    "B0_Random": 284.9539202589097,
+    "B1_EpsGreedy": 169.96863099456135,
+    "B2_UCB1": 282.9878599065439,
+    "B3_TS": 250.9684457251851,
+    "FG-TS": 277.48478419802666,
+    "BernoulliTS_Zozotown": 152.72574769479476
+   }
+  }
+ },
+ "seconds": 5455.2
+}

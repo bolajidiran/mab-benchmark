@@ -1,0 +1,347 @@
+{
+ "summary": {
+  "total": 37,
+  "up_to_date": 33,
+  "not_up_to_date": 2,
+  "passed": 29,
+  "failed": 0,
+  "partial": 2,
+  "not_tested_or_na": 6
+ },
+ "package_version": "1.2.0",
+ "components": [
+  {
+   "group": "Package",
+   "component": "core.py: BanditAlgorithm interface",
+   "up_to_date": "UP TO DATE",
+   "validation": "PASSED",
+   "evidence": "tests/test_mab_benchmark.py",
+   "evidence_short": "4 tests",
+   "action_needed": ""
+  },
+  {
+   "group": "Package",
+   "component": "runner.py: BenchmarkRunner, SEED_TABLE, seeded independent streams",
+   "up_to_date": "UP TO DATE",
+   "validation": "PASSED",
+   "evidence": "tests/test_regressions.py",
+   "evidence_short": "13 tests incl. reproducibility",
+   "action_needed": ""
+  },
+  {
+   "group": "Package",
+   "component": "environments: S1 stationary Bernoulli",
+   "up_to_date": "UP TO DATE",
+   "validation": "PASSED",
+   "evidence": "tests/test_mab_benchmark.py",
+   "evidence_short": "10 tests",
+   "action_needed": ""
+  },
+  {
+   "group": "Package",
+   "component": "environments: S2 stationary Gaussian",
+   "up_to_date": "UP TO DATE",
+   "validation": "PASSED",
+   "evidence": "tests/test_mab_benchmark.py",
+   "evidence_short": "3 tests",
+   "action_needed": ""
+  },
+  {
+   "group": "Package",
+   "component": "environments: S3 piecewise-stationary",
+   "up_to_date": "UP TO DATE",
+   "validation": "PASSED",
+   "evidence": "tests/test_mab_benchmark.py",
+   "evidence_short": "4 tests",
+   "action_needed": ""
+  },
+  {
+   "group": "Package",
+   "component": "environments: S5 cold start",
+   "up_to_date": "UP TO DATE",
+   "validation": "PASSED",
+   "evidence": "tests/test_mab_benchmark.py",
+   "evidence_short": "4 tests",
+   "action_needed": ""
+  },
+  {
+   "group": "Package",
+   "component": "environments: S4 synthetic contextual",
+   "up_to_date": "UP TO DATE",
+   "validation": "PASSED",
+   "evidence": "results/raw/S4_SYNTHETIC_K50_T10000__*.npy",
+   "evidence_short": "LinUCB 1100 vs Random 4544",
+   "action_needed": ""
+  },
+  {
+   "group": "Package",
+   "component": "environments: YahooReplayer (R6B)",
+   "up_to_date": "UP TO DATE",
+   "validation": "N/A",
+   "evidence": "s4_contextual.py",
+   "evidence_short": "deprecated; S4 uses the Open Bandit Dataset",
+   "action_needed": ""
+  },
+  {
+   "group": "Package",
+   "component": "baselines B0 to B3",
+   "up_to_date": "UP TO DATE",
+   "validation": "PASSED",
+   "evidence": "tests",
+   "evidence_short": "21 tests; \u03bb=0 FG-TS equals B3 run by run",
+   "action_needed": ""
+  },
+  {
+   "group": "Package",
+   "component": "baseline B4 LinUCB (contextual, S4)",
+   "up_to_date": "UP TO DATE",
+   "validation": "PASSED",
+   "evidence": "tests + S4 synthetic",
+   "evidence_short": "6 tests",
+   "action_needed": ""
+  },
+  {
+   "group": "Package",
+   "component": "FeelGoodThompsonSampling.py",
+   "up_to_date": "UP TO DATE",
+   "validation": "PASSED",
+   "evidence": "tests + lambda sweep",
+   "evidence_short": "\u03bb=0 reproduces B3 run by run; optimism-bonus TS after Zhang (2022)",
+   "action_needed": ""
+  },
+  {
+   "group": "Package",
+   "component": "StatisticalAnalyser (Wilcoxon, Holm, d, A12 with ties)",
+   "up_to_date": "UP TO DATE",
+   "validation": "PASSED",
+   "evidence": "tests",
+   "evidence_short": "9 tests",
+   "action_needed": ""
+  },
+  {
+   "group": "Package",
+   "component": "BCSCalculator (formula and bands)",
+   "up_to_date": "UP TO DATE",
+   "validation": "PASSED",
+   "evidence": "tests",
+   "evidence_short": "10 tests",
+   "action_needed": ""
+  },
+  {
+   "group": "Package",
+   "component": "GUF, CCM, Pareto, weight sweep (analysis/guf.py)",
+   "up_to_date": "UP TO DATE",
+   "validation": "PASSED",
+   "evidence": "tests/test_guf_ips.py",
+   "evidence_short": "14 tests",
+   "action_needed": ""
+  },
+  {
+   "group": "Package",
+   "component": "IPS estimator (analysis/ips.py)",
+   "up_to_date": "UP TO DATE",
+   "validation": "PASSED",
+   "evidence": "tests/test_guf_ips.py",
+   "evidence_short": "unbiased on a uniform log",
+   "action_needed": ""
+  },
+  {
+   "group": "Package",
+   "component": "Certifier C1/C3/C4 and repository leaderboard",
+   "up_to_date": "UP TO DATE",
+   "validation": "PASSED",
+   "evidence": "tests/test_certification.py, Leaderboard/",
+   "evidence_short": "14 tests; FG-TS: C1 (TwoTier reading C1), BernoulliTS_uniform: C1 (TwoTier reading C1)",
+   "action_needed": ""
+  },
+  {
+   "group": "Package",
+   "component": "Unit tests overall",
+   "up_to_date": "UP TO DATE",
+   "validation": "PASSED",
+   "evidence": "results/pytest_v120.xml",
+   "evidence_short": "120/120 passing",
+   "action_needed": ""
+  },
+  {
+   "group": "Results",
+   "component": "Synthetic suite S1 to S5, all algorithms, 30 runs (raw arrays saved)",
+   "up_to_date": "UP TO DATE",
+   "validation": "PASSED",
+   "evidence": "experiments/results/suite_runs.csv",
+   "evidence_short": "21 cells, every result traceable",
+   "action_needed": ""
+  },
+  {
+   "group": "Results",
+   "component": "Chapter Four S1 primary analysis (Tables 4.2, 4.3, 4.5, 4.6)",
+   "up_to_date": "UP TO DATE",
+   "validation": "PASSED",
+   "evidence": "results/tables/table_4_5..., table_4_6...",
+   "evidence_short": "10/10 pairs significant after Holm; 10/10 effects large",
+   "action_needed": ""
+  },
+  {
+   "group": "Results",
+   "component": "S3 claim: FG-TS beats TS after change-points",
+   "up_to_date": "UP TO DATE",
+   "validation": "PASSED",
+   "evidence": "results/raw/S3_*",
+   "evidence_short": "FG-TS 1742 < TS 2136; UCB1 lowest of the plain algorithms (946)",
+   "action_needed": ""
+  },
+  {
+   "group": "Results",
+   "component": "GUF weight sweep (Tables 4.15 to 4.20)",
+   "up_to_date": "UP TO DATE",
+   "validation": "PARTIAL",
+   "evidence": "results/tables/table_4_16...",
+   "evidence_short": "ranking changes with w1",
+   "action_needed": ""
+  },
+  {
+   "group": "Results",
+   "component": "Measured latency and CCM (Table 4.9)",
+   "up_to_date": "UP TO DATE",
+   "validation": "PASSED",
+   "evidence": "results/latency_profile.csv",
+   "evidence_short": "all algorithms within 2G/4G/WiFi budgets: CCM = 0",
+   "action_needed": ""
+  },
+  {
+   "group": "Results",
+   "component": "BCS on S4 (full-log replay, measured c2, domain-matched Tier 1)",
+   "up_to_date": "UP TO DATE",
+   "validation": "PASSED",
+   "evidence": "results/s4_bcs_bridge.json",
+   "evidence_short": "BCS 0.911 [PASS]; rho 0.94 (95% CI 0.66 to 0.94); c2 1.00; c3 0.73",
+   "action_needed": "Marginal: PARTIAL at the lower rho bound or with raw 6-hour c2 bins; the pooled (BTS) stream gives 0.877; a generic S1 Tier 1 gives PARTIAL"
+  },
+  {
+   "group": "S4 real data",
+   "component": "OBD preprocessing Fixes 1 to 5",
+   "up_to_date": "UP TO DATE",
+   "validation": "PASSED",
+   "evidence": "validation Test 1",
+   "evidence_short": "raw logs reproduce Table 1 CTRs (6/6)",
+   "action_needed": ""
+  },
+  {
+   "group": "S4 real data",
+   "component": "S4 replay protocol, external validity (Saito Test 2)",
+   "up_to_date": "UP TO DATE",
+   "validation": "PARTIAL",
+   "evidence": "validation/saito2020/outputs/test2_external_validity.json",
+   "evidence_short": "ratio recovered in 2/3 campaigns (Men's fails: truncation bias)",
+   "action_needed": "State that pooled replay compresses differences"
+  },
+  {
+   "group": "S4 real data",
+   "component": "OPE / IPS machinery (Saito Test 3, both directions)",
+   "up_to_date": "UP TO DATE",
+   "validation": "PASSED",
+   "evidence": "test3_test4_verdicts.json",
+   "evidence_short": "42/42 RMSE inside 95% CI; bit-identical to obp 0.5.0",
+   "action_needed": ""
+  },
+  {
+   "group": "S4 real data",
+   "component": "Sample-size dependence (Saito Test 4)",
+   "up_to_date": "UP TO DATE",
+   "validation": "PASSED",
+   "evidence": "test3_test4_verdicts.json",
+   "evidence_short": "best estimator switch reproduced; paper's Table 6 column error found",
+   "action_needed": ""
+  },
+  {
+   "group": "S4 real data",
+   "component": "s4_obd_experiment.py / s4_bernoulli_ts_experiment.py",
+   "up_to_date": "UP TO DATE",
+   "validation": "PASSED",
+   "evidence": "s4_*_results.json",
+   "evidence_short": "S4 replay and external-validity tracks; Track 0 seeded",
+   "action_needed": ""
+  },
+  {
+   "group": "Specified only",
+   "component": "NCR bridge metric (Frontier I)",
+   "up_to_date": "N/A",
+   "validation": "NOT TESTED",
+   "evidence": "Chapter 3.11",
+   "evidence_short": "future work by design",
+   "action_needed": ""
+  },
+  {
+   "group": "Layers 2 and 6",
+   "component": "MPO state monitor and switching engine, change-point rule (Layer 2)",
+   "up_to_date": "UP TO DATE",
+   "validation": "PASSED",
+   "evidence": "results/layers26_mpo_summary.csv",
+   "evidence_short": "S3 regret: TS -57%, FG-TS -40% with the MPO; 0 false flags on S1; 14 tests",
+   "action_needed": ""
+  },
+  {
+   "group": "Layers 2 and 6",
+   "component": "MPO CCM rule and system performance monitor (Layers 2, 6)",
+   "up_to_date": "UP TO DATE",
+   "validation": "PASSED",
+   "evidence": "results/layers26_results.json",
+   "evidence_short": "flag raised under injected 2G latency; weights move to w2, w3; over-budget arms avoided",
+   "action_needed": "Per-arm costs exist only in the stress test; S1 to S5 have none"
+  },
+  {
+   "group": "Layers 2 and 6",
+   "component": "Counterfactual explainer (Layer 6), scale-aware tolerance",
+   "up_to_date": "UP TO DATE",
+   "validation": "PASSED",
+   "evidence": "results/layers26_results.json",
+   "evidence_short": "graded explanations with the right sign (statistical tolerance): B1_EpsGreedy 81%, B2_UCB1 94%, B3_TS 94%; OBD: 72% graded, 98% right",
+   "action_needed": ""
+  },
+  {
+   "group": "Specified only",
+   "component": "CCM on constrained hardware (Frontier III)",
+   "up_to_date": "N/A",
+   "validation": "NOT TESTED",
+   "evidence": "Chapter 3.6",
+   "evidence_short": "laptop/cloud only so far",
+   "action_needed": ""
+  },
+  {
+   "group": "Documents",
+   "component": "Thesis Chapters 4 and 5",
+   "up_to_date": "NOT UP TO DATE",
+   "validation": "N/A",
+   "evidence": "results/tables/CHAPTER4_5_TABLES.md",
+   "evidence_short": "manuscript not yet written from the current tables",
+   "action_needed": "Write Chapters 4 and 5 from CHAPTER4_5_TABLES.md"
+  },
+  {
+   "group": "Documents",
+   "component": "README.md",
+   "up_to_date": "UP TO DATE",
+   "validation": "N/A",
+   "evidence": "README.md",
+   "evidence_short": "describes mab_benchmark 1.2.0",
+   "action_needed": ""
+  },
+  {
+   "group": "Documents",
+   "component": "FG_TS_Benchmark_Final.ipynb",
+   "up_to_date": "UP TO DATE",
+   "validation": "PASSED",
+   "evidence": "notebook outputs",
+   "evidence_short": "runs on the package; seeded, with a bit-for-bit reproduction cell; executed without errors",
+   "action_needed": ""
+  },
+  {
+   "group": "Repository",
+   "component": "Hygiene: .gitignore file, no stale build or backup folders",
+   "up_to_date": "NOT UP TO DATE",
+   "validation": "N/A",
+   "evidence": ".gitignore",
+   "evidence_short": "stale: mab_benchmark.egg-info",
+   "action_needed": ""
+  }
+ ]
+}

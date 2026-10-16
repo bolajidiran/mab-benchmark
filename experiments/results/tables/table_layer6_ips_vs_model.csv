@@ -1,0 +1,4 @@
+data,"IPS gap, sign of every explanation",model-based gap
+"S1, B1_EpsGreedy",0.5416666666666666,0.7125
+"S1, B2_UCB1",0.8166666666666667,0.8125
+"S1, B3_TS",0.6375,0.8666666666666667
